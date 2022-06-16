@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Hydrate state={pageProps.dehydratedState}>
           <ThemeProvider theme={styleTheme}>
             <Frame>
-              <ComponentFrame>
+              <ComponentFrame className="componentFrame">
                 <ComponentWrapper>
                   <Head>
                     {/* 모바일에서 인풋 클릭 시 확대방지 */}

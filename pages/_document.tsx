@@ -6,7 +6,7 @@ export default class CustomDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta property="custom" content=""></meta>
+          <meta />
 
           <style
             dangerouslySetInnerHTML={{

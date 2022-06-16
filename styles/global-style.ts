@@ -8,32 +8,22 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html {
-    font-size: 2.2vw;
-    /* scroll-behavior: smooth; */
-  }
-
-  @media screen and (min-width: 450px) {
+  /* body width 이상 */
+  @media (min-width: 1201px) {
     html {
       font-size: 10px;
     }
   }
 
+  /* body width */
+  @media screen and (max-width: 1200px) {
+    html {
+      font-size: 0.833vw;
+    }
+  }
+
   body {
     overflow-x: hidden;
-
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    p:lang(ko), label:lang(ko) {
-      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-    }
-    
-    p:lang(en){
-      font-family: 'SF Pro Display', 'Roboto', sans-serif;
-    }
   }
 
   a {
@@ -48,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input, textarea {
+    /* ios 인풋 입력 */
     -moz-user-select: auto;
     -webkit-user-select: auto;
     -ms-user-select: auto;
