@@ -175,3 +175,5 @@ export const codeString = `
     <SyntaxHighlighter language="javascript">{codeString}</SyntaxHighlighter>
   </div>
   `;
+
+export const codeString2 = `<div>asd</div>`;

@@ -1,46 +1,47 @@
-import dynamic from 'next/dynamic';
 import type { NextPage } from 'next';
 import styled from 'styled-components';
-import { useRef, useState } from 'react';
-import { codeString } from 'constants/code-block-data/part-order';
-import useOnClickOutside from 'hooks/useOnClickOutside';
-
-const SyntaxHighlighter = dynamic(() => import('react-syntax-highlighter'), { ssr: false });
+import { useState } from 'react';
+import { codeString, codeString2 } from 'constants/code-block-data/part-order';
+import CodeBlockModal from 'components/modal/code-block-modal';
+import Font from 'components/common/font';
+import Line from 'components/common/Line';
+import Footer from 'components/common/footer';
 
 const Home: NextPage = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-
-  const codeModalInRef: any = useRef();
-  const codeModalExceptRef: any = useRef();
-  useOnClickOutside({
-    inRef: codeModalInRef,
-    exceptRef: codeModalExceptRef,
-    handler: () => {
-      setModalOpen(false);
-    },
-  });
+  const [isModalOpen2, setModalOpen2] = useState(false);
 
   return (
     <Frame>
       <p>Home</p>
+
+      <Line />
 
       <button
         onClick={() => {
           setModalOpen(true);
         }}
       >
-        코드보기
+        코드보기1
       </button>
 
-      <CodeBlockFrame className={isModalOpen ? 'showCodeBlock' : 'hideCodeBlock'} isModalOpen={isModalOpen}>
-        <CodeBlockWrapper ref={codeModalInRef}>
-          <CustomSyntaxHighlighter language="javascript">{codeString}</CustomSyntaxHighlighter>
+      <button
+        onClick={() => {
+          setModalOpen2(true);
+        }}
+      >
+        코드보기2
+      </button>
 
-          <CloseButton onClick={() => setModalOpen(false)}>닫기</CloseButton>
-        </CodeBlockWrapper>
-      </CodeBlockFrame>
+      <CodeBlockModal isModalOpen={isModalOpen} setModalOpen={setModalOpen} codeString={codeString} />
 
-      <div>asdasdasdasd</div>
+      <CodeBlockModal isModalOpen={isModalOpen2} setModalOpen={setModalOpen2} codeString={codeString2} />
+
+      <Font size={12} translateY={20}>
+        테스트입니다.
+      </Font>
+
+      <Footer />
     </Frame>
   );
 };
@@ -53,53 +54,4 @@ const Frame = styled.div`
   pre {
     font-size: 2rem;
   }
-`;
-
-const CodeBlockFrame = styled.div<{ isModalOpen: boolean }>`
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 10;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s;
-
-  &.showCodeBlock {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &.hideCodeBlock {
-    opacity: 0;
-  }
-`;
-
-const CodeBlockWrapper = styled.div`
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 140rem;
-  height: 90rem;
-`;
-
-const CustomSyntaxHighlighter = styled(SyntaxHighlighter)`
-  width: 100%;
-  height: 100%;
-`;
-
-const CloseButton = styled.div`
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 1.5rem;
-  color: red;
-  cursor: pointer;
 `;

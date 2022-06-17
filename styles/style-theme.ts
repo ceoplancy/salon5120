@@ -2,29 +2,16 @@ import { DefaultTheme } from 'styled-components';
 
 const StyleTheme: DefaultTheme = {
   colors: {
-    ffeedBlue50: '#DCDDFF',
-    ffeedBlue100: '#DCDDFF',
-    ffeedBlue200: '#B8B9FF',
-    ffeedBlue300: '#8B8Dff',
-    ffeedBlue400: '#6163FF',
-    ffeedBlue500: '#373BFF',
-    ffeedBlue600: '#0004F3',
-    ffeedBlue700: '#0003CB',
-    ffeedBlue800: '#000289',
-    ffeedBlue900: '#000264',
-    ffeedBlue950: '#002412',
-
-    naturalBlue50: '#EBF2FF',
-    naturalBlue100: '#D7E4FF',
-    naturalBlue200: '#B3CDFF',
-    naturalBlue300: '#6398FF',
-    naturalBlue400: '#3F80FF',
-    naturalBlue500: '#296FF6',
-    naturalBlue600: '#0951DC',
-    naturalBlue700: '#003BAC',
-    naturalBlue800: '#002C81',
-    naturalBlue900: '#001A4E',
-    naturalBlue950: '#000E29',
+    color1: '#DCDDFF',
+    color2: '#DCDDFF',
+    color3: '#B8B9FF',
+    color4: '#8B8Dff',
+    color5: '#6163FF',
+    color6: '#373BFF',
+    color7: '#0004F3',
+    color8: '#0003CB',
+    color9: '#000289',
+    color10: '#000264',
 
     grey0: '#FFFFFF',
     grey50: '#FBFBFB',
@@ -39,8 +26,6 @@ const StyleTheme: DefaultTheme = {
     grey900: '#1A1A1A',
     grey950: '#111111',
     grey1000: '#000000',
-
-    errorRed: '#ff0d1b',
   },
 
   spacing: {

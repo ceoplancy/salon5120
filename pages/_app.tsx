@@ -6,6 +6,7 @@ import GlobalStyle from 'styles/global-style';
 import styleTheme from 'styles/style-theme';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import Navigation from 'components/common/navigation';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
@@ -24,6 +25,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ThemeProvider theme={styleTheme}>
             <Frame>
               <ComponentFrame className="componentFrame">
+                <Navigation />
+
                 <ComponentWrapper>
                   <Head>
                     {/* 모바일에서 인풋 클릭 시 확대방지 */}
@@ -55,12 +58,15 @@ const ComponentFrame = styled.main`
   max-width: 1200px;
   min-height: 100vh;
   margin: 0 auto;
-  box-shadow: rgb(0 0 0 / 16%) 0px 0px 8px;
+  border: 1px solid red;
 `;
 
 const ComponentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  // nav의 높이 보다 2rem 밑으로
+  padding-top: 10rem;
 
   // body 좌우 패딩
   padding-left: 20px;
