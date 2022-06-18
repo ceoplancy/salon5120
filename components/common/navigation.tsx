@@ -1,52 +1,72 @@
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import Image from 'next/image';
 import Font from 'components/common/font';
+import logo from 'public/vercel.svg';
 
 const Navigation = () => {
+  const router = useRouter();
+
   return (
     <Frame>
-      <Font size={21} pointer={true}>
-        logo
-      </Font>
+      <NavigationFrame>
+        <ImageWrapper onClick={() => router.push('/')}>
+          <CustomImage src={logo} alt="logo" />
+        </ImageWrapper>
 
-      <MenuWrapper>
-        <Font size={16} translateY={2} pointer={true}>
-          All
-        </Font>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '60%' }}>
+          <MenuWrapper>
+            <Font size={21} translateY={2} pointer={true}>
+              All
+            </Font>
 
-        <MenuLine />
+            <MenuLine />
 
-        <Font size={16} translateY={2} pointer={true}>
-          Components
-        </Font>
+            <Font size={21} translateY={2} pointer={true}>
+              Components
+            </Font>
 
-        <MenuLine />
+            <MenuLine />
 
-        <Font size={16} translateY={2} pointer={true}>
-          Blog
-        </Font>
-      </MenuWrapper>
+            <Font size={21} translateY={2} pointer={true}>
+              Blog
+            </Font>
+          </MenuWrapper>
 
-      <Font size={16} translateY={2} pointer={true}>
-        Introduce
-      </Font>
+          <Font size={21} translateY={2} pointer={true}>
+            Introduce
+          </Font>
+        </div>
+      </NavigationFrame>
     </Frame>
   );
 };
 
 export default Navigation;
 
-const Frame = styled.div`
+const Frame = styled.nav`
   position: absolute;
   top: 0;
-  width: 100%;
-  height: 8rem;
 
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+
+  /* 부모의 크기와 상관없이 화면 전체 nav */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+
+  height: 8rem;
 
   background-color: #fff;
-  border: 1px solid red;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+`;
+
+const NavigationFrame = styled.div`
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
 `;
 
 const MenuWrapper = styled.div`
@@ -59,4 +79,13 @@ const MenuLine = styled.div`
   width: 1px;
   height: 15px;
   border: 1px solid #989898;
+`;
+
+const CustomImage = styled(Image)`
+  cursor: pointer;
+`;
+
+const ImageWrapper = styled.div`
+  width: 12rem;
+  height: 2.5rem;
 `;

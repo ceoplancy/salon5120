@@ -22,6 +22,12 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  @media screen and (max-width: 500px) {
+    html {
+      font-size: 2vw;
+    }
+  }
+
   body {
     overflow-x: hidden;
   }

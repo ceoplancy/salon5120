@@ -52,25 +52,28 @@ const Frame = styled.div`
   width: 100vw;
 `;
 
-const ComponentFrame = styled.main`
+const ComponentFrame = styled.div`
   position: relative;
   width: 100%;
   max-width: 1200px;
   min-height: 100vh;
   margin: 0 auto;
-  border: 1px solid red;
 `;
 
-const ComponentWrapper = styled.div`
+const ComponentWrapper = styled.main`
   display: flex;
   flex-direction: column;
 
   // nav의 높이 보다 2rem 밑으로
   padding-top: 10rem;
 
-  // body 좌우 패딩
-  padding-left: 20px;
-  padding-right: 20px;
+  // footer의 높이 보다 2rem 위로
+  padding-bottom: 15rem;
 
+  // body 좌우 패딩
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  min-width: 100%;
   min-height: 100vh;
 `;
