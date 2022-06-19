@@ -1,7 +1,9 @@
 import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 import { useRef } from 'react';
+import Image from 'next/image';
 import useOnClickOutside from 'hooks/useOnClickOutside';
+import { close } from 'public/common';
 
 const SyntaxHighlighter = dynamic(() => import('react-syntax-highlighter'), { ssr: false });
 
@@ -37,11 +39,13 @@ const CodeBlockModal = (props: Props) => {
   });
 
   return (
-    <CodeBlockFrame className={isModalOpen ? 'showCodeBlock' : 'hideCodeBlock'} isModalOpen={isModalOpen}>
+    <CodeBlockFrame className={isModalOpen ? 'showCodeBlock' : 'hideCodeBlock'}>
       <CodeBlockWrapper ref={codeModalInRef}>
         <CustomSyntaxHighlighter language="javascript">{codeString}</CustomSyntaxHighlighter>
 
-        <CloseButton onClick={() => setModalOpen(false)}>닫기</CloseButton>
+        <CloseButton onClick={() => setModalOpen(false)}>
+          <Image src={close} alt="close" width={30} height={30} />
+        </CloseButton>
       </CodeBlockWrapper>
     </CodeBlockFrame>
   );
@@ -49,7 +53,7 @@ const CodeBlockModal = (props: Props) => {
 
 export default CodeBlockModal;
 
-const CodeBlockFrame = styled.div<{ isModalOpen: boolean }>`
+const CodeBlockFrame = styled.div`
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -80,8 +84,11 @@ const CodeBlockWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 140rem;
-  height: 90rem;
+  /* width: 140rem;
+  height: 90rem; */
+
+  width: 85%;
+  height: 85%;
 `;
 
 const CustomSyntaxHighlighter = styled(SyntaxHighlighter)`
@@ -91,9 +98,12 @@ const CustomSyntaxHighlighter = styled(SyntaxHighlighter)`
 
 const CloseButton = styled.div`
   position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 1.5rem;
-  color: red;
+  top: 20px;
+  right: 25px;
   cursor: pointer;
+
+  @media screen and (max-width: 500px) {
+    top: 10px;
+    right: 15px;
+  }
 `;

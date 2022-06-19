@@ -1,7 +1,5 @@
 import { StaticImageData } from 'next/image';
-import test1 from 'public/test1.jpeg';
-import test2 from 'public/test2.jpeg';
-import test3 from 'public/test3.jpg';
+import { test1, test2, test3 } from 'public/test';
 
 export type cardDataType = {
   id: number;

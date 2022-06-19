@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import github from 'public/github.svg';
-import notion from 'public/notion.svg';
 import Font from 'components/common/font';
+import ImageWrapper from 'components/common/image-wrapper';
+import { github, notion } from 'public/common';
 
 const Footer = () => {
   return (
     <Frame>
       <FooterFrame>
         <ImageFrame>
-          <ImageWrapper>
+          <ImageWrapper width={4.5} height={4.5}>
             <CustomImage src={github} alt="github" />
           </ImageWrapper>
 
-          <ImageWrapper>
+          <ImageWrapper width={4.5} height={4.5}>
             <CustomImage src={notion} alt="github" />
           </ImageWrapper>
         </ImageFrame>
@@ -56,11 +56,6 @@ const FooterFrame = styled.div`
 const ImageFrame = styled.div`
   display: flex;
   gap: 10px;
-`;
-
-const ImageWrapper = styled.div`
-  width: 4.5rem;
-  height: 4.5rem;
 `;
 
 const CustomImage = styled(Image)`

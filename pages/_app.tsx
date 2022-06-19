@@ -64,8 +64,8 @@ const ComponentWrapper = styled.main`
   display: flex;
   flex-direction: column;
 
-  // nav의 높이 보다 2rem 밑으로
-  padding-top: 10rem;
+  // nav의 높이의 2/1
+  padding-top: 4rem;
 
   // footer의 높이 보다 2rem 위로
   padding-bottom: 15rem;
