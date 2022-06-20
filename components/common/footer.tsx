@@ -18,7 +18,7 @@ const Footer = () => {
           </ImageWrapper>
         </ImageFrame>
 
-        <Font size={16}>Copyrightⓒ2022 Nick All rights reserved.</Font>
+        <Font size={16}>Copyrightⓒ2022 Nick All rights reserved. Powered by Vercel</Font>
       </FooterFrame>
     </Frame>
   );
