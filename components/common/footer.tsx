@@ -9,12 +9,12 @@ const Footer = () => {
     <Frame>
       <FooterFrame>
         <ImageFrame>
-          <ImageWrapper width={4.5} height={4.5}>
+          <ImageWrapper width={4.5} height={4.5} onClick={() => window.open('https://github.com/psw0962')}>
             <CustomImage src={github} alt="github" />
           </ImageWrapper>
 
-          <ImageWrapper width={4.5} height={4.5}>
-            <CustomImage src={notion} alt="github" />
+          <ImageWrapper width={4.5} height={4.5} onClick={() => window.open('https://url.kr/49bzk5')}>
+            <CustomImage src={notion} alt="notion" />
           </ImageWrapper>
         </ImageFrame>
 
