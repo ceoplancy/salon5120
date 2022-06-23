@@ -44,7 +44,15 @@ const Frame = styled.article`
 
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+
+  transition: all 0.2s;
   cursor: pointer;
+
+  @media screen and (min-width: 501px) {
+    &:hover {
+      transform: translateY(-30px);
+    }
+  }
 
   @media screen and (max-width: 500px) {
     width: 100%;

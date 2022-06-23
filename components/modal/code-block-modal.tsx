@@ -84,8 +84,6 @@ const CodeBlockWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 140rem;
-  height: 90rem; */
 
   width: 85%;
   height: 85%;

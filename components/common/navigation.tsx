@@ -48,7 +48,7 @@ const Navigation = () => {
             </Font>
           </MenuWrapper>
 
-          <Font size={21} translateY={2} pointer={true}>
+          <Font size={21} translateY={2} pointer={true} onClick={() => router.push('/introduce')}>
             Introduce
           </Font>
         </DeskTopMenuWrapper>

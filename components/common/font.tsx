@@ -76,7 +76,7 @@ const Font = styled.p<FontProps>`
 
   // 기본 속성
   color: ${(props) => (props.color ? props.color : '#000')};
-  letter-spacing: ${(props) => (props.letterSpacing ? props.letterSpacing : '-0.02em')};
+  letter-spacing: ${(props) => (props.letterSpacing ? props.letterSpacing : 0)};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   text-decoration: ${(props) => (props.textDecoration ? props.textDecoration : '')};
