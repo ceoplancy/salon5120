@@ -87,6 +87,11 @@ const CodeBlockWrapper = styled.div`
 
   width: 85%;
   height: 85%;
+
+  pre {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 `;
 
 const CustomSyntaxHighlighter = styled(SyntaxHighlighter)`

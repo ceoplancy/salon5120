@@ -79,7 +79,14 @@ const Navigation = () => {
               Blog
             </Font>
 
-            <Font size={21} pointer={true}>
+            <Font
+              size={21}
+              pointer={true}
+              onClick={() => {
+                router.push('/introduce');
+                setMobileMenu(false);
+              }}
+            >
               Introduce
             </Font>
           </MobileMenuWrapper>
