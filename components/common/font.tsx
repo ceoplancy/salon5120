@@ -5,7 +5,7 @@ type FontProps = {
   /**
    * font size 지정을 위한 필수 값
    */
-  size: 32 | 28 | 26 | 24 | 21 | 18 | 16 | 15 | 14 | 13 | 12 | 11 | 10;
+  size: 36 | 32 | 28 | 26 | 24 | 21 | 18 | 16 | 15 | 14 | 13 | 12 | 11 | 10;
 
   /**
    * font color 지정을 위한 선택 값 (default #000)
@@ -90,6 +90,11 @@ const Font = styled.p<FontProps>`
 
   ${(props) => {
     switch (props.size) {
+      case 36:
+        return css`
+          font-size: 3.6rem;
+        `;
+
       case 32:
         return css`
           font-size: 3.2rem;

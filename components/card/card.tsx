@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Font from './common/font';
+import Font from 'components/common/font';
 import Image from 'next/image';
-import { cardDataType } from 'constants/card/index';
+import { cardDataType } from 'constants/card-title/index';
 import { useRouter } from 'next/router';
 
 type Props = {

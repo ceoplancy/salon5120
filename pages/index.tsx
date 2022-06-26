@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import styled from 'styled-components';
 import Footer from 'components/common/footer';
-import Card from 'components/card';
-import { cardData, cardDataType } from 'constants/card/index';
+import Card from 'components/card/card';
+import { cardData, cardDataType } from 'constants/card-title/index';
 
 const Home: NextPage = () => {
   return (
