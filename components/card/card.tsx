@@ -16,11 +16,11 @@ const Card = ({ data }: Props) => {
       <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="responsive" width={280} height={300} />
 
       <FontWrapper>
-        <Font size={26} fontWeight={600}>
+        <Font size={24} fontWeight={600}>
           {data.title}
         </Font>
 
-        <Font size={21} color="#545454">
+        <Font size={18} color="#545454">
           {data.subTitle}
         </Font>
       </FontWrapper>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { test1 } from 'public/test';
 import CodeBlock from 'components/code-block';
 import ImageWrapper from 'components/common/image-wrapper';
-import codeString from 'constants/code-block-data/profile';
+import profile from 'constants/code-data/profile';
 import { github, notion } from 'public/common';
 
 const Introduce = () => {
@@ -23,7 +23,7 @@ const Introduce = () => {
         </ProfileWrapper>
       </ProfileFrame>
 
-      <CodeBlock codeString={codeString} width={70} />
+      <CodeBlock codeString={profile} />
 
       <ContentFrame>
         <pre>

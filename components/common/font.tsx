@@ -35,7 +35,7 @@ type FontProps = {
   /**
    * click event
    */
-  onClick?: (e: any) => void;
+  onClick?: () => void;
 
   /**
    * disabled

@@ -109,10 +109,6 @@ const Frame = styled.nav<{ scrollEventState: boolean }>`
   display: flex;
   justify-content: center;
 
-  /* 부모의 크기와 상관없이 화면 전체 nav */
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-
   height: 8rem;
 
   background-color: #fff;

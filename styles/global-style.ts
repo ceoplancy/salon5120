@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
   @media screen and (max-width: 1200px) {
     html {
       font-size: 0.833vw;
+      /* overflow-x: hidden; */
     }
   }
 
@@ -29,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    overflow-x: hidden;
   }
 
   a {

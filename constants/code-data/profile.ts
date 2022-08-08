@@ -1,5 +1,4 @@
-const codeString = `
-    const psw = {
+const profile = `const psw = {
         name: '박상우',
         skills: ['javascript', 'typescript', 'react', 'nextjs', 'react-query', 'recoil'],
         email: 'psw92640962@gmail.com',
@@ -7,4 +6,4 @@ const codeString = `
     }
 `;
 
-export default codeString;
+export default profile;

@@ -23,19 +23,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <ThemeProvider theme={styleTheme}>
+            <Navigation />
+
             <Frame>
-              <ComponentFrame className="componentFrame">
-                <Navigation />
+              <Head>
+                {/* 모바일에서 인풋 클릭 시 확대방지 */}
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
+              </Head>
 
-                <ComponentWrapper>
-                  <Head>
-                    {/* 모바일에서 인풋 클릭 시 확대방지 */}
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
-                  </Head>
-
-                  <Component {...pageProps} />
-                </ComponentWrapper>
-              </ComponentFrame>
+              <Component {...pageProps} />
             </Frame>
           </ThemeProvider>
         </Hydrate>
@@ -47,21 +43,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 export default MyApp;
 
-const Frame = styled.div`
-  position: relative;
-  width: 100vw;
-`;
-
-const ComponentFrame = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  min-height: 100vh;
-  margin: 0 auto;
-`;
-
-const ComponentWrapper = styled.main`
+const Frame = styled.main`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 
   // nav의 높이의 2/1
@@ -74,6 +59,7 @@ const ComponentWrapper = styled.main`
   padding-left: 3rem;
   padding-right: 3rem;
 
-  min-width: 100%;
+  max-width: 1200px;
   min-height: 100vh;
+  margin: 0 auto;
 `;
