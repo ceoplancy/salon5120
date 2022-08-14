@@ -3,10 +3,12 @@ import { test1 } from 'public/test';
 
 export type cardDataType = {
   id: number;
+  type: string;
   imageUrl: StaticImageData | string;
   title: string;
   subTitle: string;
   createdAt: string;
+  url: string;
 };
 
 export const cardData = [
@@ -75,9 +77,11 @@ export const cardData = [
   // },
   {
     id: 1,
+    type: '',
     imageUrl: test1,
     title: 'Font and Button',
     subTitle: '폰트와 버튼 일관성있게 사용하기',
     createdAt: '2022-06-18',
+    url: 'https://rainy-reaper-d5b.notion.site/572c8b79c8df4c888e768e5cb84d2981',
   },
 ];

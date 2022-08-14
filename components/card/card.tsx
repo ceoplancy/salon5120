@@ -12,23 +12,25 @@ const Card = ({ data }: Props) => {
   const router = useRouter();
 
   return (
-    <Frame onClick={() => router.push(`/card/${data.id}`)}>
-      <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="responsive" width={280} height={300} />
+    <a href={data.url} target="_blank">
+      <Frame>
+        <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="responsive" width={280} height={300} />
 
-      <FontWrapper>
-        <Font size={24} fontWeight={600}>
-          {data.title}
+        <FontWrapper>
+          <Font size={24} fontWeight={600}>
+            {data.title}
+          </Font>
+
+          <Font size={18} color="#545454">
+            {data.subTitle}
+          </Font>
+        </FontWrapper>
+
+        <Font size={14} color="#545454" margin="10px 0px 0px 0px">
+          {data.createdAt}
         </Font>
-
-        <Font size={18} color="#545454">
-          {data.subTitle}
-        </Font>
-      </FontWrapper>
-
-      <Font size={14} color="#545454" margin="10px 0px 0px 0px">
-        {data.createdAt}
-      </Font>
-    </Frame>
+      </Frame>
+    </a>
   );
 };
 

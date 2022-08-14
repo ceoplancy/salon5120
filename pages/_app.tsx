@@ -60,6 +60,6 @@ const Frame = styled.main`
   padding-right: 3rem;
 
   max-width: 1200px;
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0 auto;
 `;

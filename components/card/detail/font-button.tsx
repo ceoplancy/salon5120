@@ -2,17 +2,15 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Font from 'components/common/font';
 import ContentList from 'components/card/content-list';
-import { FontButtonData } from 'constants/content-list';
 import CodeBlockModal from 'components/modal/code-block-modal';
-import CodeBlock from 'components/code-block';
-import { fontCompString, fontTypeString } from 'constants/code-data/font-button/font';
 import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import dynamic from 'next/dynamic';
-import remarkGfm from 'remark-gfm';
+// import dynamic from 'next/dynamic';
+// import CodeBlock from 'components/code-block';
+// import rehypeRaw from 'rehype-raw';
+// import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+// import remarkGfm from 'remark-gfm';
 
-const SyntaxHighlighter = dynamic(() => import('react-syntax-highlighter'), { ssr: false });
+// const SyntaxHighlighter = dynamic(() => import('react-syntax-highlighter'), { ssr: false });
 
 // const CodeBlock = {
 //   code({ node, inline, className, children, ...props }: any) {
@@ -41,7 +39,7 @@ const FontButton = () => {
         </Font>
       </FontWrapper>
 
-      <ContentList data={FontButtonData} />
+      {/* <ContentList data={FontButtonData} /> */}
 
       <Font size={32} fontWeight={600} margin="64px 0px 0px 0px">
         1. 들어가며, font와 button 공용 컴포넌트를 만들게 된 이유
@@ -85,7 +83,7 @@ import 하여 사용 가능한 속성들을 타입으로 정의 해놓고 사용
         <Font size={18}>먼저 font component의 타입 입니다.</Font>
       </PreText>
 
-      <CodeBlockModal isModalOpen={fontType} setModalOpen={setFontType} codeString={fontTypeString} />
+      {/* <CodeBlockModal isModalOpen={fontType} setModalOpen={setFontType} codeString={fontTypeString} /> */}
 
       <Font size={16} onClick={() => setFontType(!fontType)}>
         코드보기
@@ -97,7 +95,7 @@ import 하여 사용 가능한 속성들을 타입으로 정의 해놓고 사용
         코드보기
       </Font>
 
-      <CodeBlockModal isModalOpen={fontData} setModalOpen={setFontData} codeString={fontCompString} />
+      {/* <CodeBlockModal isModalOpen={fontData} setModalOpen={setFontData} codeString={fontCompString} /> */}
     </Frame>
   );
 };

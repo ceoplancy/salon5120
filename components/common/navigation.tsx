@@ -31,20 +31,20 @@ const Navigation = () => {
 
         <DeskTopMenuWrapper>
           <MenuWrapper>
-            <Font size={21} translateY={2} pointer={true}>
-              All
+            <Font size={18} translateY={2} pointer={true}>
+              전체
             </Font>
 
             <MenuLine />
 
-            <Font size={21} translateY={2} pointer={true}>
-              Components
+            <Font size={18} translateY={2} pointer={true}>
+              기술 블로그
             </Font>
 
             <MenuLine />
 
-            <Font size={21} translateY={2} pointer={true}>
-              Blog
+            <Font size={18} translateY={2} pointer={true}>
+              회고 블로그
             </Font>
           </MenuWrapper>
 
@@ -67,16 +67,16 @@ const Navigation = () => {
           )}
 
           <MobileMenuWrapper className={isMobileMenu ? 'showMobildeMenu' : 'hideMobildeMenu'}>
-            <Font size={21} pointer={true}>
-              All
+            <Font size={18} pointer={true}>
+              전체
             </Font>
 
-            <Font size={21} pointer={true}>
-              Components
+            <Font size={18} pointer={true}>
+              기술 블로그
             </Font>
 
-            <Font size={21} pointer={true}>
-              Blog
+            <Font size={18} pointer={true}>
+              회고 블로그
             </Font>
 
             <Font

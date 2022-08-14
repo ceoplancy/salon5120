@@ -4,8 +4,15 @@ import styled from 'styled-components';
 import { test1 } from 'public/test';
 import CodeBlock from 'components/code-block';
 import ImageWrapper from 'components/common/image-wrapper';
-import profile from 'constants/code-data/profile';
 import { github, notion } from 'public/common';
+
+const PROFILE = `const psw = {
+  name: '박상우',
+  skills: ['javascript', 'typescript', 'react', 'nextjs', 'react-query', 'recoil'],
+  email: 'psw92640962@gmail.com',
+  phone: '010-9264-0962'
+}
+`;
 
 const Introduce = () => {
   return (
@@ -23,13 +30,13 @@ const Introduce = () => {
         </ProfileWrapper>
       </ProfileFrame>
 
-      <CodeBlock codeString={profile} />
+      <CodeBlock codeString={PROFILE} />
 
       <ContentFrame>
         <pre>
           웹에 대해 공부하며 개발하고 있는 <HightLightText>박상우</HightLightText> 입니다.
           <br />
-          혼자 보다는<HightLightText>협업</HightLightText>하는 것을 좋아하고 <HightLightText>비지니스 가치가 있는 웹 서비스</HightLightText>를 만드는 것에 집중하고 있습니다.
+          혼자보다는 <HightLightText>협업</HightLightText>할때 재미와 성취를 느끼고 <HightLightText>서비스가 가진 가치</HightLightText>를 사용자에게 잘 전달하는 것에 집중하고 있습니다.
         </pre>
       </ContentFrame>
 
