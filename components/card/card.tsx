@@ -12,36 +12,36 @@ const Card = ({ data }: Props) => {
   const router = useRouter();
 
   return (
-    <a href={data.url} target="_blank">
+    <CustomAtag active={data.active} href={data.url} target="_blank">
       <Frame>
-        <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="responsive" width={280} height={300} />
+        <ImageWrapper>
+          <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" quality={100} />
+        </ImageWrapper>
 
-        <FontWrapper>
-          <Font size={24} fontWeight={600}>
-            {data.title}
-          </Font>
-
-          <Font size={18} color="#545454">
-            {data.subTitle}
-          </Font>
-        </FontWrapper>
+        <Font size={18} fontWeight={600} margin="10px 0px 0px 0px" lineHeight="2.4rem">
+          {data.title}
+        </Font>
 
         <Font size={14} color="#545454" margin="10px 0px 0px 0px">
           {data.createdAt}
         </Font>
       </Frame>
-    </a>
+    </CustomAtag>
   );
 };
 
 export default Card;
 
-const Frame = styled.article`
+const CustomAtag = styled.a<{ active: boolean }>`
+  pointer-events: ${(props) => (props.active ? '' : 'none')};
+`;
+
+const Frame = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30rem;
-  height: 40rem;
+  width: 27rem;
+  height: 48rem;
   padding: 10px;
 
   border-radius: 10px;
@@ -66,9 +66,8 @@ const CustomImage = styled(Image)`
   border-radius: 10px;
 `;
 
-const FontWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 30rem;
 `;

@@ -7,12 +7,17 @@ import ImageWrapper from 'components/common/image-wrapper';
 import useScrollEvent from 'hooks/useScrollEvent';
 import { mobileMenu, closebBtn } from 'public/common';
 import logo from 'public/vercel.svg';
+import { useRecoilState } from 'recoil';
+import { filterStateAtom } from 'atoms';
 
 const Navigation = () => {
   const router = useRouter();
   const { scrollEventState } = useScrollEvent();
 
+  const [filterState, setFilterState] = useRecoilState(filterStateAtom);
   const [isMobileMenu, setMobileMenu] = useState(false);
+
+  console.log(filterState);
 
   useEffect(() => {
     if (isMobileMenu) {
@@ -31,19 +36,52 @@ const Navigation = () => {
 
         <DeskTopMenuWrapper>
           <MenuWrapper>
-            <Font size={18} translateY={2} pointer={true}>
+            <Font
+              size={18}
+              translateY={2}
+              pointer={true}
+              onClick={() => {
+                setFilterState('all');
+
+                if (router.pathname !== '/') {
+                  router.push('/');
+                }
+              }}
+            >
               전체
             </Font>
 
             <MenuLine />
 
-            <Font size={18} translateY={2} pointer={true}>
+            <Font
+              size={18}
+              translateY={2}
+              pointer={true}
+              onClick={() => {
+                setFilterState('tech');
+
+                if (router.pathname !== '/') {
+                  router.push('/');
+                }
+              }}
+            >
               기술 블로그
             </Font>
 
             <MenuLine />
 
-            <Font size={18} translateY={2} pointer={true}>
+            <Font
+              size={18}
+              translateY={2}
+              pointer={true}
+              onClick={() => {
+                setFilterState('retrospect');
+
+                if (router.pathname !== '/') {
+                  router.push('/');
+                }
+              }}
+            >
               회고 블로그
             </Font>
           </MenuWrapper>
@@ -55,7 +93,13 @@ const Navigation = () => {
 
         <MobileMenuFrame>
           {!isMobileMenu && (
-            <ImageWrapper width={2.5} height={2.5} onClick={() => setMobileMenu(!isMobileMenu)}>
+            <ImageWrapper
+              width={2.5}
+              height={2.5}
+              onClick={() => {
+                setMobileMenu(!isMobileMenu);
+              }}
+            >
               <CustomImage src={mobileMenu} alt="mobile-menu" />
             </ImageWrapper>
           )}
@@ -67,15 +111,48 @@ const Navigation = () => {
           )}
 
           <MobileMenuWrapper className={isMobileMenu ? 'showMobildeMenu' : 'hideMobildeMenu'}>
-            <Font size={18} pointer={true}>
+            <Font
+              size={18}
+              pointer={true}
+              onClick={() => {
+                setFilterState('all');
+                setMobileMenu(!isMobileMenu);
+
+                if (router.pathname !== '/') {
+                  router.push('/');
+                }
+              }}
+            >
               전체
             </Font>
 
-            <Font size={18} pointer={true}>
+            <Font
+              size={18}
+              pointer={true}
+              onClick={() => {
+                setFilterState('tech');
+                setMobileMenu(!isMobileMenu);
+
+                if (router.pathname !== '/') {
+                  router.push('/');
+                }
+              }}
+            >
               기술 블로그
             </Font>
 
-            <Font size={18} pointer={true}>
+            <Font
+              size={18}
+              pointer={true}
+              onClick={() => {
+                setFilterState('retrospect');
+                setMobileMenu(!isMobileMenu);
+
+                if (router.pathname !== '/') {
+                  router.push('/');
+                }
+              }}
+            >
               회고 블로그
             </Font>
 

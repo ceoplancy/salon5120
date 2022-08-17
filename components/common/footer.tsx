@@ -27,21 +27,17 @@ const Footer = () => {
 export default Footer;
 
 const Frame = styled.footer`
-  position: absolute;
+  width: 100%;
+  height: 10rem;
+  position: sticky;
   bottom: 0;
-  left: 0;
 
   display: flex;
   justify-content: center;
 
-  /* 부모의 크기와 상관없이 화면 전체 nav */
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-
-  height: 10rem;
-
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  z-index: 2;
 `;
 
 const FooterFrame = styled.div`

@@ -5,11 +5,18 @@ import Head from 'next/head';
 import GlobalStyle from 'styles/global-style';
 import styleTheme from 'styles/style-theme';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import { RecoilRoot } from 'recoil';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import Navigation from 'components/common/navigation';
+import Footer from 'components/common/footer';
+import { useRouter } from 'next/router';
+import usePageLoading from 'hooks/usePageLoading';
+import DotSpinner from 'components/common/dot-spinner';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
+  const router = useRouter();
+  const loading = usePageLoading();
 
   return (
     <>
@@ -23,16 +30,20 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <ThemeProvider theme={styleTheme}>
-            <Navigation />
+            <RecoilRoot>
+              <Navigation />
 
-            <Frame>
-              <Head>
-                {/* 모바일에서 인풋 클릭 시 확대방지 */}
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
-              </Head>
+              <Frame>
+                <Head>
+                  {/* 모바일에서 인풋 클릭 시 확대방지 */}
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
+                </Head>
 
-              <Component {...pageProps} />
-            </Frame>
+                {loading ? <DotSpinner width={18} height={18} marginRight={18} dotColor="#4141E7" /> : <Component {...pageProps} />}
+              </Frame>
+
+              {router.pathname === '/' && <Footer />}
+            </RecoilRoot>
           </ThemeProvider>
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
@@ -45,21 +56,18 @@ export default MyApp;
 
 const Frame = styled.main`
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  // nav의 높이의 2/1
-  padding-top: 4rem;
-
-  // footer의 높이 보다 2rem 위로
-  padding-bottom: 15rem;
 
   // body 좌우 패딩
   padding-left: 3rem;
   padding-right: 3rem;
 
   max-width: 1200px;
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
+
+  @media screen and (max-width: 500px) {
+    max-width: 500px;
+  }
 `;
