@@ -8,16 +8,21 @@ import useScrollEvent from 'hooks/useScrollEvent';
 import { mobileMenu, closebBtn } from 'public/common';
 import logo from 'public/vercel.svg';
 import { useRecoilState } from 'recoil';
-import { filterStateAtom } from 'atoms';
+import { filterStateAtom, toastStateAtom } from 'atoms';
 
 const Navigation = () => {
   const router = useRouter();
   const { scrollEventState } = useScrollEvent();
 
-  const [filterState, setFilterState] = useRecoilState(filterStateAtom);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
-  console.log(filterState);
+  const [filterState, setFilterState] = useRecoilState(filterStateAtom);
+  const [toastState, setToastState] = useRecoilState(toastStateAtom);
+
+  const toastHandler = () => {
+    setToastState(true);
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     if (isMobileMenu) {
@@ -42,6 +47,7 @@ const Navigation = () => {
               pointer={true}
               onClick={() => {
                 setFilterState('all');
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -59,6 +65,7 @@ const Navigation = () => {
               pointer={true}
               onClick={() => {
                 setFilterState('tech');
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -76,6 +83,7 @@ const Navigation = () => {
               pointer={true}
               onClick={() => {
                 setFilterState('retrospect');
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');

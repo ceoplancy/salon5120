@@ -1,7 +1,7 @@
 import Font from 'components/common/font';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { test1 } from 'public/test';
+import { test1 } from 'public/svg';
 import CodeBlock from 'components/code-block';
 import ImageWrapper from 'components/common/image-wrapper';
 import { github, notion } from 'public/common';
