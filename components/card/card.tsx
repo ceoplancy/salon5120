@@ -36,9 +36,10 @@ const Frame = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   width: 27rem;
-  height: 48rem;
-  padding: 10px;
+  height: 42rem;
+  padding: 1rem;
 
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
@@ -52,7 +53,7 @@ const Frame = styled.div`
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     width: 100%;
     height: 100%;
   }

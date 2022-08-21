@@ -67,7 +67,7 @@ const ProfileFrame = styled.div`
   align-items: center;
   gap: 10rem;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     flex-direction: column-reverse;
     gap: 4rem;
   }

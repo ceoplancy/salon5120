@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { permission } from 'public/image';
+import { kakaoMap, permission } from 'public/image';
 import { filterCategory, fontButton, formik, reactQuery } from 'public/svg';
 
 export type cardDataType = {
@@ -12,6 +12,14 @@ export type cardDataType = {
 };
 
 export const cardData = [
+  {
+    id: 6,
+    type: 'tech',
+    imageUrl: kakaoMap,
+    title: '카카오 맵 API를 활용한 지도 컴포넌트 만들기',
+    createdAt: '2022-08-22',
+    url: 'https://rainy-reaper-d5b.notion.site/API-26cad80686df41d889be27eeb13ca8df',
+  },
   {
     id: 5,
     type: 'tech',

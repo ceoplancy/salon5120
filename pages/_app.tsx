@@ -64,11 +64,11 @@ const Frame = styled.main`
   padding-left: 3rem;
   padding-right: 3rem;
 
-  max-width: 1200px;
+  width: 120rem;
   min-height: 100vh;
   margin: 0 auto;
 
-  @media screen and (max-width: 500px) {
-    max-width: 500px;
+  @media screen and (max-width: 520px) {
+    max-width: 520px;
   }
 `;
