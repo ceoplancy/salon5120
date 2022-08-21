@@ -1,7 +1,7 @@
 import Font from 'components/common/font';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { test1 } from 'public/svg';
+import { psw } from 'public/image';
 import CodeBlock from 'components/code-block';
 import ImageWrapper from 'components/common/image-wrapper';
 import { github, notion } from 'public/common';
@@ -26,7 +26,7 @@ const Introduce = () => {
         </TitleWrapper>
 
         <ProfileWrapper>
-          <Image src={test1} alt="profile" />
+          <Image src={psw} alt="profile" layout="fill" priority={true} quality={100} objectFit="cover" />
         </ProfileWrapper>
       </ProfileFrame>
 
@@ -80,6 +80,7 @@ const TitleWrapper = styled.div`
 `;
 
 const ProfileWrapper = styled.div`
+  position: relative;
   width: 15rem;
   height: 15rem;
   border-radius: 100%;

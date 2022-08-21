@@ -15,7 +15,7 @@ const Card = ({ data }: Props) => {
     <a href={data.url} target="_blank">
       <Frame>
         <ImageWrapper>
-          <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" quality={100} />
+          <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" priority={true} quality={100} />
         </ImageWrapper>
 
         <Font size={18} fontWeight={600} margin="10px 0px 0px 0px" lineHeight="2.4rem">
@@ -65,5 +65,5 @@ const CustomImage = styled(Image)`
 const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 30rem;
+  height: 27rem;
 `;

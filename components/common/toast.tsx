@@ -44,9 +44,12 @@ const Frame = styled.div<{ active: boolean }>`
 
   position: fixed;
   bottom: 12rem;
-  left: 42%;
+  left: 0;
+  right: 0;
+  width: max-content;
   padding: 1rem 2rem;
+  margin: 0 auto;
 
-  background-color: #777;
+  background-color: #000;
   border-radius: 10px;
 `;

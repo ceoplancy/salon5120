@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
-import { filterCategory, fontButton, formik, reactQuery, ready, test1 } from 'public/svg';
+import { permission } from 'public/image';
+import { filterCategory, fontButton, formik, reactQuery } from 'public/svg';
 
 export type cardDataType = {
   id: number;
@@ -11,6 +12,14 @@ export type cardDataType = {
 };
 
 export const cardData = [
+  {
+    id: 5,
+    type: 'tech',
+    imageUrl: permission,
+    title: '사용자 권한에 따른 페이지 및 기능 접근 제한하기',
+    createdAt: '2022-08-21',
+    url: 'https://rainy-reaper-d5b.notion.site/aa92b97ad2ea46438681bc61ade42d98',
+  },
   {
     id: 4,
     type: 'tech',
