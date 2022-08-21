@@ -7,6 +7,8 @@ import { filterStateAtom } from 'atoms';
 import { useEffect } from 'react';
 import FadeIn from 'react-fade-in';
 import React from 'react';
+import Font from 'components/common/font';
+import Toast from 'components/common/toast';
 
 const Home: NextPage = () => {
   const [filterState, setFilterState] = useRecoilState(filterStateAtom);
@@ -18,27 +20,47 @@ const Home: NextPage = () => {
     };
   }, []);
 
+  const filterData = (type: string) => {
+    if (type === 'all') {
+      return cardData;
+    }
+
+    if (type === 'tech') {
+      return cardData.filter((x: cardDataType) => x.type === 'tech');
+    }
+
+    if (type === 'retrospect') {
+      return cardData.filter((x: cardDataType) => x.type === 'retrospect');
+    }
+  };
+
   return (
     <CardFrame>
-      {cardData &&
-        cardData.map((data: cardDataType, idx: number) => {
+      {filterData(filterState)?.length === 0 ? (
+        <CustomFadeIn>
+          <NoContent>
+            <Font size={18} textAlign="center">
+              준비중 입니다.
+            </Font>
+          </NoContent>
+        </CustomFadeIn>
+      ) : (
+        filterData(filterState)?.map((data: cardDataType) => {
           return (
             <React.Fragment key={data.id}>
-              {filterState === 'all' ? (
-                <FadeIn>
-                  <Card data={data} />
-                </FadeIn>
-              ) : (
-                filterState !== 'all' &&
-                filterState === data.type && (
-                  <FadeIn>
-                    <Card data={data} />
-                  </FadeIn>
-                )
-              )}
+              <FadeIn>
+                <Card data={data} />
+              </FadeIn>
             </React.Fragment>
           );
-        })}
+        })
+      )}
+
+      <div>
+        {filterState === 'all' && <Toast value="전체" />}
+        {filterState === 'tech' && <Toast value="기술 블로그" />}
+        {filterState === 'retrospect' && <Toast value="회고 블로그" />}
+      </div>
     </CardFrame>
   );
 };
@@ -57,4 +79,14 @@ const CardFrame = styled.section`
     flex-direction: column;
     flex-wrap: nowrap;
   }
+`;
+
+const NoContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const CustomFadeIn = styled(FadeIn)`
+  width: 100%;
 `;

@@ -12,10 +12,10 @@ const Card = ({ data }: Props) => {
   const router = useRouter();
 
   return (
-    <CustomAtag active={data.active} href={data.url} target="_blank">
+    <a href={data.url} target="_blank">
       <Frame>
         <ImageWrapper>
-          <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" quality={100} />
+          <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" priority={true} quality={100} />
         </ImageWrapper>
 
         <Font size={18} fontWeight={600} margin="10px 0px 0px 0px" lineHeight="2.4rem">
@@ -26,15 +26,11 @@ const Card = ({ data }: Props) => {
           {data.createdAt}
         </Font>
       </Frame>
-    </CustomAtag>
+    </a>
   );
 };
 
 export default Card;
-
-const CustomAtag = styled.a<{ active: boolean }>`
-  pointer-events: ${(props) => (props.active ? '' : 'none')};
-`;
 
 const Frame = styled.div`
   display: flex;
@@ -69,5 +65,5 @@ const CustomImage = styled(Image)`
 const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 30rem;
+  height: 27rem;
 `;

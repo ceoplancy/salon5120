@@ -48,14 +48,14 @@ type FontProps = {
   pointer?: boolean;
 
   /**
-   * text decoration: 텍스트 언더라인이 필요한 경우
+   * font 정렬
    */
-  textDecoration?: 'underline';
+  textAlign?: string;
 
   /**
-   * p태그 안에서 span을 이거 붙여 써야하는 경우
+   * text decoration: 텍스트 언더라인이 필요한 경우
    */
-  useSpan?: false | boolean;
+  textDecoration?: string;
 
   /**
    * text content
@@ -69,16 +69,12 @@ type FontProps = {
 };
 
 const Font = styled.p<FontProps>`
-  // useSpan을 true 옵션으로 바꾸면 p태그 안에서 span태그를 활용해 특정 문자의 스타일을 바꿀 수 있다.
-  // 이때 display, alignitems 속성의 정렬을 없애야 가능하므로 아래처럼 useSpan의 값에 따라 속성을 바꾼다.
-  display: ${(props) => (props.useSpan ? '' : 'flex')};
-  align-items: ${(props) => (props.useSpan ? '' : 'center')};
-
   // 기본 속성
   color: ${(props) => (props.color ? props.color : '#000')};
   letter-spacing: ${(props) => (props.letterSpacing ? props.letterSpacing : 0)};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
+  text-align: ${(props) => (props.textAlign ? props.textAlign : '')};
   text-decoration: ${(props) => (props.textDecoration ? props.textDecoration : '')};
   margin: ${({ margin }) => margin};
   cursor: ${(props) => (props.pointer ? 'pointer' : '')};

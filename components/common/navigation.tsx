@@ -6,18 +6,22 @@ import Font from 'components/common/font';
 import ImageWrapper from 'components/common/image-wrapper';
 import useScrollEvent from 'hooks/useScrollEvent';
 import { mobileMenu, closebBtn } from 'public/common';
-import logo from 'public/vercel.svg';
 import { useRecoilState } from 'recoil';
-import { filterStateAtom } from 'atoms';
+import { filterStateAtom, toastStateAtom } from 'atoms';
 
 const Navigation = () => {
   const router = useRouter();
   const { scrollEventState } = useScrollEvent();
 
-  const [filterState, setFilterState] = useRecoilState(filterStateAtom);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
-  console.log(filterState);
+  const [filterState, setFilterState] = useRecoilState(filterStateAtom);
+  const [toastState, setToastState] = useRecoilState(toastStateAtom);
+
+  const toastHandler = () => {
+    setToastState(true);
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     if (isMobileMenu) {
@@ -30,9 +34,12 @@ const Navigation = () => {
   return (
     <Frame scrollEventState={scrollEventState}>
       <NavigationFrame>
-        <ImageWrapper width={12} height={2.5} onClick={() => router.push('/')}>
+        <Font size={21} fontWeight={600} onClick={() => router.push('/')} pointer={true}>
+          박상우의 개발 블로그
+        </Font>
+        {/* <ImageWrapper width={12} height={2.5} onClick={() => router.push('/')}>
           <CustomImage src={logo} alt="logo" />
-        </ImageWrapper>
+        </ImageWrapper> */}
 
         <DeskTopMenuWrapper>
           <MenuWrapper>
@@ -40,8 +47,10 @@ const Navigation = () => {
               size={18}
               translateY={2}
               pointer={true}
+              fontWeight={600}
               onClick={() => {
                 setFilterState('all');
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -57,8 +66,10 @@ const Navigation = () => {
               size={18}
               translateY={2}
               pointer={true}
+              fontWeight={600}
               onClick={() => {
                 setFilterState('tech');
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -74,8 +85,10 @@ const Navigation = () => {
               size={18}
               translateY={2}
               pointer={true}
+              fontWeight={600}
               onClick={() => {
                 setFilterState('retrospect');
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -86,8 +99,8 @@ const Navigation = () => {
             </Font>
           </MenuWrapper>
 
-          <Font size={21} translateY={2} pointer={true} onClick={() => router.push('/introduce')}>
-            Introduce
+          <Font size={18} translateY={2} pointer={true} fontWeight={600} onClick={() => router.push('/introduce')}>
+            소개
           </Font>
         </DeskTopMenuWrapper>
 
@@ -114,9 +127,11 @@ const Navigation = () => {
             <Font
               size={18}
               pointer={true}
+              fontWeight={600}
               onClick={() => {
                 setFilterState('all');
                 setMobileMenu(!isMobileMenu);
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -129,9 +144,11 @@ const Navigation = () => {
             <Font
               size={18}
               pointer={true}
+              fontWeight={600}
               onClick={() => {
                 setFilterState('tech');
                 setMobileMenu(!isMobileMenu);
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -144,9 +161,11 @@ const Navigation = () => {
             <Font
               size={18}
               pointer={true}
+              fontWeight={600}
               onClick={() => {
                 setFilterState('retrospect');
                 setMobileMenu(!isMobileMenu);
+                toastHandler();
 
                 if (router.pathname !== '/') {
                   router.push('/');
@@ -157,14 +176,15 @@ const Navigation = () => {
             </Font>
 
             <Font
-              size={21}
+              size={18}
               pointer={true}
+              fontWeight={600}
               onClick={() => {
                 router.push('/introduce');
                 setMobileMenu(false);
               }}
             >
-              Introduce
+              소개
             </Font>
           </MobileMenuWrapper>
         </MobileMenuFrame>
