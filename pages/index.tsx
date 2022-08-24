@@ -75,7 +75,7 @@ const CardFrame = styled.section`
   width: 100%;
   margin: 6rem 0;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     flex-direction: column;
     flex-wrap: nowrap;
   }

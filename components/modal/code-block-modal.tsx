@@ -105,7 +105,7 @@ const CloseButton = styled.div`
   right: 25px;
   cursor: pointer;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     top: 10px;
     right: 15px;
   }

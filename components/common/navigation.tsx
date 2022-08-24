@@ -227,7 +227,7 @@ const NavigationFrame = styled.div`
 const MobileMenuFrame = styled.div`
   display: none;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     display: flex;
   }
 `;
@@ -246,7 +246,7 @@ const DeskTopMenuWrapper = styled.div`
   justify-content: space-between;
   width: 60%;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     display: none;
   }
 `;

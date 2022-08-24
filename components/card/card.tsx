@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Font from 'components/common/font';
 import Image from 'next/image';
+import Link from 'next/link';
 import { cardDataType } from 'constants/card-title/index';
 import { useRouter } from 'next/router';
 
@@ -12,7 +13,7 @@ const Card = ({ data }: Props) => {
   const router = useRouter();
 
   return (
-    <a href={data.url} target="_blank">
+    <Link href={data.url}>
       <Frame>
         <ImageWrapper>
           <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" priority={true} quality={100} />
@@ -26,7 +27,7 @@ const Card = ({ data }: Props) => {
           {data.createdAt}
         </Font>
       </Frame>
-    </a>
+    </Link>
   );
 };
 
@@ -36,9 +37,10 @@ const Frame = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   width: 27rem;
-  height: 48rem;
-  padding: 10px;
+  height: 42rem;
+  padding: 1rem;
 
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
@@ -52,7 +54,7 @@ const Frame = styled.div`
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     width: 100%;
     height: 100%;
   }

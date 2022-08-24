@@ -39,7 +39,7 @@ const Frame = styled.table`
     padding: 15px;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 520px) {
     width: 100%;
   }
 `;
