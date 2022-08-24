@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Font from 'components/common/font';
 import Image from 'next/image';
+import Link from 'next/link';
 import { cardDataType } from 'constants/card-title/index';
 import { useRouter } from 'next/router';
 
@@ -12,7 +13,7 @@ const Card = ({ data }: Props) => {
   const router = useRouter();
 
   return (
-    <a href={data.url} target="_blank">
+    <Link href={data.url}>
       <Frame>
         <ImageWrapper>
           <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" priority={true} quality={100} />
@@ -26,7 +27,7 @@ const Card = ({ data }: Props) => {
           {data.createdAt}
         </Font>
       </Frame>
-    </a>
+    </Link>
   );
 };
 

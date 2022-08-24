@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { kakaoMap, permission } from 'public/image';
+import { kakaoMap, nextjs, permission, responsive } from 'public/image';
 import { filterCategory, fontButton, formik, reactQuery } from 'public/svg';
 
 export type cardDataType = {
@@ -12,6 +12,22 @@ export type cardDataType = {
 };
 
 export const cardData = [
+  {
+    id: 8,
+    type: 'tech',
+    imageUrl: responsive,
+    title: '반응형 레이아웃 (feat. rem)',
+    createdAt: '2022-08-24',
+    url: 'https://rainy-reaper-d5b.notion.site/feat-rem-cacdeacb782d4d97bf77a96d65765b7f',
+  },
+  {
+    id: 7,
+    type: 'tech',
+    imageUrl: nextjs,
+    title: 'Next.js 도입기 (feat.server side rendering)',
+    createdAt: '2022-08-23',
+    url: 'https://rainy-reaper-d5b.notion.site/Next-js-3c4277bbe5f24e798bb03dcebce3b240',
+  },
   {
     id: 6,
     type: 'tech',

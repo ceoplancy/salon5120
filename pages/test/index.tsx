@@ -11,17 +11,13 @@ const Test = () => {
     ];
   };
 
-  //   const map = useMemo(() => {
-  //     if (!customer) return;
-  //     return <KakaoMap locationData={makeLocation(customer)} />;
-  //   }, [customer]);
-
   return (
     <Frame>
       <KaKaoMap
         locationData={[
-          { content: '우리집', latlng: '청계천로 461' },
-          { content: '누나집', latlng: '마장로 137' },
+          { content: '1번 고객', latlng: '서울 강남구 강남대로94길 86' },
+          { content: '2번 고객', latlng: '청계천로' },
+          { content: '3번 고객', latlng: '서울특별시 중구 을지로3가' },
         ]}
       />
     </Frame>
