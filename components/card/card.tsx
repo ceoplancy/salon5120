@@ -16,16 +16,16 @@ const Card = ({ data }: Props) => {
     <Link href={data.url}>
       <Frame>
         <ImageWrapper>
-          <CustomImage src={data.imageUrl} alt="card-thumbnail" layout="fill" priority={true} quality={100} />
+          <Image src={data.imageUrl} alt="card-thumbnail" layout="fill" priority={true} quality={100} />
         </ImageWrapper>
 
-        <Font size={18} fontWeight={600} margin="10px 0px 0px 0px" lineHeight="2.4rem">
+        <Title size={18} fontWeight={600} lineHeight="2.4rem">
           {data.title}
-        </Font>
+        </Title>
 
-        <Font size={14} color="#545454" margin="10px 0px 0px 0px">
+        <Date size={14} color="#545454">
           {data.createdAt}
-        </Font>
+        </Date>
       </Frame>
     </Link>
   );
@@ -34,12 +34,13 @@ const Card = ({ data }: Props) => {
 export default Card;
 
 const Frame = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 2rem;
 
   width: 27rem;
-  height: 42rem;
+  height: 40rem;
   padding: 1rem;
 
   border-radius: 10px;
@@ -60,12 +61,23 @@ const Frame = styled.div`
   }
 `;
 
-const CustomImage = styled(Image)`
-  border-radius: 10px;
-`;
-
 const ImageWrapper = styled.div`
   position: relative;
-  width: 100%;
   height: 27rem;
+
+  img {
+    border-radius: 10px;
+  }
+`;
+
+const Title = styled(Font)`
+  @media screen and (max-width: 520px) {
+    margin-bottom: 3rem;
+  }
+`;
+
+const Date = styled(Font)`
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 `;

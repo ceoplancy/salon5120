@@ -60,11 +60,10 @@ const Frame = styled.main`
   align-items: center;
   flex-direction: column;
 
-  // body 좌우 패딩
   padding-left: 3rem;
   padding-right: 3rem;
 
-  width: 120rem;
+  max-width: 120rem;
   min-height: 100vh;
   margin: 0 auto;
 

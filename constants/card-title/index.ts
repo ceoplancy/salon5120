@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { kakaoMap, nextjs, permission, responsive } from 'public/image';
+import { kakaoMap, nextjs, permission, responsive, table } from 'public/image';
 import { filterCategory, fontButton, formik, reactQuery } from 'public/svg';
 
 export type cardDataType = {
@@ -12,6 +12,14 @@ export type cardDataType = {
 };
 
 export const cardData = [
+  {
+    id: 9,
+    type: 'tech',
+    imageUrl: table,
+    title: 'react-table을 활용하여 다재다능한 테이블 만들기',
+    createdAt: '2022-08-26',
+    url: 'https://rainy-reaper-d5b.notion.site/react-table-23596c0ec8c9480a93987ff69040818e',
+  },
   {
     id: 8,
     type: 'tech',
