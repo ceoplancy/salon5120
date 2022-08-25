@@ -37,19 +37,21 @@ const Home: NextPage = () => {
   return (
     <CardFrame>
       {filterData(filterState)?.length === 0 ? (
-        <CustomFadeIn>
+        <FadeIn>
           <NoContent>
             <Font size={18} textAlign="center">
               준비중 입니다.
             </Font>
           </NoContent>
-        </CustomFadeIn>
+        </FadeIn>
       ) : (
         filterData(filterState)?.map((data: cardDataType) => {
           return (
             <React.Fragment key={data.id}>
               <FadeIn>
-                <Card data={data} />
+                <div style={{ width: '100%' }}>
+                  <Card data={data} />
+                </div>
               </FadeIn>
             </React.Fragment>
           );
@@ -85,8 +87,4 @@ const NoContent = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-`;
-
-const CustomFadeIn = styled(FadeIn)`
-  width: 100%;
 `;
