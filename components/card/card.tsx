@@ -39,35 +39,36 @@ const Frame = styled.div`
   flex-direction: column;
   gap: 2rem;
 
-  width: 27rem;
-  height: 40rem;
-  padding: 1rem;
+  height: 38rem;
+  padding: 1.5rem;
 
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-
   transition: all 0.2s;
   cursor: pointer;
+
+  @media screen and (max-width: 520px) {
+    width: 100%;
+    height: 100%;
+  }
 
   @media screen and (min-width: 501px) {
     &:hover {
       transform: translateY(-30px);
     }
   }
-
-  @media screen and (max-width: 520px) {
-    width: 100%;
-    height: 100%;
-  }
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
-  height: 27rem;
+  width: 24rem;
+  height: 24rem;
 
   img {
     border-radius: 10px;
   }
+
+  margin: 0 auto;
 `;
 
 const Title = styled(Font)`

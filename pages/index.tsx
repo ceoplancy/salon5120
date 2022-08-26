@@ -49,9 +49,7 @@ const Home: NextPage = () => {
           return (
             <React.Fragment key={data.id}>
               <FadeIn>
-                <div style={{ width: '100%' }}>
-                  <Card data={data} />
-                </div>
+                <Card data={data} />
               </FadeIn>
             </React.Fragment>
           );
@@ -70,16 +68,17 @@ const Home: NextPage = () => {
 export default Home;
 
 const CardFrame = styled.section`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-
-  width: 100%;
   margin: 6rem 0;
 
+  @media screen and (max-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @media screen and (max-width: 520px) {
-    flex-direction: column;
-    flex-wrap: nowrap;
+    grid-template-columns: 1fr;
   }
 `;
 
