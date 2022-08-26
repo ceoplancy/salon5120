@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { kakaoMap, nextjs, permission, responsive, table } from 'public/image';
+import { hooks, kakaoMap, nextjs, permission, responsive, table, upload } from 'public/image';
 import { filterCategory, fontButton, formik, reactQuery } from 'public/svg';
 
 export type cardDataType = {
@@ -13,18 +13,34 @@ export type cardDataType = {
 
 export const cardData = [
   {
+    id: 11,
+    type: 'tech',
+    imageUrl: hooks,
+    title: '2022년도에 만든 hooks와 functions 친구들',
+    createdAt: '2022-08-26',
+    url: 'https://rainy-reaper-d5b.notion.site/2022-hooks-functions-8d355e8dfe8c4e63916b46230f933de0',
+  },
+  {
+    id: 10,
+    type: 'tech',
+    imageUrl: upload,
+    title: '이미지 리사이징과 업로드 순서 보장하기',
+    createdAt: '2022-08-26',
+    url: 'https://rainy-reaper-d5b.notion.site/11bc6a72d4f441ffbfdb091e910624fb',
+  },
+  {
     id: 9,
     type: 'tech',
     imageUrl: table,
     title: 'react-table을 활용하여 다재다능한 테이블 만들기',
-    createdAt: '2022-08-26',
+    createdAt: '2022-08-25',
     url: 'https://rainy-reaper-d5b.notion.site/react-table-23596c0ec8c9480a93987ff69040818e',
   },
   {
     id: 8,
     type: 'tech',
     imageUrl: responsive,
-    title: '반응형 레이아웃 (feat. rem)',
+    title: '반응형 레이아웃 (feat. flex box, grid, rem)',
     createdAt: '2022-08-24',
     url: 'https://rainy-reaper-d5b.notion.site/feat-rem-cacdeacb782d4d97bf77a96d65765b7f',
   },
