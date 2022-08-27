@@ -26,7 +26,7 @@ const Introduce = () => {
         </TitleWrapper>
 
         <ProfileWrapper>
-          <Image src={psw} alt="profile" layout="fill" priority={true} quality={100} objectFit="cover" />
+          <Image src={psw} alt="profile" layout="fill" objectFit="cover" priority={true} quality={100} />
         </ProfileWrapper>
       </ProfileFrame>
 
@@ -81,12 +81,12 @@ const TitleWrapper = styled.div`
 
 const ProfileWrapper = styled.div`
   position: relative;
-  width: 15rem;
-  height: 15rem;
+  width: 12rem;
+  height: 14rem;
   border-radius: 100%;
 
   img {
-    border-radius: 100%;
+    border-radius: 10px;
   }
 `;
 
