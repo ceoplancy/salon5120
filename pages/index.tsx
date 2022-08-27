@@ -35,13 +35,11 @@ const Home: NextPage = () => {
   };
 
   return (
-    <CardFrame>
+    <CardFrame active={filterData(filterState)?.length === 0}>
       {filterData(filterState)?.length === 0 ? (
         <FadeIn>
           <NoContent>
-            <Font size={18} textAlign="center">
-              준비중 입니다.
-            </Font>
+            <Font size={18}>준비중 입니다.</Font>
           </NoContent>
         </FadeIn>
       ) : (
@@ -67,9 +65,10 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const CardFrame = styled.section`
+const CardFrame = styled.section<{ active: boolean }>`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: ${(props) => (props.active ? '' : `repeat(4, 1fr)`)};
   gap: 2rem;
   margin: 6rem 0;
 
