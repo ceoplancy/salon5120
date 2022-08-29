@@ -12,14 +12,14 @@ export type cardDataType = {
 };
 
 export const cardData = [
-  // {
-  //   id: 11,
-  //   type: 'tech',
-  //   imageUrl: hooks,
-  //   title: '2022년도에 만든 hooks와 functions 친구들',
-  //   createdAt: '2022-08-28',
-  //   url: 'https://rainy-reaper-d5b.notion.site/2022-hooks-functions-8d355e8dfe8c4e63916b46230f933de0',
-  // },
+  {
+    id: 11,
+    type: 'tech',
+    imageUrl: hooks,
+    title: '2022년도에 만든 hooks와 functions 친구들',
+    createdAt: '2022-08-28',
+    url: 'https://rainy-reaper-d5b.notion.site/2022-hooks-functions-8d355e8dfe8c4e63916b46230f933de0',
+  },
   {
     id: 10,
     type: 'tech',
