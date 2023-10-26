@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Font from 'components/common/font';
-import ImageWrapper from 'components/common/image-wrapper';
 import useScrollEvent from 'hooks/useScrollEvent';
 import { mobileMenu, closebBtn } from 'public/common';
 import { useRecoilState } from 'recoil';
 import { filterStateAtom, toastStateAtom } from 'atoms';
+import ImageWrapper from './image-wrapper';
 
 const Navigation = () => {
   const router = useRouter();
@@ -34,18 +34,15 @@ const Navigation = () => {
   return (
     <Frame scrollEventState={scrollEventState}>
       <NavigationFrame>
-        <Font size={21} fontWeight={600} onClick={() => router.push('/')} pointer={true}>
-          박상우의 개발 블로그
-        </Font>
-        {/* <ImageWrapper width={12} height={2.5} onClick={() => router.push('/')}>
-          <CustomImage src={logo} alt="logo" />
-        </ImageWrapper> */}
+        <CustomImageWrapper onClick={() => router.push('/')}>
+          <CustomImage src={'/logo.svg'} alt="logo" layout="fill" />
+        </CustomImageWrapper>
 
+        {/* desktop */}
         <DeskTopMenuWrapper>
           <MenuWrapper>
             <Font
               size={18}
-              translateY={2}
               pointer={true}
               fontWeight={600}
               onClick={() => {
@@ -57,14 +54,11 @@ const Navigation = () => {
                 }
               }}
             >
-              전체
+              ABOUT
             </Font>
-
-            <MenuLine />
 
             <Font
               size={18}
-              translateY={2}
               pointer={true}
               fontWeight={600}
               onClick={() => {
@@ -76,14 +70,11 @@ const Navigation = () => {
                 }
               }}
             >
-              기술 블로그
+              EXHIBITION
             </Font>
-
-            <MenuLine />
 
             <Font
               size={18}
-              translateY={2}
               pointer={true}
               fontWeight={600}
               onClick={() => {
@@ -95,97 +86,105 @@ const Navigation = () => {
                 }
               }}
             >
-              회고 블로그
+              PROGRAM
             </Font>
-          </MenuWrapper>
 
-          <Font size={18} translateY={2} pointer={true} fontWeight={600} onClick={() => router.push('/introduce')}>
-            소개
-          </Font>
-        </DeskTopMenuWrapper>
-
-        <MobileMenuFrame>
-          {!isMobileMenu && (
-            <ImageWrapper
-              width={2.5}
-              height={2.5}
+            <Font
+              size={18}
+              pointer={true}
+              fontWeight={600}
               onClick={() => {
-                setMobileMenu(!isMobileMenu);
+                setFilterState('retrospect');
+                toastHandler();
+
+                if (router.pathname !== '/') {
+                  router.push('/');
+                }
               }}
             >
-              <CustomImage src={mobileMenu} alt="mobile-menu" />
-            </ImageWrapper>
+              NOTICE
+            </Font>
+          </MenuWrapper>
+        </DeskTopMenuWrapper>
+
+        {/* mobile */}
+        <MobileMenuFrame>
+          {isMobileMenu && (
+            <ToggleImageWrapper width="2rem" height="2rem" onClick={() => setMobileMenu(!isMobileMenu)}>
+              <CustomImage width={20} height={20} src={'/close.svg'} alt="menu" layout="fill" />
+            </ToggleImageWrapper>
           )}
 
-          {isMobileMenu && (
-            <ImageWrapper width={2.5} height={2.5} onClick={() => setMobileMenu(!isMobileMenu)}>
-              <CustomImage src={closebBtn} alt="mobile-menu-close" />
-            </ImageWrapper>
+          {!isMobileMenu && (
+            <ToggleImageWrapper width="2rem" height="4.5rem" onClick={() => setMobileMenu(!isMobileMenu)}>
+              <CustomImage width={20} height={45} src={'/menu.svg'} alt="menu" layout="fill" />
+            </ToggleImageWrapper>
           )}
 
           <MobileMenuWrapper className={isMobileMenu ? 'showMobildeMenu' : 'hideMobildeMenu'}>
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
+            <IconWrapper
               onClick={() => {
-                setFilterState('all');
                 setMobileMenu(!isMobileMenu);
                 toastHandler();
-
-                if (router.pathname !== '/') {
-                  router.push('/');
-                }
+                router.push('/');
               }}
             >
-              전체
-            </Font>
+              <ToggleImageWrapper width="2.4rem" height="2rem">
+                <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
+              </ToggleImageWrapper>
 
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
+              <Font size={32} pointer={true} fontWeight={700}>
+                ABOUT
+              </Font>
+            </IconWrapper>
+
+            <IconWrapper
               onClick={() => {
-                setFilterState('tech');
                 setMobileMenu(!isMobileMenu);
                 toastHandler();
-
-                if (router.pathname !== '/') {
-                  router.push('/');
-                }
+                router.push('/');
               }}
             >
-              기술 블로그
-            </Font>
+              <ToggleImageWrapper width="2.4rem" height="2rem">
+                <CustomImage width={24} height={20} src={'/square.svg'} alt="menu" layout="fill" />
+              </ToggleImageWrapper>
 
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
+              <Font size={32} pointer={true} fontWeight={700}>
+                EXHIBITION
+              </Font>
+            </IconWrapper>
+
+            <IconWrapper
               onClick={() => {
-                setFilterState('retrospect');
                 setMobileMenu(!isMobileMenu);
                 toastHandler();
-
-                if (router.pathname !== '/') {
-                  router.push('/');
-                }
+                router.push('/');
               }}
             >
-              회고 블로그
-            </Font>
+              <ToggleImageWrapper width="2.4rem" height="2rem">
+                <CustomImage width={24} height={20} src={'/roof.svg'} alt="menu" layout="fill" />
+              </ToggleImageWrapper>
 
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
+              <Font size={32} pointer={true} fontWeight={700}>
+                PROGRAM
+              </Font>
+            </IconWrapper>
+
+            <IconWrapper
               onClick={() => {
-                router.push('/introduce');
-                setMobileMenu(false);
+                setMobileMenu(!isMobileMenu);
+                toastHandler();
+                router.push('/');
               }}
             >
-              소개
-            </Font>
+              <ToggleImageWrapper width="2.4rem" height="2rem">
+                <CustomImage width={24} height={20} src={'/bookmark.svg'} alt="menu" layout="fill" />
+              </ToggleImageWrapper>
+
+              <Font size={32} pointer={true} fontWeight={700}>
+                NOTICE
+              </Font>
+            </IconWrapper>
           </MobileMenuWrapper>
         </MobileMenuFrame>
       </NavigationFrame>
@@ -198,18 +197,17 @@ export default Navigation;
 /**
  * Frame
  */
-const Frame = styled.nav<{ scrollEventState: boolean }>`
+const Frame = styled.nav`
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 
   display: flex;
-  justify-content: center;
 
   height: 8rem;
-
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  border-bottom: 1px solid #000;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
 
   visibility: ${(props) => (props.scrollEventState ? 'hidden' : 'visible')};
   opacity: ${(props) => (props.scrollEventState ? 0 : 1)};
@@ -217,11 +215,15 @@ const Frame = styled.nav<{ scrollEventState: boolean }>`
 `;
 
 const NavigationFrame = styled.div`
-  width: 1200px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 3rem;
+  justify-content: space-between;
+  padding: 3rem 6rem;
+
+  @media screen and (max-width: 520px) {
+    padding: 1.5rem 1.5rem;
+  }
 `;
 
 const MobileMenuFrame = styled.div`
@@ -236,9 +238,10 @@ const MobileMenuFrame = styled.div`
  * Wrapper
  */
 const MenuWrapper = styled.div`
+  width: 100%;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: flex-end;
+  gap: 7rem;
 `;
 
 const DeskTopMenuWrapper = styled.div`
@@ -260,13 +263,15 @@ const MobileMenuWrapper = styled.div`
   right: 0;
   background: #fff;
   z-index: 2;
+  transition: all 0.3s;
 
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  transition: all 0.3s;
+  gap: 3rem;
+
+  padding-top: 1rem;
+  margin-top: 10rem;
+  padding-left: 2rem;
 
   &.showMobildeMenu {
     visibility: visible;
@@ -278,16 +283,25 @@ const MobileMenuWrapper = styled.div`
   }
 `;
 
-/**
- * Etc
- */
-const MenuLine = styled.div`
-  width: 1px;
-  height: 15px;
-  border: 1px solid #989898;
-`;
-
 const CustomImage = styled(Image)`
   cursor: pointer;
   z-index: 3;
+`;
+
+const CustomImageWrapper = styled.div`
+  position: relative;
+  width: 8rem;
+  height: 4.6rem;
+`;
+
+const ToggleImageWrapper = styled.div`
+  position: relative;
+  width: ${(props) => (props.width ? props.width : '3rem')};
+  height: ${(props) => (props.height ? props.height : '3rem')};
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;

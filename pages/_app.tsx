@@ -12,6 +12,8 @@ import Footer from 'components/common/footer';
 import { useRouter } from 'next/router';
 import usePageLoading from 'hooks/usePageLoading';
 import DotSpinner from 'components/common/dot-spinner';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
@@ -23,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         {/* 모바일에서 input focus할 때 확대방지 */}
         <meta name="viewport" content="width=device-width, content='width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=2.0; user-scalable=1;" />
-        <title>psw | blog</title>
+        <title>salon5120</title>
       </Head>
 
       <GlobalStyle />
@@ -60,14 +62,15 @@ const Frame = styled.main`
   align-items: center;
   flex-direction: column;
 
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
 
-  max-width: 120rem;
+  max-width: 100vw;
   min-height: 100vh;
   margin: 0 auto;
 
   @media screen and (max-width: 520px) {
-    max-width: 520px;
+    max-width: 52rem;
+    padding: 2.4rem 1.6rem;
   }
 `;

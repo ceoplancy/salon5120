@@ -10,25 +10,25 @@ export default class CustomDocument extends Document {
           <link rel="shortcut icon" href="favicon/favicon.ico" />
 
           {/* 홈페이지 */}
-          <meta name="author" content="psw" />
-          <meta name="keywords" content="developer, frontend, psw, web, blog" />
-          <meta name="description" content="박상우의 개발 블로그 입니다." />
+          <meta name="author" content="salon5120" />
+          <meta name="keywords" content="salon5120" />
+          <meta name="description" content="salon5120" />
 
           {/* 오픈 그래프 */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="psw blog" />
-          <meta property="og:description" content="psw blog" />
-          <meta property="og:site_name" content="psw | blog"></meta>
+          <meta property="og:title" content="salon5120" />
+          <meta property="og:description" content="salon5120" />
+          <meta property="og:site_name" content="salon5120"></meta>
           <meta property="og:locale" content="ko_KR" />
           <meta property="og:image" content="" />
-          <meta property="og:url" content="https://psw-blog.vercel.app/" />
+          <meta property="og:url" content="https://naver.com" />
           <meta property="og:image:width" content="600" />
           <meta property="og:image:height" content="315" />
 
           {/* 트위터용 */}
           <meta name="twitter:card" content="website" />
-          <meta name="twitter:title" content="psw blog" />
-          <meta name="twitter:description" content="박상우의 개발 블로그 입니다." />
+          <meta name="twitter:title" content="salon5120" />
+          <meta name="twitter:description" content="salon5120" />
           <meta name="twitter:image" content=""></meta>
 
           <style
