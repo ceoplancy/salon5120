@@ -7,12 +7,12 @@ export default class CustomDocument extends Document {
       <Html>
         <Head>
           {/* favicon */}
-          <link rel="shortcut icon" href="favicon/favicon.ico" />
+          <link rel="shortcut icon" href="/favicon/favicon.ico" />
 
           {/* 홈페이지 */}
           <meta name="author" content="salon5120" />
-          <meta name="keywords" content="salon5120" />
-          <meta name="description" content="salon5120" />
+          <meta name="keywords" content="salon5120 문화살롱" />
+          <meta name="description" content="salon5120 문화살롱" />
 
           {/* 오픈 그래프 */}
           <meta property="og:type" content="website" />
@@ -40,6 +40,9 @@ export default class CustomDocument extends Document {
     		<style>`,
             }}
           ></style>
+
+          {/* 카카오맵 */}
+          <script src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js" charSet="UTF-8" />
         </Head>
 
         <body>

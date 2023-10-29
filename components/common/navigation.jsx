@@ -4,10 +4,8 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Font from 'components/common/font';
 import useScrollEvent from 'hooks/useScrollEvent';
-import { mobileMenu, closebBtn } from 'public/common';
 import { useRecoilState } from 'recoil';
 import { filterStateAtom, toastStateAtom } from 'atoms';
-import ImageWrapper from './image-wrapper';
 
 const Navigation = () => {
   const router = useRouter();
@@ -48,10 +46,7 @@ const Navigation = () => {
               onClick={() => {
                 setFilterState('all');
                 toastHandler();
-
-                if (router.pathname !== '/') {
-                  router.push('/');
-                }
+                router.push('/about');
               }}
             >
               ABOUT
@@ -64,10 +59,7 @@ const Navigation = () => {
               onClick={() => {
                 setFilterState('tech');
                 toastHandler();
-
-                if (router.pathname !== '/') {
-                  router.push('/');
-                }
+                router.push('/exhibition');
               }}
             >
               EXHIBITION
@@ -80,10 +72,7 @@ const Navigation = () => {
               onClick={() => {
                 setFilterState('retrospect');
                 toastHandler();
-
-                if (router.pathname !== '/') {
-                  router.push('/');
-                }
+                router.push('/program');
               }}
             >
               PROGRAM
@@ -96,10 +85,20 @@ const Navigation = () => {
               onClick={() => {
                 setFilterState('retrospect');
                 toastHandler();
+                router.push('/webzine');
+              }}
+            >
+              WEBZINE
+            </Font>
 
-                if (router.pathname !== '/') {
-                  router.push('/');
-                }
+            <Font
+              size={18}
+              pointer={true}
+              fontWeight={600}
+              onClick={() => {
+                setFilterState('retrospect');
+                toastHandler();
+                router.push('/notice');
               }}
             >
               NOTICE
@@ -126,7 +125,7 @@ const Navigation = () => {
               onClick={() => {
                 setMobileMenu(!isMobileMenu);
                 toastHandler();
-                router.push('/');
+                router.push('/about');
               }}
             >
               <ToggleImageWrapper width="2.4rem" height="2rem">
@@ -142,7 +141,7 @@ const Navigation = () => {
               onClick={() => {
                 setMobileMenu(!isMobileMenu);
                 toastHandler();
-                router.push('/');
+                router.push('/exhibition');
               }}
             >
               <ToggleImageWrapper width="2.4rem" height="2rem">
@@ -158,7 +157,7 @@ const Navigation = () => {
               onClick={() => {
                 setMobileMenu(!isMobileMenu);
                 toastHandler();
-                router.push('/');
+                router.push('/program');
               }}
             >
               <ToggleImageWrapper width="2.4rem" height="2rem">
@@ -174,7 +173,23 @@ const Navigation = () => {
               onClick={() => {
                 setMobileMenu(!isMobileMenu);
                 toastHandler();
-                router.push('/');
+                router.push('/webzine');
+              }}
+            >
+              <ToggleImageWrapper width="2.4rem" height="2rem">
+                <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
+              </ToggleImageWrapper>
+
+              <Font size={32} pointer={true} fontWeight={700}>
+                WEBZINE
+              </Font>
+            </IconWrapper>
+
+            <IconWrapper
+              onClick={() => {
+                setMobileMenu(!isMobileMenu);
+                toastHandler();
+                router.push('/notice');
               }}
             >
               <ToggleImageWrapper width="2.4rem" height="2rem">

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import GlobalStyle from 'styles/global-style';
 import styleTheme from 'styles/style-theme';
@@ -15,7 +14,7 @@ import DotSpinner from 'components/common/dot-spinner';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   const [queryClient] = React.useState(() => new QueryClient());
   const router = useRouter();
   const loading = usePageLoading();
@@ -42,7 +41,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
                 </Head>
 
-                {loading ? <DotSpinner width={18} height={18} marginRight={18} dotColor="#4141E7" /> : <Component {...pageProps} />}
+                {/* {loading ? <DotSpinner width={18} height={18} marginRight={18} dotColor="#4141E7" /> : <Component {...pageProps} />} */}
+                <Component {...pageProps} />
               </Frame>
 
               {router.pathname === '/' && <Footer />}

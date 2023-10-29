@@ -8,14 +8,14 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    font-family: 'LeferiBase' !important;
+  }
+
   /* body width 이상 */
   @media (min-width: 1201px) {
     html {
       font-size: 10px;
-    }
-
-    body {
-      overflow: hidden !important;
     }
   }
 

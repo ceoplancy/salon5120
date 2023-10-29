@@ -32,13 +32,6 @@ const Footer = () => {
 
 export default Footer;
 
-const FontSize = styled.p`
-  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
-  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
-  margin: ${(props) => (props.margin ? props.margin : '')};
-`;
-
 const Frame = styled.footer`
   width: 100%;
   position: sticky;
@@ -78,4 +71,11 @@ const CustomImageWrapper = styled.div`
   position: relative;
   width: ${(props) => (props.width ? props.width : '3rem')};
   height: ${(props) => (props.height ? props.height : '3rem')};
+`;
+
+const FontSize = styled.p`
+  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
+  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  margin: ${(props) => (props.margin ? props.margin : '')};
 `;
