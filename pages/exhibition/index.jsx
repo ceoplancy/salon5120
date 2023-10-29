@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import articleData from '../../constants/article-data';
-import FadeIn from 'react-fade-in';
 import { useRouter } from 'next/router';
 
 const Exhibition = () => {
@@ -45,7 +44,7 @@ const Exhibition = () => {
         {makeAricleData(articleData, 'type1')?.map((x) => {
           return (
             <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
-              <CustomFadeIn>
+              <div style={{ width: '100%', height: '100%' }}>
                 <ImageWrapper>
                   <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
                 </ImageWrapper>
@@ -61,7 +60,7 @@ const Exhibition = () => {
                 <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
                   {x.title3}
                 </FontSize>
-              </CustomFadeIn>
+              </div>
             </Type1Container>
           );
         })}
@@ -72,7 +71,7 @@ const Exhibition = () => {
         {makeMobileArticleData(articleData)?.map((x) => {
           return (
             <React.Fragment key={x.id}>
-              <CustomFadeIn>
+              <div style={{ width: '100%', height: '100%' }}>
                 {x.type === 'type1' && (
                   <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
                     <ImageWrapper>
@@ -94,7 +93,7 @@ const Exhibition = () => {
                     )}
                   </Type1Container>
                 )}
-              </CustomFadeIn>
+              </div>
             </React.Fragment>
           );
         })}
@@ -131,7 +130,6 @@ const MobileContainer = styled.div`
 `;
 
 const Type1Container = styled.div`
-  width: 100%;
   display: flex;
   padding: 1.5rem;
   width: 100%;
@@ -167,9 +165,4 @@ const PreTag = styled.pre`
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
   margin: ${(props) => (props.margin ? props.margin : '')};
-`;
-
-const CustomFadeIn = styled(FadeIn)`
-  width: 100%;
-  height: 100%;
 `;

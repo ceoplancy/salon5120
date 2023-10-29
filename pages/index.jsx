@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import articleData from '../constants/article-data';
-import FadeIn from 'react-fade-in';
 import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 
@@ -74,23 +73,21 @@ const Article = () => {
               ?.map((x) => {
                 return (
                   <div key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
-                    <FadeIn>
-                      <ImageWrapper>
-                        <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                      </ImageWrapper>
+                    <ImageWrapper>
+                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                    </ImageWrapper>
 
-                      <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
-                        {x.title1}
-                      </FontSize>
+                    <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                      {x.title1}
+                    </FontSize>
 
-                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
-                        {x.title2}
-                      </PreTag>
+                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                      {x.title2}
+                    </PreTag>
 
-                      <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                        {x.title3}
-                      </FontSize>
-                    </FadeIn>
+                    <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
+                      {x.title3}
+                    </FontSize>
                   </div>
                 );
               })}
@@ -110,7 +107,7 @@ const Article = () => {
             .slice(0, visibleItems2)
             .map((x) => {
               return (
-                <CustomFadeIn key={x.id}>
+                <div key={x.id}>
                   <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
                     <div>
                       <FontSize fontSize={'2.3rem'} fontWeight={600}>
@@ -132,7 +129,7 @@ const Article = () => {
                       {x.title4}
                     </FontSize>
                   </Type2Container>
-                </CustomFadeIn>
+                </div>
               );
             })}
 
@@ -150,13 +147,13 @@ const Article = () => {
             .slice(0, visibleItems3)
             .map((x) => {
               return (
-                <CustomFadeIn key={x.id}>
+                <div key={x.id}>
                   <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
                     <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
                       {x.title1}
                     </FontSize>
                   </Type3Container>
-                </CustomFadeIn>
+                </div>
               );
             })}
 
@@ -175,7 +172,7 @@ const Article = () => {
         {makeMobileArticleData(articleData).map((x) => {
           return (
             <React.Fragment key={x.id}>
-              <CustomFadeIn>
+              <div>
                 {x.type === 'type1' && (
                   <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
                     <ImageWrapper>
@@ -195,10 +192,10 @@ const Article = () => {
                     </FontSize>
                   </Type1Container>
                 )}
-              </CustomFadeIn>
+              </div>
 
               {x.type === 'type2' && (
-                <CustomFadeIn>
+                <div>
                   <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
                     <div>
                       <FontSize fontSize={'2.3rem'} fontWeight={600}>
@@ -220,17 +217,17 @@ const Article = () => {
                       {x.title4}
                     </FontSize>
                   </Type2Container>
-                </CustomFadeIn>
+                </div>
               )}
 
               {x.type === 'type3' && (
-                <CustomFadeIn>
+                <div>
                   <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
                     <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
                       {x.title1}
                     </FontSize>
                   </Type3Container>
-                </CustomFadeIn>
+                </div>
               )}
             </React.Fragment>
           );
@@ -376,11 +373,6 @@ const Line = styled.div`
   width: 100%;
   border: 1px solid #000;
   margin: 1.5rem 0 3.5rem 0;
-`;
-
-const CustomFadeIn = styled(FadeIn)`
-  width: 100%;
-  height: 100%;
 `;
 
 const GlobalStyle = createGlobalStyle`

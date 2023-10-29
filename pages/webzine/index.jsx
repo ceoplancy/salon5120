@@ -34,9 +34,10 @@ const Webzine = () => {
 export default Webzine;
 
 const Frame = styled.div`
+  width: 100%;
   margin-top: 9rem;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   @media screen and (max-width: 520px) {
     flex-direction: column;
