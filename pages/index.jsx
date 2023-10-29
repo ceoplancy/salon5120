@@ -172,7 +172,7 @@ const Article = () => {
         {makeMobileArticleData(articleData).map((x) => {
           return (
             <React.Fragment key={x.id}>
-              <div>
+              <div style={{ width: '100%' }}>
                 {x.type === 'type1' && (
                   <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
                     <ImageWrapper>
