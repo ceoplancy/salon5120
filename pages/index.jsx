@@ -4,6 +4,7 @@ import Image from 'next/image';
 import articleData from '../constants/article-data';
 import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
+import FadeIn from 'react-fade-in';
 
 const Article = () => {
   const router = useRouter();
@@ -73,21 +74,25 @@ const Article = () => {
               ?.map((x) => {
                 return (
                   <div key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
-                    <ImageWrapper>
-                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                    </ImageWrapper>
+                    <FadeIn>
+                      <ImageWrapper>
+                        <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                      </ImageWrapper>
+                    </FadeIn>
 
-                    <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
-                      {x.title1}
-                    </FontSize>
+                    <FadeIn>
+                      <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                        {x.title1}
+                      </FontSize>
 
-                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
-                      {x.title2}
-                    </PreTag>
+                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                        {x.title2}
+                      </PreTag>
 
-                    <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                      {x.title3}
-                    </FontSize>
+                      <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
+                        {x.title3}
+                      </FontSize>
+                    </FadeIn>
                   </div>
                 );
               })}
@@ -109,25 +114,29 @@ const Article = () => {
               return (
                 <div key={x.id}>
                   <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
-                    <div>
-                      <FontSize fontSize={'2.3rem'} fontWeight={600}>
-                        {x.title1}
+                    <FadeIn>
+                      <div>
+                        <FontSize fontSize={'2.3rem'} fontWeight={600}>
+                          {x.title1}
+                        </FontSize>
+
+                        <Line />
+
+                        <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
+                          {x.title2}
+                        </FontSize>
+
+                        <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
+                          {x.title3}
+                        </FontSize>
+                      </div>
+                    </FadeIn>
+
+                    <FadeIn>
+                      <FontSize fontSize={'1.5rem'} fontWeight={600}>
+                        {x.title4}
                       </FontSize>
-
-                      <Line />
-
-                      <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
-                        {x.title2}
-                      </FontSize>
-
-                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
-                        {x.title3}
-                      </FontSize>
-                    </div>
-
-                    <FontSize fontSize={'1.5rem'} fontWeight={600}>
-                      {x.title4}
-                    </FontSize>
+                    </FadeIn>
                   </Type2Container>
                 </div>
               );
@@ -148,11 +157,13 @@ const Article = () => {
             .map((x) => {
               return (
                 <div key={x.id}>
-                  <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                    <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
-                      {x.title1}
-                    </FontSize>
-                  </Type3Container>
+                  <FadeIn>
+                    <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
+                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                        {x.title1}
+                      </FontSize>
+                    </Type3Container>
+                  </FadeIn>
                 </div>
               );
             })}
@@ -175,58 +186,64 @@ const Article = () => {
               <div style={{ width: '100%' }}>
                 {x.type === 'type1' && (
                   <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
-                    <ImageWrapper>
-                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                    </ImageWrapper>
+                    <FadeIn>
+                      <ImageWrapper>
+                        <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                      </ImageWrapper>
 
-                    <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
-                      {x.title1}
-                    </FontSize>
+                      <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                        {x.title1}
+                      </FontSize>
 
-                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
-                      {x.title2}
-                    </PreTag>
+                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                        {x.title2}
+                      </PreTag>
 
-                    <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                      {x.title3}
-                    </FontSize>
+                      <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
+                        {x.title3}
+                      </FontSize>
+                    </FadeIn>
                   </Type1Container>
                 )}
               </div>
 
               {x.type === 'type2' && (
                 <div>
-                  <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
-                    <div>
-                      <FontSize fontSize={'2.3rem'} fontWeight={600}>
-                        {x.title1}
+                  <FadeIn>
+                    <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
+                      <div>
+                        <FontSize fontSize={'2.3rem'} fontWeight={600}>
+                          {x.title1}
+                        </FontSize>
+
+                        <Line />
+
+                        <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
+                          {x.title2}
+                        </FontSize>
+
+                        <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
+                          {x.title3}
+                        </FontSize>
+                      </div>
+
+                      <FontSize fontSize={'1.5rem'} fontWeight={600} margin="0 0 6rem 0">
+                        {x.title4}
                       </FontSize>
-
-                      <Line />
-
-                      <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
-                        {x.title2}
-                      </FontSize>
-
-                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
-                        {x.title3}
-                      </FontSize>
-                    </div>
-
-                    <FontSize fontSize={'1.5rem'} fontWeight={600} margin="0 0 6rem 0">
-                      {x.title4}
-                    </FontSize>
-                  </Type2Container>
+                    </Type2Container>
+                  </FadeIn>
                 </div>
               )}
 
               {x.type === 'type3' && (
                 <div>
-                  <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                    <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
-                      {x.title1}
-                    </FontSize>
-                  </Type3Container>
+                  <FadeIn>
+                    <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
+                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                        {x.title1}
+                      </FontSize>
+                    </Type3Container>
+                  </FadeIn>
                 </div>
               )}
             </React.Fragment>

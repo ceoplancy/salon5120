@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import articleData from '../../constants/article-data';
 import { useRouter } from 'next/router';
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 const Exhibition = () => {
   const router = useRouter();
@@ -43,25 +44,27 @@ const Exhibition = () => {
       <Container>
         {makeAricleData(articleData, 'type1')?.map((x) => {
           return (
-            <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
-              <div style={{ width: '100%', height: '100%' }}>
-                <ImageWrapper>
-                  <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                </ImageWrapper>
+            <FadeIn>
+              <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
+                <div style={{ width: '100%', height: '100%' }}>
+                  <ImageWrapper>
+                    <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                  </ImageWrapper>
 
-                <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
-                  {x.title1}
-                </FontSize>
+                  <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                    {x.title1}
+                  </FontSize>
 
-                <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
-                  {x.title2}
-                </PreTag>
+                  <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                    {x.title2}
+                  </PreTag>
 
-                <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                  {x.title3}
-                </FontSize>
-              </div>
-            </Type1Container>
+                  <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
+                    {x.title3}
+                  </FontSize>
+                </div>
+              </Type1Container>
+            </FadeIn>
           );
         })}
       </Container>
@@ -73,25 +76,27 @@ const Exhibition = () => {
             <React.Fragment key={x.id}>
               <div style={{ width: '100%', height: '100%' }}>
                 {x.type === 'type1' && (
-                  <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
-                    <ImageWrapper>
-                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                    </ImageWrapper>
+                  <FadeIn>
+                    <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
+                      <ImageWrapper>
+                        <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                      </ImageWrapper>
 
-                    <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
-                      {x.title1}
-                    </FontSize>
-
-                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
-                      {x.title2}
-                    </PreTag>
-
-                    {x.title3 && (
-                      <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                        {x.title3}
+                      <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                        {x.title1}
                       </FontSize>
-                    )}
-                  </Type1Container>
+
+                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                        {x.title2}
+                      </PreTag>
+
+                      {x.title3 && (
+                        <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
+                          {x.title3}
+                        </FontSize>
+                      )}
+                    </Type1Container>
+                  </FadeIn>
                 )}
               </div>
             </React.Fragment>
