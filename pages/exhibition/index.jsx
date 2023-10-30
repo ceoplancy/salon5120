@@ -4,74 +4,59 @@ import Image from 'next/image';
 import articleData from '../../constants/article-data';
 import { useRouter } from 'next/router';
 import FadeIn from 'react-fade-in/lib/FadeIn';
+import sortByDateAscending from '../../functions/sortByDateAscending';
 
 const Exhibition = () => {
   const router = useRouter();
-  const makeAricleData = (articleData, articleType) => {
-    if (articleType === 'type1') {
-      return articleData.filter((x) => x.type === 'type1');
-    }
 
-    if (articleType === 'type2') {
-      return articleData.filter((x) => x.type === 'type2');
-    }
-
-    if (articleType === 'type3') {
-      return articleData.filter((x) => x.type === 'type3');
-    }
+  const makeAricleData = (articleData) => {
+    return sortByDateAscending(
+      articleData.filter((x) => x.type === 'type1'),
+      'date'
+    );
   };
 
-  const makeMobileArticleData = (articleData) => {
-    const sortByDateAscending = (a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      if (dateA < dateB) {
-        return -1;
-      }
-      if (dateA > dateB) {
-        return 1;
-      }
-      return 0;
-    };
-
-    const sortedData = [...articleData].sort(sortByDateAscending);
-    return sortedData;
-  };
+  const type1Data = sortByDateAscending(
+    articleData.filter((x) => x.type === 'type1'),
+    'date'
+  );
 
   return (
     <>
       {/* descktop */}
       <Container>
-        {makeAricleData(articleData, 'type1')?.map((x) => {
+        {makeAricleData(articleData)?.map((x) => {
           return (
-            <FadeIn>
-              <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
-                <div style={{ width: '100%', height: '100%' }}>
-                  <ImageWrapper>
-                    <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                  </ImageWrapper>
+            <React.Fragment key={x.id}>
+              <FadeIn>
+                <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
+                  <div style={{ width: '100%', height: '100%' }}>
+                    <ImageWrapper>
+                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                    </ImageWrapper>
 
-                  <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
-                    {x.title1}
-                  </FontSize>
+                    <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                      {x.title1}
+                    </FontSize>
 
-                  <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
-                    {x.title2}
-                  </PreTag>
+                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                      {x.title2}
+                    </PreTag>
 
-                  <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                    {x.title3}
-                  </FontSize>
-                </div>
-              </Type1Container>
-            </FadeIn>
+                    <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
+                      {x.title3}
+                    </FontSize>
+                  </div>
+                </Type1Container>
+              </FadeIn>
+            </React.Fragment>
           );
         })}
       </Container>
 
       {/* mobile */}
       <MobileContainer>
-        {makeMobileArticleData(articleData)?.map((x) => {
+        {type1Data?.map((x) => {
           return (
             <React.Fragment key={x.id}>
               <div style={{ width: '100%', height: '100%' }}>

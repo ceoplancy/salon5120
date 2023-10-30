@@ -2,7 +2,7 @@ const articleData = [
   {
     id: 1,
     type: 'type1',
-    date: '2023-08-03',
+    date: '2023-08-10',
     images: ['/test1.png', '/test2.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
@@ -82,7 +82,7 @@ const articleData = [
   {
     id: 4,
     type: 'type2',
-    date: '2023-08-04',
+    date: '2023-08-05',
     title1: `마티네 클라스 Matinée Class`,
     title2: '3rd | 작가를 만나다',
     title3: `『당신을 보면 이해 받는
@@ -146,7 +146,7 @@ const articleData = [
   {
     id: 6,
     type: 'type2',
-    date: '2023-08-04',
+    date: '2023-08-03',
     title1: `마티네 클라스 Matinée Class`,
     title2: '3rd | 작가를 만나다',
     title3: `『당신을 보면 이해 받는

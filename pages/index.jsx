@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import articleData from '../constants/article-data';
 import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 import FadeIn from 'react-fade-in';
+import sortByDateAscending from '../functions/sortByDateAscending';
 
 const Article = () => {
   const router = useRouter();
@@ -32,34 +33,51 @@ const Article = () => {
 
   const makeAricleData = (articleData, articleType) => {
     if (articleType === 'type1') {
-      return articleData.filter((x) => x.type === 'type1');
+      return sortByDateAscending(
+        articleData.filter((x) => x.type === 'type1'),
+        'date'
+      );
     }
 
     if (articleType === 'type2') {
-      return articleData.filter((x) => x.type === 'type2');
+      return sortByDateAscending(
+        articleData.filter((x) => x.type === 'type2'),
+        'date'
+      );
     }
 
     if (articleType === 'type3') {
-      return articleData.filter((x) => x.type === 'type3');
+      return sortByDateAscending(
+        articleData.filter((x) => x.type === 'type3'),
+        'date'
+      );
     }
   };
 
   const makeMobileArticleData = (articleData) => {
-    const sortByDateAscending = (a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      if (dateA < dateB) {
-        return -1;
-      }
-      if (dateA > dateB) {
-        return 1;
-      }
-      return 0;
-    };
-
-    const sortedData = [...articleData].sort(sortByDateAscending);
-    return sortedData;
+    return sortByDateAscending(articleData, 'date');
   };
+
+  const [windowDimensions, setWindowDimensions] = useState();
+
+  const updateWindowDimensions = () => {
+    setWindowDimensions(window.innerWidth);
+  };
+
+  useEffect(() => {
+    setWindowDimensions(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('resize', updateWindowDimensions);
+
+    return () => {
+      window.removeEventListener('resize', updateWindowDimensions);
+    };
+  }, []);
+
+  const type2ContainerHeight = windowDimensions * 0.326;
+  const type3ContainerHeight = windowDimensions * 0.19;
 
   return (
     <>
@@ -113,7 +131,7 @@ const Article = () => {
             .map((x) => {
               return (
                 <div key={x.id}>
-                  <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
+                  <Type2Container type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
                     <FadeIn>
                       <div>
                         <FontSize fontSize={'2.3rem'} fontWeight={600}>
@@ -158,7 +176,7 @@ const Article = () => {
               return (
                 <div key={x.id}>
                   <FadeIn>
-                    <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
+                    <Type3Container type3ContainerHeight={type3ContainerHeight} onClick={() => router.push(`/notice/${x.id}`)}>
                       <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
                         {x.title1}
                       </FontSize>
@@ -324,7 +342,8 @@ const Type2Container = styled.div`
   justify-content: space-around;
 
   width: 100%;
-  height: 65rem;
+  /* height: 65rem; */
+  height: ${(props) => props.type2ContainerHeight}px;
 
   padding: 10rem 2rem 2rem 2rem;
   cursor: pointer;
@@ -349,7 +368,8 @@ const Type2Container = styled.div`
 
 const Type3Container = styled.div`
   width: 100%;
-  height: 36rem;
+  /* height: 36rem; */
+  height: ${(props) => props.type3ContainerHeight}px;
   padding: 1.5rem;
   cursor: pointer;
   transition: all 0.2s;
