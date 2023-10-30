@@ -80,12 +80,12 @@ const ProgramDetail = ({ query }) => {
             </PreTag>
 
             {makeData[0]?.content13 && (
-              <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5} margin="3rem 0 3rem 0">
+              <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5} margin="3rem 0 0 0">
                 {makeData[0]?.content13}
               </PreTag>
             )}
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5}>
+            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5} margin="3rem 0 0 0">
               {makeData[0]?.content14}
             </PreTag>
           </ContentContainer>

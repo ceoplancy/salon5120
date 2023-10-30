@@ -84,7 +84,7 @@ export default About;
 
 const Frame = styled.div`
   width: 100%;
-  margin-top: 6rem;
+  margin: 6rem 0;
   display: flex;
   justify-content: space-between;
   gap: 6rem;
