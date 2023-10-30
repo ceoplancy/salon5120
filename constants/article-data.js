@@ -3,7 +3,7 @@ const articleData = [
     id: 1,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들

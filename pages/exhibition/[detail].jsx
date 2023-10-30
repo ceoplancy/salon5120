@@ -6,7 +6,7 @@ import articleData from '../../constants/article-data';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
-const ArticleDetail = ({ query }) => {
+const ExhibitionDetail = ({ query }) => {
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -168,7 +168,7 @@ const ArticleDetail = ({ query }) => {
   );
 };
 
-export default ArticleDetail;
+export default ExhibitionDetail;
 
 const Container = styled.div`
   margin-top: 6rem;
@@ -232,30 +232,30 @@ const FontSize = styled.p`
 `;
 
 const RightArrowWrapper = styled.div`
-  width: 16rem;
+  width: 10rem;
   height: 3rem;
   position: absolute;
   top: 62rem;
-  right: 10rem;
+  right: 12rem;
   cursor: pointer;
 
   @media screen and (max-width: 520px) {
     top: 62rem;
-    right: 12rem;
+    right: 15rem;
   }
 `;
 
 const LeftArrowWrapper = styled.div`
-  width: 16rem;
+  width: 10rem;
   height: 3rem;
   position: absolute;
   top: 62rem;
-  left: 10rem;
+  left: 12rem;
   cursor: pointer;
 
   @media screen and (max-width: 520px) {
     top: 62rem;
-    left: 12rem;
+    left: 15rem;
   }
 `;
 

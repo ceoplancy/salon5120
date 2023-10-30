@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import articleData from '../../constants/article-data';
 
-const Program = ({ query }) => {
+const ProgramDetail = ({ query }) => {
   const [makeData, setMakeData] = useState({});
 
   const makeAricleData = (articleData, id) => {
@@ -95,7 +95,7 @@ const Program = ({ query }) => {
   );
 };
 
-export default Program;
+export default ProgramDetail;
 
 const Container = styled.div`
   margin-top: 9rem;

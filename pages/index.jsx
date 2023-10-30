@@ -97,7 +97,7 @@ const Article = () => {
               .slice(0, visibleItems1)
               ?.map((x) => {
                 return (
-                  <div key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
+                  <Type1Wrapper key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
                     <FadeIn>
                       <ImageWrapper>
                         <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
@@ -119,7 +119,7 @@ const Article = () => {
                         </FontSize>
                       )}
                     </FadeIn>
-                  </div>
+                  </Type1Wrapper>
                 );
               })}
           </Type1Container>
@@ -347,10 +347,6 @@ const Type1Container = styled.div`
   width: 100%;
 
   cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: translateY(-30px);
-  }
 
   @media screen and (max-width: 520px) {
     border: 1px solid #000;
@@ -460,4 +456,12 @@ const MobileLoadMoreBtn = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`;
+
+const Type1Wrapper = styled.div`
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-30px);
+  }
 `;
