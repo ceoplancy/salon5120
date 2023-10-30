@@ -21,7 +21,7 @@ export default class CustomDocument extends Document {
           <meta property="og:site_name" content="salon5120"></meta>
           <meta property="og:locale" content="ko_KR" />
           <meta property="og:image" content="" />
-          <meta property="og:url" content="https://naver.com" />
+          <meta property="og:url" content="https://salon5120.vercel.app" />
           <meta property="og:image:width" content="600" />
           <meta property="og:image:height" content="315" />
 
@@ -55,7 +55,7 @@ export default class CustomDocument extends Document {
   }
 }
 
-CustomDocument.getInitialProps = async (ctx): Promise<any> => {
+CustomDocument.getInitialProps = async (ctx) => {
   const sheet = new ServerStyleSheet();
   const originalRenderPage = ctx.renderPage;
 
@@ -63,7 +63,7 @@ CustomDocument.getInitialProps = async (ctx): Promise<any> => {
     //css를 ssr해주는 메소드
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: (App: any) => (props: any) => sheet.collectStyles(<App {...props} />),
+        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
       });
 
     const initialProps = await Document?.getInitialProps(ctx);
