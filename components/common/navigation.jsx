@@ -285,7 +285,8 @@ const MobileMenuWrapper = styled.div`
   gap: 3rem;
 
   padding-top: 1rem;
-  margin-top: 10rem;
+  margin-top: 8rem;
+  padding-top: 2rem;
   padding-left: 2rem;
 
   &.showMobildeMenu {
