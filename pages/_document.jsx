@@ -11,14 +11,14 @@ export default class CustomDocument extends Document {
 
           {/* 홈페이지 */}
           <meta name="author" content="salon5120" />
-          <meta name="keywords" content="salon5120 문화살롱" />
+          <meta name="keywords" content="salon5120 문화살롱 문화살롱5120" />
           <meta name="description" content="salon5120 문화살롱" />
 
           {/* 오픈 그래프 */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="salon5120" />
-          <meta property="og:description" content="salon5120" />
-          <meta property="og:site_name" content="salon5120"></meta>
+          <meta property="og:title" content="salon5120 문화살롱5120" />
+          <meta property="og:description" content="salon5120 문화살롱5120" />
+          <meta property="og:site_name" content="salon5120 문화살롱5120"></meta>
           <meta property="og:locale" content="ko_KR" />
           <meta property="og:image" content="" />
           <meta property="og:url" content="https://salon5120.vercel.app" />
@@ -27,8 +27,8 @@ export default class CustomDocument extends Document {
 
           {/* 트위터용 */}
           <meta name="twitter:card" content="website" />
-          <meta name="twitter:title" content="salon5120" />
-          <meta name="twitter:description" content="salon5120" />
+          <meta name="twitter:title" content="salon5120 문화살롱5120" />
+          <meta name="twitter:description" content="salon5120 문화살롱5120" />
           <meta name="twitter:image" content=""></meta>
 
           <style

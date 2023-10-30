@@ -13,6 +13,7 @@ const Article = () => {
   const [visibleItems1, setVisibleItems1] = useState(5);
   const [visibleItems2, setVisibleItems2] = useState(5);
   const [visibleItems3, setVisibleItems3] = useState(5);
+  const [mobileVisibleItems, setMobileVisibleItems] = useState(5);
 
   const onLoadMore = (type) => {
     if (type === 1) {
@@ -27,6 +28,11 @@ const Article = () => {
 
     if (type === 3) {
       setVisibleItems3((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 'mobile') {
+      setMobileVisibleItems((prev) => prev + 5);
       return;
     }
   };
@@ -99,17 +105,19 @@ const Article = () => {
                     </FadeIn>
 
                     <FadeIn>
-                      <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                      <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
                         {x.title1}
                       </FontSize>
 
-                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={700}>
                         {x.title2}
                       </PreTag>
 
-                      <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                        {x.title3}
-                      </FontSize>
+                      {x.title3 && (
+                        <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
+                          {x.title3}
+                        </FontSize>
+                      )}
                     </FadeIn>
                   </div>
                 );
@@ -118,7 +126,7 @@ const Article = () => {
 
           {visibleItems1 < makeAricleData(articleData, 'type1')?.length ? (
             <LoadMoreBtn onClick={() => onLoadMore(1)}>
-              <FontSize fontSize={'2.5rem'} fontWeight={700} margin="0 0 3rem 0">
+              <FontSize fontSize={'2.5rem'} fontWeight={700}>
                 LOAD MORE
               </FontSize>
             </LoadMoreBtn>
@@ -134,24 +142,24 @@ const Article = () => {
                   <Type2Container type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
                     <FadeIn>
                       <div>
-                        <FontSize fontSize={'2.3rem'} fontWeight={600}>
+                        <FontSize fontSize={'2.3rem'} fontWeight={700}>
                           {x.title1}
                         </FontSize>
 
                         <Line />
 
-                        <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
+                        <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                           {x.title2}
                         </FontSize>
 
-                        <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
+                        <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
                           {x.title3}
                         </FontSize>
                       </div>
                     </FadeIn>
 
                     <FadeIn>
-                      <FontSize fontSize={'1.5rem'} fontWeight={600}>
+                      <FontSize fontSize={'2.1rem'} fontWeight={700}>
                         {x.title4}
                       </FontSize>
                     </FadeIn>
@@ -162,7 +170,7 @@ const Article = () => {
 
           {visibleItems2 < makeAricleData(articleData, 'type2')?.length ? (
             <LoadMoreBtn onClick={() => onLoadMore(2)}>
-              <FontSize fontSize={'2.5rem'} fontWeight={700} margin="0 0 3rem 0">
+              <FontSize fontSize={'2.5rem'} fontWeight={700}>
                 LOAD MORE
               </FontSize>
             </LoadMoreBtn>
@@ -177,7 +185,7 @@ const Article = () => {
                 <div key={x.id}>
                   <FadeIn>
                     <Type3Container type3ContainerHeight={type3ContainerHeight} onClick={() => router.push(`/notice/${x.id}`)}>
-                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                      <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
                         {x.title1}
                       </FontSize>
                     </Type3Container>
@@ -188,7 +196,7 @@ const Article = () => {
 
           {visibleItems3 < makeAricleData(articleData, 'type3')?.length ? (
             <LoadMoreBtn onClick={() => onLoadMore(3)}>
-              <FontSize fontSize={'2.5rem'} fontWeight={700} margin="0 0 3rem 0">
+              <FontSize fontSize={'2.5rem'} fontWeight={700}>
                 LOAD MORE
               </FontSize>
             </LoadMoreBtn>
@@ -198,75 +206,87 @@ const Article = () => {
 
       {/* mobile */}
       <MobileContainer>
-        {makeMobileArticleData(articleData).map((x) => {
-          return (
-            <React.Fragment key={x.id}>
-              <div style={{ width: '100%' }}>
-                {x.type === 'type1' && (
-                  <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
-                    <FadeIn>
-                      <ImageWrapper>
-                        <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                      </ImageWrapper>
+        {makeMobileArticleData(articleData)
+          .slice(0, mobileVisibleItems)
+          ?.map((x) => {
+            return (
+              <React.Fragment key={x.id}>
+                <div style={{ width: '100%' }}>
+                  {x.type === 'type1' && (
+                    <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
+                      <FadeIn>
+                        <ImageWrapper>
+                          <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                        </ImageWrapper>
 
-                      <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
-                        {x.title1}
-                      </FontSize>
-
-                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
-                        {x.title2}
-                      </PreTag>
-
-                      <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                        {x.title3}
-                      </FontSize>
-                    </FadeIn>
-                  </Type1Container>
-                )}
-              </div>
-
-              {x.type === 'type2' && (
-                <div>
-                  <FadeIn>
-                    <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
-                      <div>
-                        <FontSize fontSize={'2.3rem'} fontWeight={600}>
+                        <FontSize fontSize={'1.4rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
                           {x.title1}
                         </FontSize>
 
-                        <Line />
-
-                        <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
+                        <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
                           {x.title2}
-                        </FontSize>
+                        </PreTag>
 
-                        <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
-                          {x.title3}
-                        </FontSize>
-                      </div>
-
-                      <FontSize fontSize={'1.5rem'} fontWeight={600} margin="0 0 6rem 0">
-                        {x.title4}
-                      </FontSize>
-                    </Type2Container>
-                  </FadeIn>
+                        {x.title3 && (
+                          <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
+                            {x.title3}
+                          </FontSize>
+                        )}
+                      </FadeIn>
+                    </Type1Container>
+                  )}
                 </div>
-              )}
 
-              {x.type === 'type3' && (
-                <div>
-                  <FadeIn>
-                    <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
-                        {x.title1}
-                      </FontSize>
-                    </Type3Container>
-                  </FadeIn>
-                </div>
-              )}
-            </React.Fragment>
-          );
-        })}
+                {x.type === 'type2' && (
+                  <div>
+                    <FadeIn>
+                      <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
+                        <div>
+                          <FontSize fontSize={'2.3rem'} fontWeight={700}>
+                            {x.title1}
+                          </FontSize>
+
+                          <Line />
+
+                          <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                            {x.title2}
+                          </FontSize>
+
+                          <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
+                            {x.title3}
+                          </FontSize>
+                        </div>
+
+                        <FontSize fontSize={'2.1rem'} fontWeight={700} margin="0 0 6rem 0">
+                          {x.title4}
+                        </FontSize>
+                      </Type2Container>
+                    </FadeIn>
+                  </div>
+                )}
+
+                {x.type === 'type3' && (
+                  <div>
+                    <FadeIn>
+                      <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
+                        <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                          {x.title1}
+                        </FontSize>
+                      </Type3Container>
+                    </FadeIn>
+                  </div>
+                )}
+              </React.Fragment>
+            );
+          })}
+
+        {mobileVisibleItems < makeMobileArticleData(articleData)?.length ? (
+          <MobileLoadMoreBtn onClick={() => onLoadMore('mobile')}>
+            <FontSize fontSize={'2.5rem'} fontWeight={700}>
+              LOAD MORE
+            </FontSize>
+          </MobileLoadMoreBtn>
+        ) : null}
       </MobileContainer>
     </>
   );
@@ -322,6 +342,7 @@ const InnerWrapper = styled.div`
 const Type1Container = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   padding: 1.5rem;
   width: 100%;
 
@@ -382,7 +403,7 @@ const Type3Container = styled.div`
   background-size: contain;
 
   @media screen and (max-width: 520px) {
-    height: 30rem;
+    height: 28rem;
   }
 `;
 
@@ -423,6 +444,18 @@ const GlobalStyle = createGlobalStyle`
 const LoadMoreBtn = styled.div`
   width: 100%;
   height: 100%;
+  margin-top: 1.3rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
+const MobileLoadMoreBtn = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;

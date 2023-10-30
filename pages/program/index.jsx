@@ -8,6 +8,30 @@ import sortByDateAscending from '../../functions/sortByDateAscending';
 const Program = () => {
   const router = useRouter();
 
+  const [mobileVisibleItems, setMobileVisibleItems] = useState(5);
+
+  const onLoadMore = (type) => {
+    if (type === 1) {
+      setVisibleItems1((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 2) {
+      setVisibleItems2((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 3) {
+      setVisibleItems3((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 'mobile') {
+      setMobileVisibleItems((prev) => prev + 5);
+      return;
+    }
+  };
+
   const makeAricleData = (articleData) => {
     return sortByDateAscending(
       articleData.filter((x) => x.type === 'type2'),
@@ -51,24 +75,24 @@ const Program = () => {
                 <Type2Container type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
                   <FadeIn>
                     <div>
-                      <FontSize fontSize={'2.3rem'} fontWeight={600}>
+                      <FontSize fontSize={'2.3rem'} fontWeight={700}>
                         {x.title1}
                       </FontSize>
 
                       <Line />
 
-                      <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
+                      <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                         {x.title2}
                       </FontSize>
 
-                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
+                      <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
                         {x.title3}
                       </FontSize>
                     </div>
                   </FadeIn>
 
                   <FadeIn>
-                    <FontSize fontSize={'1.5rem'} fontWeight={600}>
+                    <FontSize fontSize={'2.1rem'} fontWeight={700}>
                       {x.title4}
                     </FontSize>
                   </FadeIn>
@@ -81,29 +105,29 @@ const Program = () => {
 
       {/* mobile */}
       <MobileContainer>
-        {type2Data?.map((x) => {
+        {type2Data?.slice(0, mobileVisibleItems).map((x) => {
           return (
             <div key={x.id} style={{ width: '100%', height: '100%' }}>
               {x.type === 'type2' && (
                 <FadeIn>
                   <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
                     <div>
-                      <FontSize fontSize={'2.3rem'} fontWeight={600}>
+                      <FontSize fontSize={'2.3rem'} fontWeight={700}>
                         {x.title1}
                       </FontSize>
 
                       <Line />
 
-                      <FontSize fontSize={'1.5rem'} fontWeight={600} margin={'0 0 1rem 0'}>
+                      <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                         {x.title2}
                       </FontSize>
 
-                      <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2}>
+                      <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
                         {x.title3}
                       </FontSize>
                     </div>
 
-                    <FontSize fontSize={'1.5rem'} fontWeight={600} margin="0 0 6rem 0">
+                    <FontSize fontSize={'2.1rem'} fontWeight={700} margin="0 0 6rem 0">
                       {x.title4}
                     </FontSize>
                   </Type2Container>
@@ -112,6 +136,14 @@ const Program = () => {
             </div>
           );
         })}
+
+        {mobileVisibleItems < type2Data.length ? (
+          <MobileLoadMoreBtn onClick={() => onLoadMore('mobile')}>
+            <FontSize fontSize={'2.5rem'} fontWeight={700}>
+              LOAD MORE
+            </FontSize>
+          </MobileLoadMoreBtn>
+        ) : null}
       </MobileContainer>
     </>
   );
@@ -192,4 +224,14 @@ const Line = styled.div`
   width: 100%;
   border: 1px solid #000;
   margin: 1.5rem 0 3.5rem 0;
+`;
+
+const MobileLoadMoreBtn = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;

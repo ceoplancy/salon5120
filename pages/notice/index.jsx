@@ -8,6 +8,30 @@ import sortByDateAscending from '../../functions/sortByDateAscending';
 const Notice = () => {
   const router = useRouter();
 
+  const [mobileVisibleItems, setMobileVisibleItems] = useState(5);
+
+  const onLoadMore = (type) => {
+    if (type === 1) {
+      setVisibleItems1((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 2) {
+      setVisibleItems2((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 3) {
+      setVisibleItems3((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 'mobile') {
+      setMobileVisibleItems((prev) => prev + 5);
+      return;
+    }
+  };
+
   const makeAricleData = (articleData) => {
     return sortByDateAscending(
       articleData.filter((x) => x.type === 'type3'),
@@ -15,7 +39,7 @@ const Notice = () => {
     );
   };
 
-  const type2Data = sortByDateAscending(
+  const type3Data = sortByDateAscending(
     articleData.filter((x) => x.type === 'type3'),
     'date'
   );
@@ -49,7 +73,7 @@ const Notice = () => {
             <div key={x.id}>
               <FadeIn>
                 <Type3Container type3ContainerHeight={type3ContainerHeight} onClick={() => router.push(`/notice/${x.id}`)}>
-                  <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                  <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
                     {x.title1}
                   </FontSize>
                 </Type3Container>
@@ -61,13 +85,13 @@ const Notice = () => {
 
       {/* mobile */}
       <MobileContainer>
-        {type2Data?.map((x) => {
+        {type3Data?.slice(0, mobileVisibleItems).map((x) => {
           return (
             <div key={x.id} style={{ width: '100%', height: '100%' }}>
               {x.type === 'type3' && (
                 <FadeIn>
                   <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                    <FontSize fontSize={'3rem'} fontWeight={600} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                    <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
                       {x.title1}
                     </FontSize>
                   </Type3Container>
@@ -76,6 +100,14 @@ const Notice = () => {
             </div>
           );
         })}
+
+        {mobileVisibleItems < type3Data.length ? (
+          <MobileLoadMoreBtn onClick={() => onLoadMore('mobile')}>
+            <FontSize fontSize={'2.5rem'} fontWeight={700}>
+              LOAD MORE
+            </FontSize>
+          </MobileLoadMoreBtn>
+        ) : null}
       </MobileContainer>
     </>
   );
@@ -140,4 +172,14 @@ const Type3Container = styled.div`
   @media screen and (max-width: 520px) {
     height: 30rem;
   }
+`;
+
+const MobileLoadMoreBtn = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;

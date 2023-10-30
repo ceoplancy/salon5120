@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import articleData from '../../constants/article-data';
@@ -8,6 +8,30 @@ import sortByDateAscending from '../../functions/sortByDateAscending';
 
 const Exhibition = () => {
   const router = useRouter();
+
+  const [mobileVisibleItems, setMobileVisibleItems] = useState(5);
+
+  const onLoadMore = (type) => {
+    if (type === 1) {
+      setVisibleItems1((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 2) {
+      setVisibleItems2((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 3) {
+      setVisibleItems3((prev) => prev + 5);
+      return;
+    }
+
+    if (type === 'mobile') {
+      setMobileVisibleItems((prev) => prev + 5);
+      return;
+    }
+  };
 
   const makeAricleData = (articleData) => {
     return sortByDateAscending(
@@ -35,17 +59,19 @@ const Exhibition = () => {
                       <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
                     </ImageWrapper>
 
-                    <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                    <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
                       {x.title1}
                     </FontSize>
 
-                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={700}>
                       {x.title2}
                     </PreTag>
 
-                    <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
-                      {x.title3}
-                    </FontSize>
+                    {x.title3 && (
+                      <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
+                        {x.title3}
+                      </FontSize>
+                    )}
                   </div>
                 </Type1Container>
               </FadeIn>
@@ -56,7 +82,7 @@ const Exhibition = () => {
 
       {/* mobile */}
       <MobileContainer>
-        {type1Data?.map((x) => {
+        {type1Data?.slice(0, mobileVisibleItems).map((x) => {
           return (
             <React.Fragment key={x.id}>
               <div style={{ width: '100%', height: '100%' }}>
@@ -67,16 +93,16 @@ const Exhibition = () => {
                         <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
                       </ImageWrapper>
 
-                      <FontSize fontSize={'1rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                      <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
                         {x.title1}
                       </FontSize>
 
-                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={700}>
                         {x.title2}
                       </PreTag>
 
                       {x.title3 && (
-                        <FontSize fontSize={'3rem'} fontWeight={600} margin="0 0 3rem 0">
+                        <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
                           {x.title3}
                         </FontSize>
                       )}
@@ -87,6 +113,14 @@ const Exhibition = () => {
             </React.Fragment>
           );
         })}
+
+        {mobileVisibleItems < type1Data.length ? (
+          <MobileLoadMoreBtn onClick={() => onLoadMore('mobile')}>
+            <FontSize fontSize={'2.5rem'} fontWeight={700}>
+              LOAD MORE
+            </FontSize>
+          </MobileLoadMoreBtn>
+        ) : null}
       </MobileContainer>
     </>
   );
@@ -155,4 +189,14 @@ const PreTag = styled.pre`
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
   margin: ${(props) => (props.margin ? props.margin : '')};
+`;
+
+const MobileLoadMoreBtn = styled.div`
+  width: 100%;
+  height: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;

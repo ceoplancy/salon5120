@@ -138,7 +138,7 @@ const ArticleDetail = ({ query }) => {
           )}
 
           <ContentContainer>
-            <FontSize fontSize={'1.6rem'} fontWeight={700} margin="0 0 0.5rem 0">
+            <FontSize fontSize={'1.4rem'} fontWeight={700} margin="0 0 0.5rem 0">
               {makeData[0]?.content1}
             </FontSize>
 
@@ -146,19 +146,19 @@ const ArticleDetail = ({ query }) => {
               {makeData[0]?.content2}
             </PreTag>
 
-            <PreTag fontSize={'2.5rem'} fontWeight={400} margin="3rem 0 3rem 0" lineHeight={1.2}>
+            <PreTag fontSize={'2.3rem'} fontWeight={400} margin="10rem 0 0 0" lineHeight={1.2}>
               {makeData[0]?.content3}
             </PreTag>
 
-            <PreTag fontSize={'2rem'} fontWeight={400} margin="3rem 0 3rem 0" lineHeight={1.5}>
+            <PreTag fontSize={'1.5rem'} fontWeight={400} margin="3rem 0 3rem 0" lineHeight={1.5}>
               {makeData[0]?.content4}
             </PreTag>
 
-            <PreTag fontSize={'2rem'} fontWeight={700}>
+            <PreTag fontSize={'2.3rem'} fontWeight={700}>
               {makeData[0]?.content5}
             </PreTag>
 
-            <PreTag fontSize={'2rem'} lineHeight={1.5} fontWeight={400} margin="3rem 0 3rem 0">
+            <PreTag fontSize={'1.5rem'} lineHeight={1.5} fontWeight={400} margin="3rem 0 3rem 0">
               {makeData[0]?.content6}
             </PreTag>
           </ContentContainer>
