@@ -63,6 +63,7 @@ const Program = () => {
   }, []);
 
   const type2ContainerHeight = windowDimensions * 0.326;
+  const type2ContainerPaddingTop = windowDimensions * 0.08;
 
   return (
     <>
@@ -72,7 +73,7 @@ const Program = () => {
           return (
             <div key={x.id}>
               <FadeIn>
-                <Type2Container type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
+                <Type2Container type2ContainerPaddingTop={type2ContainerPaddingTop} type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
                   <FadeIn>
                     <div>
                       <FontSize fontSize={'2.3rem'} fontWeight={700}>
@@ -179,7 +180,7 @@ const MobileContainer = styled.div`
 const FontSize = styled.p`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -187,7 +188,7 @@ const PreTag = styled.pre`
   white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -197,10 +198,7 @@ const Type2Container = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  /* height: 65rem; */
   height: ${(props) => props.type2ContainerHeight}px;
-
-  /* padding-top: 18rem; */
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
   padding-right: 3rem;
   padding-bottom: 3rem;
@@ -218,7 +216,7 @@ const Type2Container = styled.div`
 
   @media screen and (max-width: 520px) {
     padding: 13rem 2rem 2rem 2rem;
-    height: 51rem;
+    height: 53rem;
   }
 `;
 

@@ -173,14 +173,13 @@ const Type1Container = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  /* width: 33rem; */
   min-height: 50rem;
 `;
 
 const FontSize = styled.p`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -188,7 +187,7 @@ const PreTag = styled.pre`
   white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 

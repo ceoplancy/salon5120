@@ -8,27 +8,47 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  @font-face {
+    font-family: 'LeferiBase';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/fonts/LeferiBaseRegular.otf') format('woff');
+  }
+
+  @font-face {
+    font-family: 'LeferiBase';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/fonts/LeferiBaseBold.otf') format('woff');
+  }
+
   body {
-    font-family: 'LeferiBase' !important;
+    font-family: 'LeferiBase';
   }
 
   /* body width 이상 */
-  @media (min-width: 1201px) {
+  @media (min-width: 1440px) {
     html {
       font-size: 10px;
     }
   }
 
   /* body width */
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1439px) {
     html {
-      font-size: 0.833vw;
+      font-size: 0.694vw;
     }
   }
 
+  /* @media screen and (max-width: 520px) {
+    html {
+      font-size: 1vw;
+    }
+  } */
+
   @media screen and (max-width: 520px) {
     html {
-      font-size: 2vw;
+      font-size: 1.923vw;
     }
   }
 

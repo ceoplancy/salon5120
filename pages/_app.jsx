@@ -22,9 +22,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>salon5120 | 문화살롱5120</title>
+
         {/* 모바일에서 input focus할 때 확대방지 */}
         <meta name="viewport" content="width=device-width, content='width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=2.0; user-scalable=1;" />
-        <title>salon5120 | 문화살롱5120</title>
       </Head>
 
       <GlobalStyle />
@@ -70,7 +71,7 @@ const Frame = styled.main`
   margin: 0 auto;
 
   @media screen and (max-width: 520px) {
-    max-width: 52rem;
+    max-width: 100rem;
     padding: 2.4rem 1.6rem;
   }
 `;

@@ -84,7 +84,7 @@ const Article = () => {
 
   const type2ContainerPaddingTop = windowDimensions * 0.08;
   const type2ContainerHeight = windowDimensions * 0.326;
-  const type3ContainerHeight = windowDimensions * 0.19;
+  const type3ContainerHeight = windowDimensions * 0.185;
 
   return (
     <>
@@ -92,38 +92,36 @@ const Article = () => {
       <Container>
         <GlobalStyle />
 
-        <InnerWrapper isType1={true}>
-          <Type1Container>
-            {makeAricleData(articleData, 'type1')
-              .slice(0, visibleItems1)
-              ?.map((x) => {
-                return (
-                  <Type1Wrapper key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
-                    <FadeIn>
-                      <ImageWrapper>
-                        <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                      </ImageWrapper>
-                    </FadeIn>
+        <InnerWrapper>
+          {makeAricleData(articleData, 'type1')
+            .slice(0, visibleItems1)
+            ?.map((x) => {
+              return (
+                <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
+                  <FadeIn>
+                    <ImageWrapper>
+                      <Image width={500} height={500} src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                    </ImageWrapper>
+                  </FadeIn>
 
-                    <FadeIn>
-                      <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
-                        {x.title1}
+                  <FadeIn>
+                    <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
+                      {x.title1}
+                    </FontSize>
+
+                    <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
+                      {x.title2}
+                    </PreTag>
+
+                    {x.title3 && (
+                      <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
+                        {x.title3}
                       </FontSize>
-
-                      <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
-                        {x.title2}
-                      </PreTag>
-
-                      {x.title3 && (
-                        <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
-                          {x.title3}
-                        </FontSize>
-                      )}
-                    </FadeIn>
-                  </Type1Wrapper>
-                );
-              })}
-          </Type1Container>
+                    )}
+                  </FadeIn>
+                </Type1Container>
+              );
+            })}
 
           {visibleItems1 < makeAricleData(articleData, 'type1')?.length ? (
             <LoadMoreBtn onClick={() => onLoadMore(1)}>
@@ -134,7 +132,7 @@ const Article = () => {
           ) : null}
         </InnerWrapper>
 
-        <InnerWrapper isType1={false}>
+        <InnerWrapper>
           {makeAricleData(articleData, 'type2')
             .slice(0, visibleItems2)
             .map((x) => {
@@ -178,7 +176,7 @@ const Article = () => {
           ) : null}
         </InnerWrapper>
 
-        <InnerWrapper isType1={false}>
+        <InnerWrapper>
           {makeAricleData(articleData, 'type3')
             .slice(0, visibleItems3)
             .map((x) => {
@@ -327,7 +325,6 @@ const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: ${(props) => (props.isType1 ? '1px solid #000' : '')};
   overflow: scroll;
 
   ::-webkit-scrollbar {
@@ -344,14 +341,14 @@ const Type1Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
   width: 100%;
-
-  cursor: pointer;
-
-  @media screen and (max-width: 520px) {
-    border: 1px solid #000;
+  padding: 2rem;
+  border: 1px solid #000;
+  transition: all 0.2s;
+  &:hover {
+    transform: translateY(-30px);
   }
+  cursor: pointer;
 `;
 
 const Type2Container = styled.div`
@@ -360,10 +357,7 @@ const Type2Container = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  /* height: 65rem; */
   height: ${(props) => props.type2ContainerHeight}px;
-
-  /* padding-top: 18rem; */
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
   padding-right: 3rem;
   padding-bottom: 3rem;
@@ -381,13 +375,12 @@ const Type2Container = styled.div`
 
   @media screen and (max-width: 520px) {
     padding: 13rem 2rem 2rem 2rem;
-    height: 51rem;
+    height: 53rem;
   }
 `;
 
 const Type3Container = styled.div`
   width: 100%;
-  /* height: 36rem; */
   height: ${(props) => props.type3ContainerHeight}px;
   padding: 2rem;
   cursor: pointer;
@@ -401,20 +394,23 @@ const Type3Container = styled.div`
   background-size: contain;
 
   @media screen and (max-width: 520px) {
-    height: 28rem;
+    height: 29rem;
   }
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
-  /* width: 33rem; */
   min-height: 50rem;
+
+  @media screen and (max-width: 520px) {
+    height: 50rem;
+  }
 `;
 
 const FontSize = styled.p`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -422,7 +418,7 @@ const PreTag = styled.pre`
   white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 

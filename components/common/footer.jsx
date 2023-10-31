@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import Font from 'components/common/font';
-import ImageWrapper from 'components/common/image-wrapper';
-import { github, notion } from 'public/common';
 
 const Footer = () => {
   return (
@@ -41,7 +38,6 @@ const Frame = styled.footer`
 
   display: flex;
 
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
   background-color: #fff;
   z-index: 2;
 
@@ -76,6 +72,6 @@ const CustomImageWrapper = styled.div`
 const FontSize = styled.p`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;

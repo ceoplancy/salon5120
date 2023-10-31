@@ -89,7 +89,7 @@ const Frame = styled.div`
   justify-content: space-between;
   gap: 6rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 520px) {
     flex-direction: column;
     gap: 3rem;
     margin-top: 1.5rem;
@@ -102,7 +102,7 @@ const InfoWrapper = styled.div`
 `;
 
 const MobileAbout = styled.div`
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 520px) {
     display: none;
   }
 `;
@@ -110,7 +110,7 @@ const MobileAbout = styled.div`
 const FontSize = styled.p`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
   word-break: break-all;
 `;
@@ -119,7 +119,7 @@ const PreTag = styled.pre`
   white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -128,7 +128,7 @@ const ImageWrapper = styled.div`
   min-width: 42rem;
   height: 31.7rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 520px) {
     display: none;
   }
 `;

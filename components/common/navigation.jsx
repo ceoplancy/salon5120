@@ -213,16 +213,20 @@ export default Navigation;
  * Frame
  */
 const Frame = styled.nav`
+  display: flex;
+  height: 8rem;
+
   position: sticky;
   top: 0;
   z-index: 3;
 
-  display: flex;
-
-  height: 8rem;
-  background-color: #fff;
+  background: #fff;
   border-bottom: 1px solid #000;
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+  padding: 3rem 6rem;
+
+  @media screen and (max-width: 520px) {
+    padding: 1.5rem;
+  }
 
   visibility: ${(props) => (props.scrollEventState ? 'hidden' : 'visible')};
   opacity: ${(props) => (props.scrollEventState ? 0 : 1)};
@@ -234,11 +238,6 @@ const NavigationFrame = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 6rem;
-
-  @media screen and (max-width: 520px) {
-    padding: 1.5rem 1.5rem;
-  }
 `;
 
 const MobileMenuFrame = styled.div`

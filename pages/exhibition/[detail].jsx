@@ -219,7 +219,7 @@ const PreTag = styled.pre`
   white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -227,7 +227,7 @@ const FontSize = styled.p`
   white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -241,7 +241,7 @@ const RightArrowWrapper = styled.div`
 
   @media screen and (max-width: 520px) {
     top: 62rem;
-    right: 15rem;
+    right: 16rem;
   }
 `;
 
@@ -255,7 +255,7 @@ const LeftArrowWrapper = styled.div`
 
   @media screen and (max-width: 520px) {
     top: 62rem;
-    left: 15rem;
+    left: 16rem;
   }
 `;
 

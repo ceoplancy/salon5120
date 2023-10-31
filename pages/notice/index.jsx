@@ -143,7 +143,7 @@ const MobileContainer = styled.div`
 const FontSize = styled.p`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
@@ -151,13 +151,12 @@ const PreTag = styled.pre`
   white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
 `;
 
 const Type3Container = styled.div`
   width: 100%;
-  /* height: 36rem; */
   height: ${(props) => props.type3ContainerHeight}px;
   padding: 2rem;
   cursor: pointer;
@@ -171,7 +170,7 @@ const Type3Container = styled.div`
   background-size: contain;
 
   @media screen and (max-width: 520px) {
-    height: 30rem;
+    height: 29rem;
   }
 `;
 
