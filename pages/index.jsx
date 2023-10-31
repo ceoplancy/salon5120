@@ -82,6 +82,7 @@ const Article = () => {
     };
   }, []);
 
+  const type2ContainerPaddingTop = windowDimensions * 0.08;
   const type2ContainerHeight = windowDimensions * 0.326;
   const type3ContainerHeight = windowDimensions * 0.19;
 
@@ -109,7 +110,7 @@ const Article = () => {
                         {x.title1}
                       </FontSize>
 
-                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={700}>
+                      <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
                         {x.title2}
                       </PreTag>
 
@@ -139,7 +140,7 @@ const Article = () => {
             .map((x) => {
               return (
                 <div key={x.id}>
-                  <Type2Container type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
+                  <Type2Container type2ContainerHeight={type2ContainerHeight} type2ContainerPaddingTop={type2ContainerPaddingTop} onClick={() => router.push(`/program/${x.id}`)}>
                     <FadeIn>
                       <div>
                         <FontSize fontSize={'2.3rem'} fontWeight={700}>
@@ -152,16 +153,16 @@ const Article = () => {
                           {x.title2}
                         </FontSize>
 
-                        <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
+                        <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
                           {x.title3}
-                        </FontSize>
+                        </PreTag>
                       </div>
                     </FadeIn>
 
                     <FadeIn>
-                      <FontSize fontSize={'2.1rem'} fontWeight={700}>
+                      <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
                         {x.title4}
-                      </FontSize>
+                      </PreTag>
                     </FadeIn>
                   </Type2Container>
                 </div>
@@ -182,12 +183,12 @@ const Article = () => {
             .slice(0, visibleItems3)
             .map((x) => {
               return (
-                <div key={x.id}>
+                <div key={x.id} style={{ width: '100%' }}>
                   <FadeIn>
                     <Type3Container type3ContainerHeight={type3ContainerHeight} onClick={() => router.push(`/notice/${x.id}`)}>
-                      <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                      <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                         {x.title1}
-                      </FontSize>
+                      </PreTag>
                     </Type3Container>
                   </FadeIn>
                 </div>
@@ -219,11 +220,11 @@ const Article = () => {
                           <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
                         </ImageWrapper>
 
-                        <FontSize fontSize={'1.4rem'} fontWeight={600} margin="2rem 0 0.5rem 0">
+                        <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
                           {x.title1}
                         </FontSize>
 
-                        <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={600}>
+                        <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
                           {x.title2}
                         </PreTag>
 
@@ -238,7 +239,7 @@ const Article = () => {
                 </div>
 
                 {x.type === 'type2' && (
-                  <div>
+                  <div style={{ width: '100%', height: '100%' }}>
                     <FadeIn>
                       <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
                         <div>
@@ -252,26 +253,26 @@ const Article = () => {
                             {x.title2}
                           </FontSize>
 
-                          <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
+                          <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
                             {x.title3}
-                          </FontSize>
+                          </PreTag>
                         </div>
 
-                        <FontSize fontSize={'2.1rem'} fontWeight={700} margin="0 0 6rem 0">
+                        <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
                           {x.title4}
-                        </FontSize>
+                        </PreTag>
                       </Type2Container>
                     </FadeIn>
                   </div>
                 )}
 
                 {x.type === 'type3' && (
-                  <div>
+                  <div style={{ width: '100%' }}>
                     <FadeIn>
                       <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                        <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                        <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                           {x.title1}
-                        </FontSize>
+                        </PreTag>
                       </Type3Container>
                     </FadeIn>
                   </div>
@@ -343,7 +344,7 @@ const Type1Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1.5rem;
+  padding: 2rem;
   width: 100%;
 
   cursor: pointer;
@@ -356,13 +357,18 @@ const Type1Container = styled.div`
 const Type2Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 
   width: 100%;
   /* height: 65rem; */
   height: ${(props) => props.type2ContainerHeight}px;
 
-  padding: 10rem 2rem 2rem 2rem;
+  /* padding-top: 18rem; */
+  padding-top: ${(props) => props.type2ContainerPaddingTop}px;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 3rem;
+
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
@@ -374,10 +380,6 @@ const Type2Container = styled.div`
   background-size: contain;
 
   @media screen and (max-width: 520px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
     padding: 13rem 2rem 2rem 2rem;
     height: 51rem;
   }
@@ -387,7 +389,7 @@ const Type3Container = styled.div`
   width: 100%;
   /* height: 36rem; */
   height: ${(props) => props.type3ContainerHeight}px;
-  padding: 1.5rem;
+  padding: 2rem;
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
@@ -417,6 +419,7 @@ const FontSize = styled.p`
 `;
 
 const PreTag = styled.pre`
+  white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};

@@ -85,16 +85,16 @@ const Program = () => {
                         {x.title2}
                       </FontSize>
 
-                      <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
+                      <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
                         {x.title3}
-                      </FontSize>
+                      </PreTag>
                     </div>
                   </FadeIn>
 
                   <FadeIn>
-                    <FontSize fontSize={'2.1rem'} fontWeight={700}>
+                    <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
                       {x.title4}
-                    </FontSize>
+                    </PreTag>
                   </FadeIn>
                 </Type2Container>
               </FadeIn>
@@ -122,14 +122,14 @@ const Program = () => {
                         {x.title2}
                       </FontSize>
 
-                      <FontSize fontSize={'3rem'} fontWeight={700} lineHeight={1.2}>
+                      <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
                         {x.title3}
-                      </FontSize>
+                      </PreTag>
                     </div>
 
-                    <FontSize fontSize={'2.1rem'} fontWeight={700} margin="0 0 6rem 0">
+                    <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
                       {x.title4}
-                    </FontSize>
+                    </PreTag>
                   </Type2Container>
                 </FadeIn>
               )}
@@ -184,6 +184,7 @@ const FontSize = styled.p`
 `;
 
 const PreTag = styled.pre`
+  white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
@@ -193,13 +194,18 @@ const PreTag = styled.pre`
 const Type2Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 
   width: 100%;
   /* height: 65rem; */
   height: ${(props) => props.type2ContainerHeight}px;
 
-  padding: 10rem 2rem 2rem 2rem;
+  /* padding-top: 18rem; */
+  padding-top: ${(props) => props.type2ContainerPaddingTop}px;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 3rem;
+
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
@@ -211,10 +217,6 @@ const Type2Container = styled.div`
   background-size: contain;
 
   @media screen and (max-width: 520px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
     padding: 13rem 2rem 2rem 2rem;
     height: 51rem;
   }

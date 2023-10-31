@@ -63,7 +63,7 @@ const Exhibition = () => {
                       {x.title1}
                     </FontSize>
 
-                    <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={700}>
+                    <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
                       {x.title2}
                     </PreTag>
 
@@ -97,7 +97,7 @@ const Exhibition = () => {
                         {x.title1}
                       </FontSize>
 
-                      <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={700}>
+                      <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
                         {x.title2}
                       </PreTag>
 
@@ -155,7 +155,7 @@ const MobileContainer = styled.div`
 
 const Type1Container = styled.div`
   display: flex;
-  padding: 1.5rem;
+  padding: 2rem;
   width: 100%;
   border: 1px solid #000;
 
@@ -185,6 +185,7 @@ const FontSize = styled.p`
 `;
 
 const PreTag = styled.pre`
+  white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};

@@ -73,9 +73,9 @@ const Notice = () => {
             <div key={x.id}>
               <FadeIn>
                 <Type3Container type3ContainerHeight={type3ContainerHeight} onClick={() => router.push(`/notice/${x.id}`)}>
-                  <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                  <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                     {x.title1}
-                  </FontSize>
+                  </PreTag>
                 </Type3Container>
               </FadeIn>
             </div>
@@ -91,9 +91,9 @@ const Notice = () => {
               {x.type === 'type3' && (
                 <FadeIn>
                   <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                    <FontSize fontSize={'3.2rem'} fontWeight={700} lineHeight={1.2} margin={'0 0 2rem 0'}>
+                    <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                       {x.title1}
-                    </FontSize>
+                    </PreTag>
                   </Type3Container>
                 </FadeIn>
               )}
@@ -148,6 +148,7 @@ const FontSize = styled.p`
 `;
 
 const PreTag = styled.pre`
+  white-space: pre-wrap;
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : '400')};
@@ -158,7 +159,7 @@ const Type3Container = styled.div`
   width: 100%;
   /* height: 36rem; */
   height: ${(props) => props.type3ContainerHeight}px;
-  padding: 1.5rem;
+  padding: 2rem;
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
