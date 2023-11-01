@@ -3,7 +3,8 @@ const articleData = [
     id: 1,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -86,7 +87,8 @@ const articleData = [
     id: 4,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -115,7 +117,8 @@ const articleData = [
     id: 5,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -144,7 +147,8 @@ const articleData = [
     id: 6,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -519,7 +523,8 @@ const articleData = [
     id: 18,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -548,7 +553,8 @@ const articleData = [
     id: 19,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -577,7 +583,8 @@ const articleData = [
     id: 20,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -606,7 +613,8 @@ const articleData = [
     id: 21,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -635,7 +643,8 @@ const articleData = [
     id: 22,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -664,7 +673,8 @@ const articleData = [
     id: 23,
     type: 'type1',
     date: '2023-08-10',
-    images: ['/test1.png', '/test2.png', '/test3.png'],
+    images: ['/test1.png', '/test2.png', '/test3.png', '/test4.png', '/test5.png'],
+    mobileImages: ['/test5.png'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들

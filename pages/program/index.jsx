@@ -197,9 +197,12 @@ const Type2Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  width: 100%;
   height: ${(props) => props.type2ContainerHeight}px;
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
+
+  /* height: 46rem;
+  padding-top: 11rem; */
+  width: 100%;
   padding-right: 3rem;
   padding-bottom: 3rem;
   padding-left: 3rem;
@@ -217,6 +220,10 @@ const Type2Container = styled.div`
   @media screen and (max-width: 520px) {
     padding: 13rem 2rem 2rem 2rem;
     height: 53rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-height: 64rem;
   }
 `;
 

@@ -13,6 +13,7 @@ import usePageLoading from 'hooks/usePageLoading';
 import DotSpinner from 'components/common/dot-spinner';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import SubFooter from '../components/common/sub-footer';
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = React.useState(() => new QueryClient());
@@ -47,6 +48,9 @@ function MyApp({ Component, pageProps }) {
               </Frame>
 
               {router.pathname === '/' && <Footer />}
+              {router.pathname === '/exhibition' && <SubFooter />}
+              {router.pathname === '/program' && <SubFooter />}
+              {router.pathname === '/notice' && <SubFooter />}
             </RecoilRoot>
           </ThemeProvider>
         </Hydrate>
@@ -66,12 +70,12 @@ const Frame = styled.main`
   padding-left: 6rem;
   padding-right: 6rem;
 
-  max-width: 100vw;
+  max-width: 192rem;
   min-height: 100vh;
   margin: 0 auto;
 
   @media screen and (max-width: 520px) {
-    max-width: 100rem;
+    max-width: 100%;
     padding: 2.4rem 1.6rem;
   }
 `;

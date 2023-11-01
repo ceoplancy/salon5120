@@ -97,29 +97,31 @@ const Article = () => {
             .slice(0, visibleItems1)
             ?.map((x) => {
               return (
-                <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
+                <React.Fragment key={x.id}>
                   <FadeIn>
-                    <ImageWrapper>
-                      <Image width={500} height={500} src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
-                    </ImageWrapper>
+                    <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
+                      <div style={{ width: '100%', height: '100%' }}>
+                        <ImageWrapper>
+                          <Image width={500} height={500} src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                        </ImageWrapper>
+
+                        <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
+                          {x.title1}
+                        </FontSize>
+
+                        <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
+                          {x.title2}
+                        </PreTag>
+
+                        {x.title3 && (
+                          <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
+                            {x.title3}
+                          </FontSize>
+                        )}
+                      </div>
+                    </Type1Container>
                   </FadeIn>
-
-                  <FadeIn>
-                    <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
-                      {x.title1}
-                    </FontSize>
-
-                    <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
-                      {x.title2}
-                    </PreTag>
-
-                    {x.title3 && (
-                      <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
-                        {x.title3}
-                      </FontSize>
-                    )}
-                  </FadeIn>
-                </Type1Container>
+                </React.Fragment>
               );
             })}
 
@@ -215,7 +217,7 @@ const Article = () => {
                     <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
                       <FadeIn>
                         <ImageWrapper>
-                          <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                          <Image src={x.mobileImages[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} objectFit="cover" />
                         </ImageWrapper>
 
                         <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
@@ -340,15 +342,15 @@ const InnerWrapper = styled.div`
 const Type1Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-  padding: 2rem;
-  border: 1px solid #000;
+  padding: 2.5rem;
+  border: 0.15rem solid #000;
+  background-color: #fff;
+
+  cursor: pointer;
   transition: all 0.2s;
   &:hover {
     transform: translateY(-30px);
   }
-  cursor: pointer;
 `;
 
 const Type2Container = styled.div`
@@ -356,9 +358,10 @@ const Type2Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  width: 100%;
   height: ${(props) => props.type2ContainerHeight}px;
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
+  /* height: 63rem; */
+  /* padding-top: 16rem; */
   padding-right: 3rem;
   padding-bottom: 3rem;
   padding-left: 3rem;
@@ -377,11 +380,15 @@ const Type2Container = styled.div`
     padding: 13rem 2rem 2rem 2rem;
     height: 53rem;
   }
+
+  @media screen and (min-width: 1920px) {
+    max-height: 64rem;
+  }
 `;
 
 const Type3Container = styled.div`
-  width: 100%;
   height: ${(props) => props.type3ContainerHeight}px;
+  /* height: 35rem; */
   padding: 2rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -394,7 +401,11 @@ const Type3Container = styled.div`
   background-size: contain;
 
   @media screen and (max-width: 520px) {
-    height: 29rem;
+    height: 30rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-height: 35rem;
   }
 `;
 
@@ -403,7 +414,7 @@ const ImageWrapper = styled.div`
   min-height: 50rem;
 
   @media screen and (max-width: 520px) {
-    height: 50rem;
+    min-height: 25rem;
   }
 `;
 
@@ -438,7 +449,7 @@ const GlobalStyle = createGlobalStyle`
 
 const LoadMoreBtn = styled.div`
   width: 100%;
-  height: 100%;
+  height: 5rem;
   margin-top: 1.3rem;
   margin-bottom: 5rem;
   display: flex;

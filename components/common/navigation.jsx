@@ -32,176 +32,179 @@ const Navigation = () => {
   return (
     <Frame scrollEventState={scrollEventState}>
       <NavigationFrame>
-        <CustomImageWrapper onClick={() => router.push('/')}>
-          <CustomImage src={'/logo.svg'} alt="logo" layout="fill" />
-        </CustomImageWrapper>
+        <Container>
+          <CustomImageWrapper onClick={() => router.push('/')}>
+            <CustomImage src={'/logo.svg'} alt="logo" layout="fill" />
+          </CustomImageWrapper>
 
-        {/* desktop */}
-        <DeskTopMenuWrapper>
-          <MenuWrapper>
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
-              onClick={() => {
-                setFilterState('all');
-                toastHandler();
-                router.push('/about');
-              }}
-            >
-              ABOUT
-            </Font>
-
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
-              onClick={() => {
-                setFilterState('tech');
-                toastHandler();
-                router.push('/exhibition');
-              }}
-            >
-              EXHIBITION
-            </Font>
-
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
-              onClick={() => {
-                setFilterState('retrospect');
-                toastHandler();
-                router.push('/program');
-              }}
-            >
-              PROGRAM
-            </Font>
-
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
-              onClick={() => {
-                setFilterState('retrospect');
-                toastHandler();
-                router.push('/webzine');
-              }}
-            >
-              WEBZINE
-            </Font>
-
-            <Font
-              size={18}
-              pointer={true}
-              fontWeight={600}
-              onClick={() => {
-                setFilterState('retrospect');
-                toastHandler();
-                router.push('/notice');
-              }}
-            >
-              NOTICE
-            </Font>
-          </MenuWrapper>
-        </DeskTopMenuWrapper>
-
-        {/* mobile */}
-        <MobileMenuFrame>
-          {isMobileMenu && (
-            <ToggleImageWrapper width="2rem" height="2rem" onClick={() => setMobileMenu(!isMobileMenu)}>
-              <CustomImage width={20} height={20} src={'/close.svg'} alt="menu" layout="fill" />
-            </ToggleImageWrapper>
-          )}
-
-          {!isMobileMenu && (
-            <ToggleImageWrapper width="2rem" height="4.5rem" onClick={() => setMobileMenu(!isMobileMenu)}>
-              <CustomImage width={20} height={45} src={'/menu.svg'} alt="menu" layout="fill" />
-            </ToggleImageWrapper>
-          )}
-
-          <MobileMenuWrapper className={isMobileMenu ? 'showMobildeMenu' : 'hideMobildeMenu'}>
-            <IconWrapper
-              onClick={() => {
-                setMobileMenu(!isMobileMenu);
-                toastHandler();
-                router.push('/about');
-              }}
-            >
-              <ToggleImageWrapper width="2.4rem" height="2rem">
-                <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
-              </ToggleImageWrapper>
-
-              <Font size={32} pointer={true} fontWeight={700}>
+          {/* desktop */}
+          <DeskTopMenuWrapper>
+            <MenuWrapper>
+              <PurpleIcon
+                active={'/purple.svg'}
+                size={18}
+                pointer={true}
+                fontWeight={600}
+                onClick={() => {
+                  setFilterState('all');
+                  toastHandler();
+                  router.push('/about');
+                }}
+              >
                 ABOUT
-              </Font>
-            </IconWrapper>
+              </PurpleIcon>
 
-            <IconWrapper
-              onClick={() => {
-                setMobileMenu(!isMobileMenu);
-                toastHandler();
-                router.push('/exhibition');
-              }}
-            >
-              <ToggleImageWrapper width="2.4rem" height="2rem">
-                <CustomImage width={24} height={20} src={'/square.svg'} alt="menu" layout="fill" />
-              </ToggleImageWrapper>
-
-              <Font size={32} pointer={true} fontWeight={700}>
+              <RedIcon
+                size={18}
+                pointer={true}
+                fontWeight={600}
+                onClick={() => {
+                  setFilterState('tech');
+                  toastHandler();
+                  router.push('/exhibition');
+                }}
+              >
                 EXHIBITION
-              </Font>
-            </IconWrapper>
+              </RedIcon>
 
-            <IconWrapper
-              onClick={() => {
-                setMobileMenu(!isMobileMenu);
-                toastHandler();
-                router.push('/program');
-              }}
-            >
-              <ToggleImageWrapper width="2.4rem" height="2rem">
-                <CustomImage width={24} height={20} src={'/roof.svg'} alt="menu" layout="fill" />
-              </ToggleImageWrapper>
-
-              <Font size={32} pointer={true} fontWeight={700}>
+              <GreenIcon
+                size={18}
+                pointer={true}
+                fontWeight={600}
+                onClick={() => {
+                  setFilterState('retrospect');
+                  toastHandler();
+                  router.push('/program');
+                }}
+              >
                 PROGRAM
-              </Font>
-            </IconWrapper>
+              </GreenIcon>
 
-            <IconWrapper
-              onClick={() => {
-                setMobileMenu(!isMobileMenu);
-                toastHandler();
-                router.push('/webzine');
-              }}
-            >
-              <ToggleImageWrapper width="2.4rem" height="2rem">
-                <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
-              </ToggleImageWrapper>
-
-              <Font size={32} pointer={true} fontWeight={700}>
+              <PurpleIcon
+                size={18}
+                pointer={true}
+                fontWeight={600}
+                onClick={() => {
+                  setFilterState('retrospect');
+                  toastHandler();
+                  router.push('/webzine');
+                }}
+              >
                 WEBZINE
-              </Font>
-            </IconWrapper>
+              </PurpleIcon>
 
-            <IconWrapper
-              onClick={() => {
-                setMobileMenu(!isMobileMenu);
-                toastHandler();
-                router.push('/notice');
-              }}
-            >
-              <ToggleImageWrapper width="2.4rem" height="2rem">
-                <CustomImage width={24} height={20} src={'/bookmark.svg'} alt="menu" layout="fill" />
-              </ToggleImageWrapper>
-
-              <Font size={32} pointer={true} fontWeight={700}>
+              <RedIcon
+                size={18}
+                pointer={true}
+                fontWeight={600}
+                onClick={() => {
+                  setFilterState('retrospect');
+                  toastHandler();
+                  router.push('/notice');
+                }}
+              >
                 NOTICE
-              </Font>
-            </IconWrapper>
-          </MobileMenuWrapper>
-        </MobileMenuFrame>
+              </RedIcon>
+            </MenuWrapper>
+          </DeskTopMenuWrapper>
+
+          {/* mobile */}
+          <MobileMenuFrame>
+            {isMobileMenu && (
+              <ToggleImageWrapper width="2rem" height="2rem" onClick={() => setMobileMenu(!isMobileMenu)}>
+                <CustomImage width={20} height={20} src={'/close.svg'} alt="menu" layout="fill" />
+              </ToggleImageWrapper>
+            )}
+
+            {!isMobileMenu && (
+              <ToggleImageWrapper width="2rem" height="4.5rem" onClick={() => setMobileMenu(!isMobileMenu)}>
+                <CustomImage width={20} height={45} src={'/menu.svg'} alt="menu" layout="fill" />
+              </ToggleImageWrapper>
+            )}
+
+            <MobileMenuWrapper className={isMobileMenu ? 'showMobildeMenu' : 'hideMobildeMenu'}>
+              <IconWrapper
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                  toastHandler();
+                  router.push('/about');
+                }}
+              >
+                <ToggleImageWrapper width="2.4rem" height="2rem">
+                  <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
+                </ToggleImageWrapper>
+
+                <Font size={32} pointer={true} fontWeight={700}>
+                  ABOUT
+                </Font>
+              </IconWrapper>
+
+              <IconWrapper
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                  toastHandler();
+                  router.push('/exhibition');
+                }}
+              >
+                <ToggleImageWrapper width="2.4rem" height="2rem">
+                  <CustomImage width={24} height={20} src={'/square.svg'} alt="menu" layout="fill" />
+                </ToggleImageWrapper>
+
+                <Font size={32} pointer={true} fontWeight={700}>
+                  EXHIBITION
+                </Font>
+              </IconWrapper>
+
+              <IconWrapper
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                  toastHandler();
+                  router.push('/program');
+                }}
+              >
+                <ToggleImageWrapper width="2.4rem" height="2rem">
+                  <CustomImage width={24} height={20} src={'/roof.svg'} alt="menu" layout="fill" />
+                </ToggleImageWrapper>
+
+                <Font size={32} pointer={true} fontWeight={700}>
+                  PROGRAM
+                </Font>
+              </IconWrapper>
+
+              <IconWrapper
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                  toastHandler();
+                  router.push('/webzine');
+                }}
+              >
+                <ToggleImageWrapper width="2.4rem" height="2rem">
+                  <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
+                </ToggleImageWrapper>
+
+                <Font size={32} pointer={true} fontWeight={700}>
+                  WEBZINE
+                </Font>
+              </IconWrapper>
+
+              <IconWrapper
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                  toastHandler();
+                  router.push('/notice');
+                }}
+              >
+                <ToggleImageWrapper width="2.4rem" height="2rem">
+                  <CustomImage width={24} height={20} src={'/bookmark.svg'} alt="menu" layout="fill" />
+                </ToggleImageWrapper>
+
+                <Font size={32} pointer={true} fontWeight={700}>
+                  NOTICE
+                </Font>
+              </IconWrapper>
+            </MobileMenuWrapper>
+          </MobileMenuFrame>
+        </Container>
       </NavigationFrame>
     </Frame>
   );
@@ -209,9 +212,6 @@ const Navigation = () => {
 
 export default Navigation;
 
-/**
- * Frame
- */
 const Frame = styled.nav`
   display: flex;
   height: 8rem;
@@ -220,24 +220,30 @@ const Frame = styled.nav`
   top: 0;
   z-index: 3;
 
-  background: #fff;
-  border-bottom: 1px solid #000;
-  padding: 3rem 6rem;
-
-  @media screen and (max-width: 520px) {
-    padding: 1.5rem;
-  }
-
   visibility: ${(props) => (props.scrollEventState ? 'hidden' : 'visible')};
   opacity: ${(props) => (props.scrollEventState ? 0 : 1)};
   transition: all 0.2s;
 `;
 
 const NavigationFrame = styled.div`
-  width: 100%;
+  background: #fff;
+  border-bottom: 0.15rem solid #000;
+  position: absolute;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+`;
+
+const Container = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  max-width: 192rem;
+  margin: 0 auto;
+  padding: 1.5rem 6rem;
+
+  @media screen and (max-width: 520px) {
+    padding: 1.5rem;
+  }
 `;
 
 const MobileMenuFrame = styled.div`
@@ -248,9 +254,6 @@ const MobileMenuFrame = styled.div`
   }
 `;
 
-/**
- * Wrapper
- */
 const MenuWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -284,7 +287,7 @@ const MobileMenuWrapper = styled.div`
   gap: 3rem;
 
   padding-top: 1rem;
-  margin-top: 8rem;
+  margin-top: 10rem;
   padding-top: 2rem;
   padding-left: 2rem;
 
@@ -319,4 +322,16 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+`;
+
+const PurpleIcon = styled(Font)`
+  cursor: url('/purple.svg'), url('/purple.svg') 5 5, progress;
+`;
+
+const RedIcon = styled(Font)`
+  cursor: url('/red.svg'), url('/purple.svg') 5 5, progress;
+`;
+
+const GreenIcon = styled(Font)`
+  cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 `;

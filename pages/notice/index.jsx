@@ -62,7 +62,7 @@ const Notice = () => {
     };
   }, []);
 
-  const type3ContainerHeight = windowDimensions * 0.19;
+  const type3ContainerHeight = windowDimensions * 0.185;
 
   return (
     <>
@@ -156,8 +156,9 @@ const PreTag = styled.pre`
 `;
 
 const Type3Container = styled.div`
-  width: 100%;
   height: ${(props) => props.type3ContainerHeight}px;
+  /* height: 26rem; */
+  width: 100%;
   padding: 2rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -170,7 +171,11 @@ const Type3Container = styled.div`
   background-size: contain;
 
   @media screen and (max-width: 520px) {
-    height: 29rem;
+    height: 30rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-height: 35rem;
   }
 `;
 

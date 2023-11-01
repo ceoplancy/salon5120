@@ -56,7 +56,7 @@ const Exhibition = () => {
                 <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
                   <div style={{ width: '100%', height: '100%' }}>
                     <ImageWrapper>
-                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} priority={true} quality={100} layout="fill" objectFit="cover" />
                     </ImageWrapper>
 
                     <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
@@ -90,7 +90,7 @@ const Exhibition = () => {
                   <FadeIn>
                     <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
                       <ImageWrapper>
-                        <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                        <Image src={x.mobileImages[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} objectFit="cover" />
                       </ImageWrapper>
 
                       <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
@@ -155,7 +155,7 @@ const MobileContainer = styled.div`
 
 const Type1Container = styled.div`
   display: flex;
-  padding: 2rem;
+  padding: 2.5rem;
   width: 100%;
   border: 1px solid #000;
 
@@ -174,6 +174,10 @@ const Type1Container = styled.div`
 const ImageWrapper = styled.div`
   position: relative;
   min-height: 50rem;
+
+  @media screen and (max-width: 520px) {
+    min-height: 25rem;
+  }
 `;
 
 const FontSize = styled.p`

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const Footer = () => {
+const SubFooter = () => {
   return (
     <Frame>
       <FooterFrame>
@@ -29,12 +29,11 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default SubFooter;
 
 const Frame = styled.footer`
-  /* position: sticky; */
-  /* bottom: 0; */
-
+  position: sticky;
+  bottom: 0;
   background-color: #fff;
   z-index: 2;
 
@@ -44,10 +43,7 @@ const Frame = styled.footer`
 `;
 
 const FooterFrame = styled.div`
-  position: fixed;
-  bottom: 0;
-
-  border-top: 0.15rem solid #000;
+  border-top: 1px solid #000;
   position: absolute;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
