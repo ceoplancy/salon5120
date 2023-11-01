@@ -15,6 +15,16 @@ const Article = () => {
   const [visibleItems3, setVisibleItems3] = useState(5);
   const [mobileVisibleItems, setMobileVisibleItems] = useState(5);
 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   const onLoadMore = (type) => {
     if (type === 1) {
       setVisibleItems1((prev) => prev + 5);
@@ -95,11 +105,11 @@ const Article = () => {
         <InnerWrapper>
           {makeAricleData(articleData, 'type1')
             .slice(0, visibleItems1)
-            ?.map((x) => {
+            ?.map((x, index) => {
               return (
-                <React.Fragment key={x.id}>
+                <div key={x.id}>
                   <FadeIn>
-                    <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
+                    <Type1Container hoveredIndex={hoveredIndex} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} onClick={() => router.push(`/exhibition/${x.id}`)}>
                       <div style={{ width: '100%', height: '100%' }}>
                         <ImageWrapper>
                           <Image width={500} height={500} src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
@@ -121,7 +131,7 @@ const Article = () => {
                       </div>
                     </Type1Container>
                   </FadeIn>
-                </React.Fragment>
+                </div>
               );
             })}
 
@@ -137,10 +147,17 @@ const Article = () => {
         <InnerWrapper>
           {makeAricleData(articleData, 'type2')
             .slice(0, visibleItems2)
-            .map((x) => {
+            .map((x, index) => {
               return (
                 <div key={x.id}>
-                  <Type2Container type2ContainerHeight={type2ContainerHeight} type2ContainerPaddingTop={type2ContainerPaddingTop} onClick={() => router.push(`/program/${x.id}`)}>
+                  <Type2Container
+                    hoveredIndex={hoveredIndex}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                    type2ContainerHeight={type2ContainerHeight}
+                    type2ContainerPaddingTop={type2ContainerPaddingTop}
+                    onClick={() => router.push(`/program/${x.id}`)}
+                  >
                     <FadeIn>
                       <div>
                         <FontSize fontSize={'2.3rem'} fontWeight={700}>
@@ -181,11 +198,17 @@ const Article = () => {
         <InnerWrapper>
           {makeAricleData(articleData, 'type3')
             .slice(0, visibleItems3)
-            .map((x) => {
+            .map((x, index) => {
               return (
                 <div key={x.id} style={{ width: '100%' }}>
                   <FadeIn>
-                    <Type3Container type3ContainerHeight={type3ContainerHeight} onClick={() => router.push(`/notice/${x.id}`)}>
+                    <Type3Container
+                      hoveredIndex={hoveredIndex}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave}
+                      type3ContainerHeight={type3ContainerHeight}
+                      onClick={() => router.push(`/notice/${x.id}`)}
+                    >
                       <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                         {x.title1}
                       </PreTag>
@@ -349,7 +372,7 @@ const Type1Container = styled.div`
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
-    transform: translateY(-30px);
+    transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
   }
 `;
 
@@ -369,7 +392,7 @@ const Type2Container = styled.div`
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
-    transform: translateY(-30px);
+    transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
   }
 
   background-image: url('/arch.svg');
@@ -393,7 +416,7 @@ const Type3Container = styled.div`
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
-    transform: translateY(-30px);
+    transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
   }
 
   background-image: url('/test2.svg');
