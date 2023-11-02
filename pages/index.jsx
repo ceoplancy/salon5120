@@ -368,11 +368,13 @@ const Type1Container = styled.div`
   padding: 2.5rem;
   border: 0.15rem solid #000;
   background-color: #fff;
-
   cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
+
+  @media screen and (min-width: 520px) {
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
+    }
   }
 `;
 
@@ -389,15 +391,17 @@ const Type2Container = styled.div`
   padding-bottom: 3rem;
   padding-left: 3rem;
 
-  cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
-  }
-
   background-image: url('/arch.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+
+  @media screen and (min-width: 520px) {
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
+    }
+  }
 
   @media screen and (max-width: 520px) {
     padding: 13rem 2rem 2rem 2rem;
@@ -405,6 +409,7 @@ const Type2Container = styled.div`
   }
 
   @media screen and (min-width: 1920px) {
+    padding-top: 18rem;
     max-height: 64rem;
   }
 `;
@@ -413,15 +418,17 @@ const Type3Container = styled.div`
   height: ${(props) => props.type3ContainerHeight}px;
   /* height: 35rem; */
   padding: 2rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
-  }
-
   background-image: url('/test2.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+
+  @media screen and (min-width: 520px) {
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
+    }
+  }
 
   @media screen and (max-width: 520px) {
     height: 30rem;
@@ -434,7 +441,8 @@ const Type3Container = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  min-height: 50rem;
+  /* min-height: 50rem; */
+  min-height: 70rem;
 
   @media screen and (max-width: 520px) {
     min-height: 25rem;
@@ -489,12 +497,4 @@ const MobileLoadMoreBtn = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-`;
-
-const Type1Wrapper = styled.div`
-  transition: all 0.2s;
-
-  &:hover {
-    transform: translateY(-30px);
-  }
 `;

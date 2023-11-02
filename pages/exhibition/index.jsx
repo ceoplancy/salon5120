@@ -158,11 +158,13 @@ const Type1Container = styled.div`
   padding: 2.5rem;
   width: 100%;
   border: 1px solid #000;
-
   cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: translateY(-30px);
+
+  @media screen and (min-width: 520px) {
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
+    }
   }
 
   @media screen and (max-width: 520px) {
@@ -173,7 +175,8 @@ const Type1Container = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  min-height: 50rem;
+  /* min-height: 50rem; */
+  min-height: 70rem;
 
   @media screen and (max-width: 520px) {
     min-height: 25rem;

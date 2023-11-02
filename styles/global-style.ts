@@ -27,16 +27,27 @@ const GlobalStyle = createGlobalStyle`
   }
 
   /* body width 이상 */
-  @media (min-width: 1440px) {
+  /* @media (min-width: 1440px) {
+    html {
+      font-size: 10px;
+    }
+  } */
+
+  /* @media screen and (max-width: 1439px) {
+    html {
+      font-size: 0.694vw;
+    }
+  } */
+
+  @media screen and (min-width: 1921px) {
     html {
       font-size: 10px;
     }
   }
 
-  /* body width */
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1920px) {
     html {
-      font-size: 0.694vw;
+      font-size: 0.521vw;
     }
   }
 

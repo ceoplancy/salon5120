@@ -160,15 +160,17 @@ const Type3Container = styled.div`
   /* height: 26rem; */
   width: 100%;
   padding: 2rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: translateY(-30px);
-  }
-
   background-image: url('/test2.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+
+  @media screen and (min-width: 520px) {
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
+    }
+  }
 
   @media screen and (max-width: 520px) {
     height: 30rem;

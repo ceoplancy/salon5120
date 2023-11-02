@@ -207,15 +207,17 @@ const Type2Container = styled.div`
   padding-bottom: 3rem;
   padding-left: 3rem;
 
-  cursor: pointer;
-  transition: all 0.2s;
-  &:hover {
-    transform: translateY(-30px);
-  }
-
   background-image: url('/arch.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+
+  @media screen and (min-width: 520px) {
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
+    }
+  }
 
   @media screen and (max-width: 520px) {
     padding: 13rem 2rem 2rem 2rem;
@@ -223,6 +225,7 @@ const Type2Container = styled.div`
   }
 
   @media screen and (min-width: 1920px) {
+    padding-top: 18rem;
     max-height: 64rem;
   }
 `;
