@@ -163,7 +163,7 @@ const Type3Container = styled.div`
   background-image: url('/test2.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  cursor: url('/purple.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
     transition: all 0.2s;
@@ -176,7 +176,7 @@ const Type3Container = styled.div`
     height: 30rem;
   }
 
-  @media screen and (min-width: 1920px) {
+  @media screen and (min-width: 1600px) {
     max-height: 35rem;
   }
 `;

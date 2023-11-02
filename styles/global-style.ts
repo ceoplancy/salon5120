@@ -39,15 +39,15 @@ const GlobalStyle = createGlobalStyle`
     }
   } */
 
-  @media screen and (min-width: 1921px) {
+  @media screen and (min-width: 1601px) {
     html {
       font-size: 10px;
     }
   }
 
-  @media screen and (max-width: 1920px) {
+  @media screen and (max-width: 1600px) {
     html {
-      font-size: 0.521vw;
+      font-size: 0.625vw;
     }
   }
 

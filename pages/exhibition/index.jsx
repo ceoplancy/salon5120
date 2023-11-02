@@ -158,7 +158,7 @@ const Type1Container = styled.div`
   padding: 2.5rem 2.5rem 6.5rem 2.5rem;
   width: 100%;
   border: 1px solid #000;
-  cursor: pointer;
+  cursor: url('/red.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
     transition: all 0.2s;

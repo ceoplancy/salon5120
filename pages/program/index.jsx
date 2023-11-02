@@ -4,6 +4,7 @@ import articleData from '../../constants/article-data';
 import { useRouter } from 'next/router';
 import FadeIn from 'react-fade-in/lib/FadeIn';
 import sortByDateAscending from '../../functions/sortByDateAscending';
+import Image from 'next/image';
 
 const Program = () => {
   const router = useRouter();
@@ -80,7 +81,9 @@ const Program = () => {
                         {x.title1}
                       </FontSize>
 
-                      <Line />
+                      <ImageWrapper>
+                        <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
+                      </ImageWrapper>
 
                       <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                         {x.title2}
@@ -117,7 +120,9 @@ const Program = () => {
                         {x.title1}
                       </FontSize>
 
-                      <Line />
+                      <ImageWrapper>
+                        <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
+                      </ImageWrapper>
 
                       <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                         {x.title2}
@@ -206,7 +211,7 @@ const Type2Container = styled.div`
   background-image: url('/arch.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
     justify-content: space-between;
@@ -222,16 +227,10 @@ const Type2Container = styled.div`
     height: 53rem;
   }
 
-  @media screen and (min-width: 1920px) {
+  @media screen and (min-width: 1600px) {
     padding-top: 18rem;
     max-height: 64rem;
   }
-`;
-
-const Line = styled.div`
-  width: 100%;
-  border: 1px solid #000;
-  margin: 1.5rem 0 3.5rem 0;
 `;
 
 const MobileLoadMoreBtn = styled.div`
@@ -242,4 +241,11 @@ const MobileLoadMoreBtn = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  margin: 1.6rem 0 3.8rem 0;
 `;

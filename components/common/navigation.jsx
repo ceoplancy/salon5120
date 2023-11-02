@@ -41,7 +41,6 @@ const Navigation = () => {
           <DeskTopMenuWrapper>
             <MenuWrapper>
               <PurpleIcon
-                active={'/purple.svg'}
                 size={18}
                 pointer={true}
                 fontWeight={600}

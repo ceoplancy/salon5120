@@ -164,7 +164,9 @@ const Article = () => {
                           {x.title1}
                         </FontSize>
 
-                        <Line />
+                        <Type2LineWrapper>
+                          <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
+                        </Type2LineWrapper>
 
                         <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                           {x.title2}
@@ -200,7 +202,7 @@ const Article = () => {
             .slice(0, visibleItems3)
             .map((x, index) => {
               return (
-                <div key={x.id} style={{ width: '100%' }}>
+                <div key={x.id}>
                   <FadeIn>
                     <Type3Container
                       hoveredIndex={hoveredIndex}
@@ -270,7 +272,9 @@ const Article = () => {
                             {x.title1}
                           </FontSize>
 
-                          <Line />
+                          <Type2LineWrapper>
+                            <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
+                          </Type2LineWrapper>
 
                           <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                             {x.title2}
@@ -352,9 +356,48 @@ const InnerWrapper = styled.div`
   gap: 1rem;
   overflow: scroll;
 
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
+    display: none;
+  } */
+
+  &::-webkit-scrollbar {
+    display: flex;
+    opacity: 1;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 20px;
+    background: #888;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  /* 기본 상태에서는 스크롤바를 감춥니다. */
+  /* &::-webkit-scrollbar {
     display: none;
   }
+
+  &:hover {
+    &::-webkit-scrollbar {
+      display: flex;
+      opacity: 1;
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 20px;
+      background: #888;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  } */
 
   @media screen and (max-width: 480px) {
     width: 100%;
@@ -368,13 +411,17 @@ const Type1Container = styled.div`
   padding: 2.5rem 2.5rem 6.5rem 2.5rem;
   border: 0.15rem solid #000;
   background-color: #fff;
-  cursor: pointer;
+  cursor: url('/red.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
     }
+  }
+
+  @media screen and (min-width: 1601px) {
+    border: 0.111rem solid #000;
   }
 `;
 
@@ -391,7 +438,7 @@ const Type2Container = styled.div`
   background-image: url('/arch.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
     justify-content: space-between;
@@ -407,7 +454,7 @@ const Type2Container = styled.div`
     height: 53rem;
   }
 
-  @media screen and (min-width: 1920px) {
+  @media screen and (min-width: 1600px) {
     padding-top: 18rem;
     max-height: 64rem;
   }
@@ -420,7 +467,7 @@ const Type3Container = styled.div`
   background-image: url('/test2.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  cursor: pointer;
+  cursor: url('/purple.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
     transition: all 0.2s;
@@ -433,7 +480,7 @@ const Type3Container = styled.div`
     height: 30rem;
   }
 
-  @media screen and (min-width: 1920px) {
+  @media screen and (min-width: 1600px) {
     max-height: 35rem;
   }
 `;
@@ -496,4 +543,11 @@ const MobileLoadMoreBtn = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`;
+
+const Type2LineWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  margin: 1.6rem 0 3.8rem 0;
 `;
