@@ -365,7 +365,7 @@ const InnerWrapper = styled.div`
 const Type1Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2.5rem;
+  padding: 2.5rem 2.5rem 6.5rem 2.5rem;
   border: 0.15rem solid #000;
   background-color: #fff;
   cursor: pointer;
