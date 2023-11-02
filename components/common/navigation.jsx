@@ -241,7 +241,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 1.5rem 6rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     padding: 1.5rem;
   }
 `;
@@ -249,7 +249,7 @@ const Container = styled.div`
 const MobileMenuFrame = styled.div`
   display: none;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: flex;
   }
 `;
@@ -266,7 +266,7 @@ const DeskTopMenuWrapper = styled.div`
   justify-content: space-between;
   width: 60%;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;
@@ -287,7 +287,7 @@ const MobileMenuWrapper = styled.div`
   gap: 3rem;
 
   padding-top: 1rem;
-  margin-top: 10rem;
+  margin-top: 7rem;
   padding-top: 2rem;
   padding-left: 2rem;
 

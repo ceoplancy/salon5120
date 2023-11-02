@@ -136,7 +136,7 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;
@@ -148,7 +148,7 @@ const MobileContainer = styled.div`
   align-items: center;
   gap: 1rem;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     display: none;
   }
 `;
@@ -160,14 +160,14 @@ const Type1Container = styled.div`
   border: 1px solid #000;
   cursor: pointer;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
     }
   }
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
   }
@@ -178,7 +178,7 @@ const ImageWrapper = styled.div`
   /* min-height: 50rem; */
   min-height: 70rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     min-height: 25rem;
   }
 `;

@@ -36,7 +36,7 @@ const Frame = styled.div`
   margin-top: 9rem;
   display: flex;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column;
     margin-top: 0rem;
   }

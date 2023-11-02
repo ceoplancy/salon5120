@@ -74,7 +74,7 @@ const Frame = styled.main`
   min-height: 100vh;
   margin: 0 auto;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     max-width: 100%;
     padding: 2.4rem 1.6rem;
   }

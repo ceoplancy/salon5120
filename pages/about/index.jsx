@@ -89,7 +89,7 @@ const Frame = styled.div`
   justify-content: space-between;
   gap: 6rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column;
     gap: 3rem;
     margin-top: 1.5rem;
@@ -102,7 +102,7 @@ const InfoWrapper = styled.div`
 `;
 
 const MobileAbout = styled.div`
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     display: none;
   }
 `;
@@ -128,7 +128,7 @@ const ImageWrapper = styled.div`
   min-width: 42rem;
   height: 31.7rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;

@@ -123,7 +123,7 @@ const Program = () => {
                         {x.title2}
                       </FontSize>
 
-                      <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
+                      <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                         {x.title3}
                       </PreTag>
                     </div>
@@ -160,7 +160,7 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;
@@ -172,7 +172,7 @@ const MobileContainer = styled.div`
   align-items: center;
   gap: 1rem;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     display: none;
   }
 `;
@@ -195,13 +195,9 @@ const PreTag = styled.pre`
 const Type2Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   height: ${(props) => props.type2ContainerHeight}px;
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
-
-  /* height: 46rem;
-  padding-top: 11rem; */
   width: 100%;
   padding-right: 3rem;
   padding-bottom: 3rem;
@@ -212,14 +208,16 @@ const Type2Container = styled.div`
   background-size: contain;
   cursor: pointer;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
+    justify-content: space-between;
+
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
     }
   }
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     padding: 13rem 2rem 2rem 2rem;
     height: 53rem;
   }

@@ -176,7 +176,7 @@ const Container = styled.div`
   display: flex;
   gap: 6rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column;
     align-items: center;
     margin-top: 0rem;
@@ -188,7 +188,7 @@ const CustomSlick = styled(Slick)`
   height: 59rem;
   margin-bottom: 6rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     width: 100%;
   }
 `;
@@ -198,7 +198,7 @@ const ImageWrapper = styled.div`
   height: 59rem;
   position: relative;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     width: 100%;
   }
 `;
@@ -239,7 +239,7 @@ const RightArrowWrapper = styled.div`
   right: 12rem;
   cursor: pointer;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     top: 62rem;
     right: 16rem;
   }
@@ -253,7 +253,7 @@ const LeftArrowWrapper = styled.div`
   left: 12rem;
   cursor: pointer;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     top: 62rem;
     left: 16rem;
   }

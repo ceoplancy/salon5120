@@ -51,9 +51,9 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     html {
-      font-size: 1.923vw;
+      font-size: 2.083vw;
     }
   }
 

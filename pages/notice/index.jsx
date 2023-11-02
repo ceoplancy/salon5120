@@ -123,7 +123,7 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;
@@ -135,7 +135,7 @@ const MobileContainer = styled.div`
   align-items: center;
   gap: 1rem;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     display: none;
   }
 `;
@@ -165,14 +165,14 @@ const Type3Container = styled.div`
   background-size: contain;
   cursor: pointer;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
     }
   }
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     height: 30rem;
   }
 

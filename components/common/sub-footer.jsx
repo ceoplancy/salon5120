@@ -37,7 +37,7 @@ const Frame = styled.footer`
   background-color: #fff;
   z-index: 2;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;

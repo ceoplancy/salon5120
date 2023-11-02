@@ -103,7 +103,7 @@ const Container = styled.div`
   display: flex;
   gap: 6rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column;
     margin-top: 0rem;
   }

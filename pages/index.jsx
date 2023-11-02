@@ -276,7 +276,7 @@ const Article = () => {
                             {x.title2}
                           </FontSize>
 
-                          <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
+                          <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                             {x.title3}
                           </PreTag>
                         </div>
@@ -326,7 +326,7 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     display: none;
   }
 `;
@@ -339,7 +339,7 @@ const MobileContainer = styled.div`
   align-items: center;
   gap: 1rem;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     display: none;
   }
 `;
@@ -356,7 +356,7 @@ const InnerWrapper = styled.div`
     display: none;
   }
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     width: 100%;
     overflow: hidden;
   }
@@ -370,7 +370,7 @@ const Type1Container = styled.div`
   background-color: #fff;
   cursor: pointer;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
@@ -381,12 +381,9 @@ const Type1Container = styled.div`
 const Type2Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   height: ${(props) => props.type2ContainerHeight}px;
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
-  /* height: 63rem; */
-  /* padding-top: 16rem; */
   padding-right: 3rem;
   padding-bottom: 3rem;
   padding-left: 3rem;
@@ -396,14 +393,16 @@ const Type2Container = styled.div`
   background-size: contain;
   cursor: pointer;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
+    justify-content: space-between;
+
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
     }
   }
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     padding: 13rem 2rem 2rem 2rem;
     height: 53rem;
   }
@@ -423,14 +422,14 @@ const Type3Container = styled.div`
   background-size: contain;
   cursor: pointer;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
     }
   }
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     height: 30rem;
   }
 
@@ -444,7 +443,7 @@ const ImageWrapper = styled.div`
   /* min-height: 50rem; */
   min-height: 70rem;
 
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 480px) {
     min-height: 25rem;
   }
 `;
@@ -471,7 +470,7 @@ const Line = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 480px) {
     body {
       overflow: hidden !important;
     }
