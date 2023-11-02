@@ -214,7 +214,7 @@ const Type2Container = styled.div`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
-    justify-content: space-between;
+    gap: 2rem;
 
     transition: all 0.2s;
     &:hover {
@@ -224,12 +224,12 @@ const Type2Container = styled.div`
 
   @media screen and (max-width: 480px) {
     padding: 13rem 2rem 2rem 2rem;
-    height: 53rem;
+    height: 50rem;
   }
 
   @media screen and (min-width: 1600px) {
-    padding-top: 18rem;
-    max-height: 64rem;
+    padding-top: 14rem;
+    max-height: 51rem;
   }
 `;
 

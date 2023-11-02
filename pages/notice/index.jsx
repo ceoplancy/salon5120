@@ -62,7 +62,7 @@ const Notice = () => {
     };
   }, []);
 
-  const type3ContainerHeight = windowDimensions * 0.185;
+  const type3ContainerHeight = windowDimensions * 0.18;
 
   return (
     <>
@@ -73,7 +73,7 @@ const Notice = () => {
             <div key={x.id}>
               <FadeIn>
                 <Type3Container type3ContainerHeight={type3ContainerHeight} onClick={() => router.push(`/notice/${x.id}`)}>
-                  <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
+                  <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                     {x.title1}
                   </PreTag>
                 </Type3Container>
@@ -91,7 +91,7 @@ const Notice = () => {
               {x.type === 'type3' && (
                 <FadeIn>
                   <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                    <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
+                    <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                       {x.title1}
                     </PreTag>
                   </Type3Container>
@@ -157,7 +157,6 @@ const PreTag = styled.pre`
 
 const Type3Container = styled.div`
   height: ${(props) => props.type3ContainerHeight}px;
-  /* height: 26rem; */
   width: 100%;
   padding: 2rem;
   background-image: url('/test2.svg');
@@ -173,7 +172,7 @@ const Type3Container = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    height: 30rem;
+    height: 28rem;
   }
 
   @media screen and (min-width: 1600px) {

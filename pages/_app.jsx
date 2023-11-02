@@ -70,7 +70,7 @@ const Frame = styled.main`
   padding-left: 6rem;
   padding-right: 6rem;
 
-  max-width: 192rem;
+  max-width: 160rem;
   min-height: 100vh;
   margin: 0 auto;
 

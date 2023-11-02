@@ -94,7 +94,7 @@ const Article = () => {
 
   const type2ContainerPaddingTop = windowDimensions * 0.08;
   const type2ContainerHeight = windowDimensions * 0.326;
-  const type3ContainerHeight = windowDimensions * 0.185;
+  const type3ContainerHeight = windowDimensions * 0.18;
 
   return (
     <>
@@ -211,7 +211,7 @@ const Article = () => {
                       type3ContainerHeight={type3ContainerHeight}
                       onClick={() => router.push(`/notice/${x.id}`)}
                     >
-                      <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
+                      <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                         {x.title1}
                       </PreTag>
                     </Type3Container>
@@ -297,7 +297,7 @@ const Article = () => {
                   <div style={{ width: '100%' }}>
                     <FadeIn>
                       <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                        <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
+                        <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                           {x.title1}
                         </PreTag>
                       </Type3Container>
@@ -441,7 +441,7 @@ const Type2Container = styled.div`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
-    justify-content: space-between;
+    gap: 2rem;
 
     transition: all 0.2s;
     &:hover {
@@ -451,18 +451,17 @@ const Type2Container = styled.div`
 
   @media screen and (max-width: 480px) {
     padding: 13rem 2rem 2rem 2rem;
-    height: 53rem;
+    height: 50rem;
   }
 
   @media screen and (min-width: 1600px) {
-    padding-top: 18rem;
-    max-height: 64rem;
+    padding-top: 14rem;
+    max-height: 51rem;
   }
 `;
 
 const Type3Container = styled.div`
   height: ${(props) => props.type3ContainerHeight}px;
-  /* height: 35rem; */
   padding: 2rem;
   background-image: url('/test2.svg');
   background-repeat: no-repeat;
@@ -477,7 +476,7 @@ const Type3Container = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    height: 30rem;
+    height: 28rem;
   }
 
   @media screen and (min-width: 1600px) {

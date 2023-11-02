@@ -236,7 +236,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 192rem;
+  max-width: 160rem;
   margin: 0 auto;
   padding: 1.5rem 6rem;
 

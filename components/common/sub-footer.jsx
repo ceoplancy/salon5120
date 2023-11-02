@@ -50,7 +50,7 @@ const FooterFrame = styled.div`
 `;
 
 const Container = styled.div`
-  max-width: 192rem;
+  max-width: 160rem;
   margin: 0 auto;
   padding: 1rem 6rem;
   display: flex;
