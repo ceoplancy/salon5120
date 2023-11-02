@@ -155,7 +155,7 @@ const MobileContainer = styled.div`
 
 const Type1Container = styled.div`
   display: flex;
-  padding: 2.5rem;
+  padding: 2.5rem 2.5rem 6.5rem 2.5rem;
   width: 100%;
   border: 1px solid #000;
   cursor: pointer;
