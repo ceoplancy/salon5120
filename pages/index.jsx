@@ -480,7 +480,7 @@ const Type3Container = styled.div`
   }
 
   @media screen and (min-width: 1600px) {
-    max-height: 35rem;
+    max-height: 28rem;
   }
 `;
 
