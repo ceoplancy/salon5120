@@ -240,8 +240,8 @@ const RightArrowWrapper = styled.div`
   cursor: pointer;
 
   @media screen and (max-width: 480px) {
-    top: 62rem;
-    right: 16rem;
+    top: 61rem;
+    right: 14rem;
   }
 `;
 
@@ -254,8 +254,8 @@ const LeftArrowWrapper = styled.div`
   cursor: pointer;
 
   @media screen and (max-width: 480px) {
-    top: 62rem;
-    left: 16rem;
+    top: 61rem;
+    left: 14rem;
   }
 `;
 
