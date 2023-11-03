@@ -138,11 +138,11 @@ const ExhibitionDetail = ({ query }) => {
           )}
 
           <ContentContainer>
-            <FontSize fontSize={'1.4rem'} fontWeight={700} margin="0 0 0.5rem 0">
+            <FontSize fontSize={'2.3rem'} fontWeight={700} margin="0 0 0.5rem 0">
               {makeData[0]?.content1}
             </FontSize>
 
-            <PreTag fontSize={'3rem'} lineHeight={1.2} fontWeight={700}>
+            <PreTag fontSize={'4.5rem'} lineHeight={1.33} fontWeight={700}>
               {makeData[0]?.content2}
             </PreTag>
 
@@ -150,7 +150,7 @@ const ExhibitionDetail = ({ query }) => {
               {makeData[0]?.content3}
             </PreTag>
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} margin="3rem 0 3rem 0" lineHeight={1.5}>
+            <PreTag fontSize={'1.5rem'} fontWeight={400} margin="3rem 0 3rem 0" lineHeight={1.73}>
               {makeData[0]?.content4}
             </PreTag>
 
@@ -158,7 +158,7 @@ const ExhibitionDetail = ({ query }) => {
               {makeData[0]?.content5}
             </PreTag>
 
-            <PreTag fontSize={'1.5rem'} lineHeight={1.5} fontWeight={400} margin="3rem 0 3rem 0">
+            <PreTag fontSize={'1.5rem'} lineHeight={1.66} fontWeight={400} margin="3rem 0 3rem 0">
               {makeData[0]?.content6}
             </PreTag>
           </ContentContainer>

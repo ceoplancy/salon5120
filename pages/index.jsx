@@ -115,16 +115,16 @@ const Article = () => {
                           <Image width={500} height={500} src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
                         </ImageWrapper>
 
-                        <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
+                        <FontSize fontSize={'1.556rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
                           {x.title1}
                         </FontSize>
 
-                        <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
+                        <PreTag fontSize={'3.333rem'} lineHeight={1.46} fontWeight={700}>
                           {x.title2}
                         </PreTag>
 
                         {x.title3 && (
-                          <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
+                          <FontSize fontSize={'3.333rem'} fontWeight={700} margin="0 0 3rem 0">
                             {x.title3}
                           </FontSize>
                         )}
@@ -160,7 +160,7 @@ const Article = () => {
                   >
                     <FadeIn>
                       <div>
-                        <FontSize fontSize={'2.3rem'} fontWeight={700}>
+                        <FontSize fontSize={'2.556rem'} fontWeight={700}>
                           {x.title1}
                         </FontSize>
 
@@ -168,18 +168,18 @@ const Article = () => {
                           <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
                         </Type2LineWrapper>
 
-                        <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                        <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                           {x.title2}
                         </FontSize>
 
-                        <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46}>
                           {x.title3}
                         </PreTag>
                       </div>
                     </FadeIn>
 
                     <FadeIn>
-                      <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
+                      <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
                         {x.title4}
                       </PreTag>
                     </FadeIn>
@@ -211,7 +211,7 @@ const Article = () => {
                       type3ContainerHeight={type3ContainerHeight}
                       onClick={() => router.push(`/notice/${x.id}`)}
                     >
-                      <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
+                      <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.4} margin={'0 0 2rem 0'}>
                         {x.title1}
                       </PreTag>
                     </Type3Container>
@@ -455,7 +455,7 @@ const Type2Container = styled.div`
   }
 
   @media screen and (min-width: 1600px) {
-    padding-top: 14rem;
+    padding-top: 12rem;
     max-height: 51rem;
   }
 `;
@@ -486,8 +486,7 @@ const Type3Container = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  /* min-height: 50rem; */
-  min-height: 70rem;
+  min-height: 47rem;
 
   @media screen and (max-width: 480px) {
     min-height: 25rem;

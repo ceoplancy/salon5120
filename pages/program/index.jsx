@@ -77,7 +77,7 @@ const Program = () => {
                 <Type2Container type2ContainerPaddingTop={type2ContainerPaddingTop} type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
                   <FadeIn>
                     <div>
-                      <FontSize fontSize={'2.3rem'} fontWeight={700}>
+                      <FontSize fontSize={'2.556rem'} fontWeight={700}>
                         {x.title1}
                       </FontSize>
 
@@ -85,18 +85,18 @@ const Program = () => {
                         <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
                       </ImageWrapper>
 
-                      <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                      <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                         {x.title2}
                       </FontSize>
 
-                      <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5}>
+                      <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46}>
                         {x.title3}
                       </PreTag>
                     </div>
                   </FadeIn>
 
                   <FadeIn>
-                    <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
+                    <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
                       {x.title4}
                     </PreTag>
                   </FadeIn>
@@ -228,7 +228,7 @@ const Type2Container = styled.div`
   }
 
   @media screen and (min-width: 1600px) {
-    padding-top: 14rem;
+    padding-top: 12rem;
     max-height: 51rem;
   }
 `;

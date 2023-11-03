@@ -41,9 +41,8 @@ const Navigation = () => {
           <DeskTopMenuWrapper>
             <MenuWrapper>
               <PurpleIcon
-                size={18}
-                pointer={true}
-                fontWeight={600}
+                fontSize="2.556rem"
+                fontWeight={700}
                 onClick={() => {
                   setFilterState('all');
                   toastHandler();
@@ -54,9 +53,8 @@ const Navigation = () => {
               </PurpleIcon>
 
               <RedIcon
-                size={18}
-                pointer={true}
-                fontWeight={600}
+                fontSize="2.556rem"
+                fontWeight={700}
                 onClick={() => {
                   setFilterState('tech');
                   toastHandler();
@@ -67,9 +65,8 @@ const Navigation = () => {
               </RedIcon>
 
               <GreenIcon
-                size={18}
-                pointer={true}
-                fontWeight={600}
+                fontSize="2.556rem"
+                fontWeight={700}
                 onClick={() => {
                   setFilterState('retrospect');
                   toastHandler();
@@ -80,9 +77,8 @@ const Navigation = () => {
               </GreenIcon>
 
               <PurpleIcon
-                size={18}
-                pointer={true}
-                fontWeight={600}
+                fontSize="2.556rem"
+                fontWeight={700}
                 onClick={() => {
                   setFilterState('retrospect');
                   toastHandler();
@@ -93,9 +89,8 @@ const Navigation = () => {
               </PurpleIcon>
 
               <RedIcon
-                size={18}
-                pointer={true}
-                fontWeight={600}
+                fontSize="2.556rem"
+                fontWeight={700}
                 onClick={() => {
                   setFilterState('retrospect');
                   toastHandler();
@@ -307,8 +302,8 @@ const CustomImage = styled(Image)`
 
 const CustomImageWrapper = styled.div`
   position: relative;
-  width: 8rem;
-  height: 4.6rem;
+  width: 8.8rem;
+  height: 5.1rem;
 `;
 
 const ToggleImageWrapper = styled.div`
@@ -323,14 +318,30 @@ const IconWrapper = styled.div`
   gap: 1rem;
 `;
 
-const PurpleIcon = styled(Font)`
+const FontSize = styled.p`
+  cursor: pointer;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
+  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
+  margin: ${(props) => (props.margin ? props.margin : '')};
+`;
+
+const PurpleIcon = styled(FontSize)`
   cursor: url('/purple.svg'), url('/purple.svg') 5 5, progress;
 `;
 
-const RedIcon = styled(Font)`
+const RedIcon = styled(FontSize)`
   cursor: url('/red.svg'), url('/purple.svg') 5 5, progress;
 `;
 
-const GreenIcon = styled(Font)`
+const GreenIcon = styled(FontSize)`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
+`;
+
+const PreTag = styled.pre`
+  white-space: pre-wrap;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
+  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
+  margin: ${(props) => (props.margin ? props.margin : '')};
 `;

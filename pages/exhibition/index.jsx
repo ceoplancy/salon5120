@@ -59,16 +59,16 @@ const Exhibition = () => {
                       <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} priority={true} quality={100} layout="fill" objectFit="cover" />
                     </ImageWrapper>
 
-                    <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
+                    <FontSize fontSize={'1.556rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
                       {x.title1}
                     </FontSize>
 
-                    <PreTag fontSize={'3rem'} lineHeight={1.5} fontWeight={700}>
+                    <PreTag fontSize={'3.333rem'} lineHeight={1.46} fontWeight={700}>
                       {x.title2}
                     </PreTag>
 
                     {x.title3 && (
-                      <FontSize fontSize={'3rem'} fontWeight={700} margin="0 0 3rem 0">
+                      <FontSize fontSize={'3.333rem'} fontWeight={700} margin="0 0 3rem 0">
                         {x.title3}
                       </FontSize>
                     )}
@@ -175,8 +175,7 @@ const Type1Container = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  /* min-height: 50rem; */
-  min-height: 70rem;
+  min-height: 47rem;
 
   @media screen and (max-width: 480px) {
     min-height: 25rem;

@@ -26,11 +26,11 @@ const ProgramDetail = ({ query }) => {
       ) : (
         <Container>
           <TitleContainer>
-            <FontSize fontSize={'4.5rem'} fontWeight={700} margin="0 0 3rem 0">
+            <FontSize fontSize={'4.5rem'} fontWeight={700} margin="0 0 3rem 0" lineHeight={1.33}>
               {makeData[0]?.content1}
             </FontSize>
 
-            <FontSize fontSize={'1.5rem'} fontWeight={400}>
+            <FontSize fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66}>
               {makeData[0]?.content2}
             </FontSize>
           </TitleContainer>
@@ -41,15 +41,15 @@ const ProgramDetail = ({ query }) => {
               {makeData[0]?.content3}
             </PreTag>
 
-            <PreTag fontSize={'3rem'} fontWeight={700} margin="1rem 0 0 0">
+            <PreTag fontSize={'3.2rem'} fontWeight={700} margin="1rem 0 0 0">
               {makeData[0]?.content4}
             </PreTag>
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5} margin="3rem 0 3rem 0">
+            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} margin="3rem 0 3rem 0">
               {makeData[0]?.content5}
             </PreTag>
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5}>
+            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66}>
               {makeData[0]?.content6}
             </PreTag>
 
@@ -58,15 +58,15 @@ const ProgramDetail = ({ query }) => {
               {makeData[0]?.content7}
             </PreTag>
 
-            <PreTag fontSize={'3rem'} fontWeight={700} margin="1rem 0 0 0">
+            <PreTag fontSize={'3.2rem'} fontWeight={700} margin="1rem 0 0 0">
               {makeData[0]?.content8}
             </PreTag>
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5} margin="3rem 0 3rem 0">
+            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} margin="3rem 0 3rem 0">
               {makeData[0]?.content9}
             </PreTag>
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5}>
+            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66}>
               {makeData[0]?.content10}
             </PreTag>
 
@@ -75,17 +75,17 @@ const ProgramDetail = ({ query }) => {
               {makeData[0]?.content11}
             </PreTag>
 
-            <PreTag fontSize={'3rem'} fontWeight={700} margin="1rem 0 0 0">
+            <PreTag fontSize={'3.2rem'} fontWeight={700} margin="1rem 0 0 0">
               {makeData[0]?.content12}
             </PreTag>
 
             {makeData[0]?.content13 && (
-              <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5} margin="3rem 0 0 0">
+              <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} margin="3rem 0 0 0">
                 {makeData[0]?.content13}
               </PreTag>
             )}
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.5} margin="3rem 0 0 0">
+            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} margin="3rem 0 0 0">
               {makeData[0]?.content14}
             </PreTag>
           </ContentContainer>
