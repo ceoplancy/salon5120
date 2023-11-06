@@ -32,7 +32,7 @@ const SubFooter = () => {
 export default SubFooter;
 
 const Frame = styled.footer`
-  position: sticky;
+  position: fixed;
   bottom: 0;
   background-color: #fff;
   z-index: 2;
@@ -44,7 +44,6 @@ const Frame = styled.footer`
 
 const FooterFrame = styled.div`
   border-top: 1px solid #000;
-  position: absolute;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 `;

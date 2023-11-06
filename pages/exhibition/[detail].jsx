@@ -179,7 +179,7 @@ const Container = styled.div`
   @media screen and (max-width: 480px) {
     flex-direction: column;
     align-items: center;
-    margin-top: 0rem;
+    margin-top: 6rem;
   }
 `;
 
