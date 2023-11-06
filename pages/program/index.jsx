@@ -171,6 +171,7 @@ const Container = styled.div`
 `;
 
 const MobileContainer = styled.div`
+  margin-top: 4rem;
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -21,7 +21,6 @@ export default DotSpinner;
 
 const Spinner = styled.div<Props>`
   margin: 0 auto;
-  text-align: center;
 
   div {
     width: ${({ width }) => `${width}px`};

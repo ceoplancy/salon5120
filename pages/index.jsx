@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import articleData from '../constants/article-data';
 import { useRouter } from 'next/router';
-import { createGlobalStyle } from 'styled-components';
 import FadeIn from 'react-fade-in';
 import sortByDateAscending from '../functions/sortByDateAscending';
 
@@ -100,8 +99,6 @@ const Article = () => {
     <>
       {/* descktop */}
       <Container>
-        <GlobalStyle />
-
         <InnerWrapper>
           {makeAricleData(articleData, 'type1')
             .slice(0, visibleItems1)
@@ -337,6 +334,7 @@ const Container = styled.div`
 
 const MobileContainer = styled.div`
   width: 100%;
+  margin-top: 4rem;
 
   display: flex;
   flex-direction: column;
@@ -363,13 +361,13 @@ const InnerWrapper = styled.div`
   &::-webkit-scrollbar {
     display: flex;
     opacity: 1;
-    width: 4px;
+    width: 2px;
   }
 
   &::-webkit-scrollbar-thumb {
     height: 20px;
-    background: #888;
-    border-radius: 6px;
+    background: #000;
+    border-radius: 20px;
   }
 
   &::-webkit-scrollbar-track {
@@ -506,20 +504,6 @@ const PreTag = styled.pre`
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
-`;
-
-const Line = styled.div`
-  width: 100%;
-  border: 1px solid #000;
-  margin: 1.5rem 0 3.5rem 0;
-`;
-
-const GlobalStyle = createGlobalStyle`
-  @media screen and (min-width: 480px) {
-    body {
-      overflow: hidden !important;
-    }
-  }
 `;
 
 const LoadMoreBtn = styled.div`

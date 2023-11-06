@@ -207,7 +207,6 @@ const Navigation = () => {
 export default Navigation;
 
 const Frame = styled.nav`
-  display: flex;
   height: 8rem;
 
   position: sticky;
@@ -236,7 +235,8 @@ const Container = styled.div`
   padding: 1.5rem 6rem;
 
   @media screen and (max-width: 480px) {
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
+    padding: 2.4rem 1.5rem 2.4rem 1.5rem;
   }
 `;
 
@@ -281,7 +281,7 @@ const MobileMenuWrapper = styled.div`
   gap: 3rem;
 
   padding-top: 1rem;
-  margin-top: 7rem;
+  margin-top: 8rem;
   padding-top: 2rem;
   padding-left: 2rem;
 

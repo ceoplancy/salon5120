@@ -32,11 +32,9 @@ const Footer = () => {
 export default Footer;
 
 const Frame = styled.footer`
-  /* position: sticky; */
-  /* bottom: 0; */
-
-  background-color: #fff;
-  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
 
   @media screen and (max-width: 480px) {
     display: none;
@@ -44,24 +42,18 @@ const Frame = styled.footer`
 `;
 
 const FooterFrame = styled.div`
-  position: fixed;
-  bottom: 0;
-
+  background-color: #fff;
   border-top: 0.15rem solid #000;
-  position: absolute;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 `;
 
 const Container = styled.div`
-  max-width: 160rem;
-  margin: 0 auto;
-  padding: 1rem 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background-color: #fff;
+  padding: 1rem 6rem;
 `;
 
 const ImageFrame = styled.div`

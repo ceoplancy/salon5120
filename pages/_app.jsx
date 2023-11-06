@@ -14,6 +14,7 @@ import DotSpinner from 'components/common/dot-spinner';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SubFooter from '../components/common/sub-footer';
+import { createGlobalStyle } from 'styled-components';
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = React.useState(() => new QueryClient());
@@ -35,22 +36,31 @@ function MyApp({ Component, pageProps }) {
         <Hydrate state={pageProps.dehydratedState}>
           <ThemeProvider theme={styleTheme}>
             <RecoilRoot>
-              <Navigation />
-
               <Frame>
                 <Head>
                   {/* 모바일에서 인풋 클릭 시 확대방지 */}
                   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
                 </Head>
 
-                {/* {loading ? <DotSpinner width={18} height={18} marginRight={18} dotColor="#4141E7" /> : <Component {...pageProps} />} */}
-                <Component {...pageProps} />
-              </Frame>
+                {loading ? (
+                  <SpinnerWrapper>
+                    <DotSpinner width={18} height={18} marginRight={18} dotColor="#8536FF" />
+                  </SpinnerWrapper>
+                ) : (
+                  <>
+                    <CustomGlobalStyle />
 
-              {router.pathname === '/' && <Footer />}
-              {router.pathname === '/exhibition' && <SubFooter />}
-              {router.pathname === '/program' && <SubFooter />}
-              {router.pathname === '/notice' && <SubFooter />}
+                    <Navigation />
+
+                    <Component {...pageProps} />
+
+                    {router.pathname === '/' && <Footer />}
+                    {router.pathname === '/exhibition' && <SubFooter />}
+                    {router.pathname === '/program' && <SubFooter />}
+                    {router.pathname === '/notice' && <SubFooter />}
+                  </>
+                )}
+              </Frame>
             </RecoilRoot>
           </ThemeProvider>
         </Hydrate>
@@ -76,6 +86,21 @@ const Frame = styled.main`
 
   @media screen and (max-width: 480px) {
     max-width: 100%;
-    padding: 2.4rem 1.6rem;
+    padding: 0rem 1.6rem 2.4rem 1.6rem;
+  }
+`;
+
+const SpinnerWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CustomGlobalStyle = createGlobalStyle`
+  @media screen and (min-width: 480px) {
+    body {
+      overflow-x: hidden !important;
+    }
   }
 `;
