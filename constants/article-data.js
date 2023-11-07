@@ -40,10 +40,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -218,10 +216,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -292,10 +288,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -326,10 +320,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -360,10 +352,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -394,10 +384,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -428,10 +416,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -462,10 +448,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',
@@ -496,10 +480,8 @@ const articleData = [
 저자와의 대화`,
     title4: `일시 | 9월 13일 수요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
-    content1: `
-  마티네 클라스
-  Matinée Class
-  `,
+    content1: `마티네 클라스
+Matinée Class`,
     content2: `낮에 펼쳐지는 공연을 뜻하는 단어 '마티네(Matinée)'에서 따온 문화살롱 5120의 '마티네 클라스'는 나른한 평일 오후, 예술의 영역 안에서 다양한 논의가 오고 갈 수 있는 교육프로그램입니다.`,
     content3: `1st I 현대예술특강`,
     content4: '경계를 넘는 예술',

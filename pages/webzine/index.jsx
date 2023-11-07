@@ -43,11 +43,12 @@ const Frame = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  max-width: 84rem;
+  width: 100%;
 `;
 
 const TitleContainer = styled.div`
-  width: 47rem;
+  max-width: 45rem;
+  width: 100%;
 `;
 
 const PreTag = styled.pre`

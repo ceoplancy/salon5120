@@ -353,6 +353,7 @@ const InnerWrapper = styled.div`
   flex-direction: column;
   gap: 1rem;
   overflow: scroll;
+  padding-right: 0.5rem;
 
   /* ::-webkit-scrollbar {
     display: none;
