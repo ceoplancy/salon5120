@@ -98,7 +98,7 @@ const ProgramDetail = ({ query }) => {
 export default ProgramDetail;
 
 const Container = styled.div`
-  margin-top: 9rem;
+  margin-top: 6rem;
   width: 100%;
   display: flex;
   gap: 6rem;
