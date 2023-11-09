@@ -109,7 +109,17 @@ const Article = () => {
                     <Type1Container hoveredIndex={hoveredIndex} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave} onClick={() => router.push(`/exhibition/${x.id}`)}>
                       <div style={{ width: '100%', height: '100%' }}>
                         <ImageWrapper>
-                          <Image width={500} height={500} src={x.images[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} />
+                          <Image
+                            width={500}
+                            height={500}
+                            src={x.images[0]}
+                            alt={`card-thumbnail${x.id}`}
+                            layout="fill"
+                            priority={true}
+                            quality={100}
+                            placeholder="blur"
+                            blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                          />
                         </ImageWrapper>
 
                         <FontSize fontSize={'1.556rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
@@ -239,7 +249,16 @@ const Article = () => {
                     <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
                       <FadeIn>
                         <ImageWrapper>
-                          <Image src={x.mobileImages[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} objectFit="cover" />
+                          <Image
+                            src={x.mobileImages[0]}
+                            alt={`card-thumbnail${x.id}`}
+                            layout="fill"
+                            priority={true}
+                            quality={100}
+                            objectFit="cover"
+                            placeholder="blur"
+                            blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                          />
                         </ImageWrapper>
 
                         <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">

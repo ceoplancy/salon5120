@@ -56,7 +56,16 @@ const Exhibition = () => {
                 <Type1Container key={x.id} onClick={() => router.push(`/exhibition/${x.id}`)}>
                   <div style={{ width: '100%', height: '100%' }}>
                     <ImageWrapper>
-                      <Image src={x.images[0]} alt={`card-thumbnail${x.id}`} priority={true} quality={100} layout="fill" objectFit="cover" />
+                      <Image
+                        src={x.images[0]}
+                        alt={`card-thumbnail${x.id}`}
+                        priority={true}
+                        quality={100}
+                        layout="fill"
+                        objectFit="cover"
+                        placeholder="blur"
+                        blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                      />
                     </ImageWrapper>
 
                     <FontSize fontSize={'1.556rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
@@ -90,7 +99,16 @@ const Exhibition = () => {
                   <FadeIn>
                     <Type1Container onClick={() => router.push(`/exhibition/${x.id}`)}>
                       <ImageWrapper>
-                        <Image src={x.mobileImages[0]} alt={`card-thumbnail${x.id}`} layout="fill" priority={true} quality={100} objectFit="cover" />
+                        <Image
+                          src={x.mobileImages[0]}
+                          alt={`card-thumbnail${x.id}`}
+                          layout="fill"
+                          priority={true}
+                          quality={100}
+                          objectFit="cover"
+                          placeholder="blur"
+                          blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                        />
                       </ImageWrapper>
 
                       <FontSize fontSize={'1.4rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
