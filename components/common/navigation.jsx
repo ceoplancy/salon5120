@@ -82,10 +82,10 @@ const Navigation = () => {
                 onClick={() => {
                   setFilterState('retrospect');
                   toastHandler();
-                  router.push('/webzine');
+                  router.push('/notice');
                 }}
               >
-                WEBZINE
+                NOTICE
               </PurpleIcon>
 
               <RedIcon
@@ -94,10 +94,10 @@ const Navigation = () => {
                 onClick={() => {
                   setFilterState('retrospect');
                   toastHandler();
-                  router.push('/notice');
+                  router.push('/webzine');
                 }}
               >
-                NOTICE
+                WEBZINE
               </RedIcon>
             </MenuWrapper>
           </DeskTopMenuWrapper>
@@ -125,7 +125,7 @@ const Navigation = () => {
                 }}
               >
                 <ToggleImageWrapper width="2.4rem" height="2rem">
-                  <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
+                  <CustomImage width={24} height={20} src={'/bookmark.svg'} alt="menu" layout="fill" />
                 </ToggleImageWrapper>
 
                 <Font size={32} pointer={true} fontWeight={700}>
@@ -169,22 +169,6 @@ const Navigation = () => {
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
                   toastHandler();
-                  router.push('/webzine');
-                }}
-              >
-                <ToggleImageWrapper width="2.4rem" height="2rem">
-                  <CustomImage width={24} height={20} src={'/blank.svg'} alt="menu" layout="fill" />
-                </ToggleImageWrapper>
-
-                <Font size={32} pointer={true} fontWeight={700}>
-                  WEBZINE
-                </Font>
-              </IconWrapper>
-
-              <IconWrapper
-                onClick={() => {
-                  setMobileMenu(!isMobileMenu);
-                  toastHandler();
                   router.push('/notice');
                 }}
               >
@@ -194,6 +178,22 @@ const Navigation = () => {
 
                 <Font size={32} pointer={true} fontWeight={700}>
                   NOTICE
+                </Font>
+              </IconWrapper>
+
+              <IconWrapper
+                onClick={() => {
+                  setMobileMenu(!isMobileMenu);
+                  toastHandler();
+                  router.push('/webzine');
+                }}
+              >
+                <ToggleImageWrapper width="2.4rem" height="2rem">
+                  <CustomImage width={24} height={20} src={'/square.svg'} alt="menu" layout="fill" />
+                </ToggleImageWrapper>
+
+                <Font size={32} pointer={true} fontWeight={700}>
+                  WEBZINE
                 </Font>
               </IconWrapper>
             </MobileMenuWrapper>

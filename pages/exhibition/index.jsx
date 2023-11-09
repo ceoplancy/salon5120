@@ -162,6 +162,8 @@ const Type1Container = styled.div`
   cursor: url('/red.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
+    min-height: 80rem;
+
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});

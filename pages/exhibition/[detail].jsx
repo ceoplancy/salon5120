@@ -146,9 +146,11 @@ const ExhibitionDetail = ({ query }) => {
               {makeData[0]?.content2}
             </PreTag>
 
-            <PreTag fontSize={'2.3rem'} fontWeight={400} margin="10rem 0 0 0" lineHeight={1.2}>
-              {makeData[0]?.content3}
-            </PreTag>
+            {makeData[0]?.content3 && (
+              <PreTag fontSize={'2.3rem'} fontWeight={400} margin="10rem 0 0 0" lineHeight={1.2}>
+                {makeData[0]?.content3}
+              </PreTag>
+            )}
 
             <PreTag fontSize={'1.5rem'} fontWeight={400} margin="3rem 0 6rem 0" lineHeight={1.73}>
               {makeData[0]?.content4}

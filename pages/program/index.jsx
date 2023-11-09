@@ -215,7 +215,7 @@ const Type2Container = styled.div`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
-    gap: 2rem;
+    justify-content: space-around;
 
     transition: all 0.2s;
     &:hover {
