@@ -63,7 +63,8 @@ const Program = () => {
     };
   }, []);
 
-  const type2ContainerHeight = windowDimensions * 0.326;
+  // const type2ContainerHeight = windowDimensions * 0.326;
+  const type2ContainerHeight = windowDimensions * 0.313;
   const type2ContainerPaddingTop = windowDimensions * 0.08;
 
   return (

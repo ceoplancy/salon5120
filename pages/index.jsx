@@ -92,7 +92,8 @@ const Article = () => {
   }, []);
 
   const type2ContainerPaddingTop = windowDimensions * 0.08;
-  const type2ContainerHeight = windowDimensions * 0.326;
+  // const type2ContainerHeight = windowDimensions * 0.326;
+  const type2ContainerHeight = windowDimensions * 0.313;
   const type3ContainerHeight = windowDimensions * 0.18;
 
   return (
