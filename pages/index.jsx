@@ -219,7 +219,7 @@ const Article = () => {
                       type3ContainerHeight={type3ContainerHeight}
                       onClick={() => router.push(`/notice/${x.id}`)}
                     >
-                      <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.4} margin={'0 0 2rem 0'}>
+                      <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.4} margin={'0 0 2rem 0'}>
                         {x.title1}
                       </PreTag>
                     </Type3Container>
@@ -314,7 +314,7 @@ const Article = () => {
                   <div style={{ width: '100%' }}>
                     <FadeIn>
                       <Type3Container onClick={() => router.push(`/notice/${x.id}`)}>
-                        <PreTag fontSize={'3.556rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
                           {x.title1}
                         </PreTag>
                       </Type3Container>
