@@ -97,8 +97,8 @@ const articleData = [
     type: 'type2',
     date: '2023-09-30',
     title1: `THE SALON`,
-    title2: '독서모임',
-    title3: ``,
+    title2: '',
+    title3: `독서모임`,
     title4: `일시 | 9월 초 시작 예정`,
 
     // title
@@ -168,9 +168,9 @@ const articleData = [
     type: 'type2',
     date: '2023-08-19',
     title1: `THE SALON`,
-    title2: '음악감상회 ‘상대음감’',
-    title3: ``,
-    title4: `[2nd]일시 | 8월 19일 토요일 오후 4시
+    title2: '[2nd]',
+    title3: `음악감상회 ‘상대음감’`,
+    title4: `일시 | 8월 19일 토요일 오후 4시
 주제 | 계절감이 잘 드러나는 노래`,
 
     // title
@@ -243,9 +243,9 @@ const articleData = [
     type: 'type2',
     date: '2023-07-22',
     title1: `THE SALON`,
-    title2: '음악감상회 ‘상대음감’',
-    title3: ``,
-    title4: `[1st]일시 | 7월 22일 토요일 오후 4시
+    title2: '[1st]',
+    title3: `음악감상회 ‘상대음감’`,
+    title4: `일시 | 7월 22일 토요일 오후 4시
 주제 | 자유주제`,
 
     // title
@@ -317,8 +317,8 @@ const articleData = [
     type: 'type2',
     date: '2023-06-30',
     title1: `THE SALON`,
-    title2: '[1st] 아트시그널',
-    title3: ``,
+    title2: '[1st]',
+    title3: ` 아트시그널`,
     title4: `일시 | 6월 30일 금요일 오후 2시`,
 
     // title
