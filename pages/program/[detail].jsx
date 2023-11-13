@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import articleData from '../../constants/article-data';
+import Comp13 from '../../components/program/13';
+import Comp9 from '../../components/program/9';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const ProgramDetail = ({ query }) => {
+  const router = useRouter();
   const [makeData, setMakeData] = useState({});
 
   const makeAricleData = (articleData, id) => {
@@ -33,6 +38,21 @@ const ProgramDetail = ({ query }) => {
             <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66}>
               {makeData[0]?.content2}
             </PreTag>
+
+            {makeData[0]?.content1 === '마티네 클라스 Matinée Class' && (
+              <ImageWrapper onClick={() => openLightbox(index)}>
+                <Image
+                  src={`/image/matineeclass.jpg`}
+                  alt={`matineeclass`}
+                  layout="fill"
+                  objectFit="cover"
+                  priority={true}
+                  quality={100}
+                  placeholder="blur"
+                  blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                />
+              </ImageWrapper>
+            )}
           </TitleContainer>
 
           <ContentContainer>
@@ -110,6 +130,10 @@ const ProgramDetail = ({ query }) => {
                 {makeData[0]?.content14}
               </PreTag>
             )}
+
+            {/* 별도 */}
+            {Number(router.query.detail) === 13 && <Comp13 />}
+            {Number(router.query.detail) === 9 && <Comp9 />}
           </ContentContainer>
         </Container>
       )}
@@ -155,6 +179,7 @@ const PreTag = styled.pre`
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
+  cursor: ${(props) => (props.pointer ? props.pointer : '')};
 `;
 
 const FontSize = styled.p`
@@ -173,3 +198,14 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+const ImageWrapper = styled.div`
+  margin-top: 12rem;
+  width: 42rem;
+  height: 31.5rem;
+  position: relative;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
+`;

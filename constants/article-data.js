@@ -27,20 +27,18 @@ const articleData = [
       '/image/type1-1/21.jpg',
       '/image/type1-1/22.jpg',
       '/image/type1-1/23.jpg',
-      '/image/type1-1/24.jpg',
-      '/image/type1-1/25.jpg',
     ],
-    mobileImages: ['/image/type1-1/26.jpg'],
+    mobileImages: ['/image/type1-1/24.jpg'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
 (Unknown Scenes)>
-23.8.8-9.16`,
+23.08.08-09.16`,
     title3: ``,
     content1: '문화살롱 5120 기획전',
     content2: `김지희 작가 개인전
 <낯선 풍경들(Unknown Scenes)>
-23.8.8-9.16`,
+23.08.08-09.16`,
     content3: `상상의 풍경: 회화와 공간 사이`,
     content4: `김지희 작가는 상상의 풍경을 그린다. 그는 그곳을 “물리적으로 있음직한 공간과 심리적 공간 사이 어딘가”의 공간이라고 부른다.
 있음직하지만 모호한 그곳을 표현하고자 작가는 캔버스와 그 바깥인 실제의 공간을 넘나든다. 회화의 캔버스는 그림의 바탕이자 배경을 이룬다.
@@ -51,29 +49,17 @@ const articleData = [
     content6: `참여작가 : 김지희
 일시 : 23. 9. 9 (토) 15:00
 대상 : 모든 관람객(온라인 신청 구글폼 링크)`,
+    content7: '',
+    content8: '',
+    content9: 'https://www.youtube.com/embed/JRF8_InIKlg',
   },
 
   {
     id: 2,
     type: 'type1',
     date: '2023-06-17',
-    images: [
-      '/image/type1-2/1.jpg',
-      '/image/type1-2/2.jpg',
-      '/image/type1-2/3.jpg',
-      '/image/type1-2/4.jpg',
-      '/image/type1-2/5.jpg',
-      '/image/type1-2/6.jpg',
-      '/image/type1-2/7.jpg',
-      '/image/type1-2/8.jpg',
-      '/image/type1-2/9.jpg',
-      '/image/type1-2/10.jpg',
-      '/image/type1-2/11.jpg',
-      '/image/type1-2/12.jpg',
-      '/image/type1-2/13.jpg',
-      '/image/type1-2/14.jpg',
-    ],
-    mobileImages: ['/image/type1-2/15.jpg'],
+    images: ['/image/type1-2/1.jpg', '/image/type1-2/2.jpg', '/image/type1-2/3.jpg', '/image/type1-2/4.jpg', '/image/type1-2/5.jpg', '/image/type1-2/6.jpg', '/image/type1-2/7.jpg'],
+    mobileImages: ['/image/type1-2/8.jpg'],
     title1: '문화살롱 5120 개관기념 특별전',
     title2: `<전영진 : OPENING NEW DOOR>
 23.6.7-6.30`,
@@ -90,6 +76,9 @@ const articleData = [
     content6: `참여작가 : 전영진 @jun.youngjin | 모더레이터: 홍해준(문화살롱 5120 프로그램 매니저)
 일시 : 2023. 6. 17.(토) 16:00
 대상 : 모든 관람객(온라인 신청)`,
+    content7: '',
+    content8: '',
+    content9: '',
   },
 
   {
@@ -98,17 +87,18 @@ const articleData = [
     date: '2023-09-30',
     title1: `THE SALON`,
     title2: '',
-    title3: `독서모임`,
-    title4: `일시 | 9월 초 시작 예정`,
+    title3: `읽기모임`,
+    title4: `일시 | 둘째 주, 넷째 주 금요일 오후 4시`,
 
     // title
     content1: `THE SALON`,
-    content2: `독서모임`,
+    content2: ``,
 
     // 1
     content3: ``,
-    content4: '',
-    content5: `문화살롱 5120이 준비한 독서모임입니다. 공상과학소설로도 번역되는 SF소설은 오늘날 한계에 다다른 인간과 지구의 대안을 찾는 사고실험으로 여겨지기도 하죠. 한국의 SF의 장르는 최근 흥행과 성장이라는 두 마리 토끼를 잡고 있습니다. 함께 읽고 이야기 나누면서 인간과 지구, 또 다른 행성 등 새로운 세계로 떠나볼까요?`,
+    content4: '읽기모임',
+    content5: `청년예술공간 문화살롱5120에서 ‘읽기모임’ 시즌 1을 진행합니다.
+‘읽기모임’은 문학과 비문학의 경계를 구분하지 않고 하나의 작품을 선정해, 2주에 한 번씩 모여 각자 읽은 것과 느낀 것을 함께 나누는 모임입니다.`,
     content6: ``,
 
     // 2
@@ -121,20 +111,20 @@ const articleData = [
     content11: ``,
     content12: ``,
     content13: ``,
-    content14: `일시 : 9월 초 시작 예정`,
+    content14: `일시 : 둘째 주, 넷째 주 금요일 오후 4시`,
   },
 
   {
     id: 4,
     type: 'type2',
-    date: '2023-09-13',
+    date: '2023-09-21',
     title1: `마티네 클라스 Matinée Class`,
     title2: '[3rd] 작가를 만나다',
-    title3: `〈『당신을 보면 이해
-받는 기분이 들어요』
-저자와의 대화〉`,
-    title4: `일시 | 9월 13일 수요일 오후 4시
-저자 | 김지연, 김건희`,
+    title3: `『당신을 보면 이해 받는
+기분이 들어요』
+: 그리고 독립출판 이야기`,
+    title4: `일시 | 9월 21일 목요일 오후 3시
+패널 | 저자 김지연, 디자이너...`,
 
     // title
     content1: `마티네 클라스 Matinée Class`,
@@ -157,10 +147,10 @@ const articleData = [
 
     // 3
     content11: `[3rd] 작가를 만나다`,
-    content12: `〈『당신을 보면 이해 받는 기분이 들어요』: 저자와의 대화〉`,
+    content12: `『당신을 보면 이해 받는 기분이 들어요』 : 그리고 독립출판 이야기`,
     content13: ``,
-    content14: `일시 : 9월 13일 수요일 오후 4시
-저자: 김지연, 김건희`,
+    content14: `일시 : 9월 21일 목요일 오후 3시
+패널 : 저자 김지연, 디자이너 최선주(선드리프레스)`,
   },
 
   {
@@ -175,11 +165,11 @@ const articleData = [
 
     // title
     content1: `THE SALON`,
-    content2: `음악감상회 ‘상대음감’`,
+    content2: ``,
 
     // 1
     content3: ``,
-    content4: ``,
+    content4: `음악감상회 ‘상대음감’`,
     content5: `음악감상회 ‘상대음감’은 참여자들이 음악의 장르를 넘나들며 자신이 소개하고 싶은 음악 플레이리스트를 공유하고, 선정한 곡에 담긴 이야기를 나누며 다양한 음악에 대한 이해와 감상의 폭을 넓히는 문화예술 향유 프로그램입니다. 음악 이해의 폭을 넓히고, 다양한 분야에서 활동하는 예술 동호인들이 모여 티타임을 가지면서 자연스럽게 관계를 만들어가는 자리를 지향합니다. `,
     content6: `[1st] 일시 : 7월 22일 토요일 오후 4시
 주제 : 자유주제
@@ -232,10 +222,10 @@ const articleData = [
 
     // 3
     content11: `[3rd] 작가를 만나다`,
-    content12: `〈『당신을 보면 이해 받는 기분이 들어요』: 저자와의 대화〉`,
+    content12: `『당신을 보면 이해 받는 기분이 들어요』 : 그리고 독립출판 이야기`,
     content13: ``,
-    content14: `일시 : 9월 13일 수요일 오후 4시
-저자: 김지연, 김건희`,
+    content14: `일시 : 9월 21일 목요일 오후 3시
+패널 : 저자 김지연, 디자이너 최선주(선드리프레스)`,
   },
 
   {
@@ -250,11 +240,11 @@ const articleData = [
 
     // title
     content1: `THE SALON`,
-    content2: `음악감상회 ‘상대음감’`,
+    content2: ``,
 
     // 1
     content3: ``,
-    content4: ``,
+    content4: `음악감상회 ‘상대음감’`,
     content5: `음악감상회 ‘상대음감’은 참여자들이 음악의 장르를 넘나들며 자신이 소개하고 싶은 음악 플레이리스트를 공유하고, 선정한 곡에 담긴 이야기를 나누며 다양한 음악에 대한 이해와 감상의 폭을 넓히는 문화예술 향유 프로그램입니다. 음악 이해의 폭을 넓히고, 다양한 분야에서 활동하는 예술 동호인들이 모여 티타임을 가지면서 자연스럽게 관계를 만들어가는 자리를 지향합니다. `,
     content6: `[1st] 일시 : 7월 22일 토요일 오후 4시
 주제 : 자유주제
@@ -306,10 +296,10 @@ const articleData = [
 
     // 3
     content11: `[3rd] 작가를 만나다`,
-    content12: `〈『당신을 보면 이해 받는 기분이 들어요』: 저자와의 대화〉`,
+    content12: `『당신을 보면 이해 받는 기분이 들어요』 : 그리고 독립출판 이야기`,
     content13: ``,
-    content14: `일시 : 9월 13일 수요일 오후 4시
-저자: 김지연, 김건희`,
+    content14: `일시 : 9월 21일 목요일 오후 3시
+패널 : 저자 김지연, 디자이너 최선주(선드리프레스)`,
   },
 
   {
@@ -323,19 +313,19 @@ const articleData = [
 
     // title
     content1: `THE SALON`,
-    content2: `아트시그널 Art Signal`,
+    content2: ``,
 
     // 1
     content3: ``,
-    content4: ``,
+    content4: `아트시그널 Art Signal`,
     content5: `아트시그널은 문학, 미술, 음악, 영화 등 장르를 가리지 않고 예술 관련 학과 학생들이나 동아리원들이 모여 자유로운 좌담회 형식으로 이야기를 나누는 라운드테이블 프로그램입니다. 청년 예술인들에게 어떤 지원이 필요한지 이야기하고, 각자의 작업을 공유하는 시간을 가집니다.`,
     content6: ``,
 
     // 2
-    content7: `[1st] 아트시그널`,
+    content7: ``,
     content8: ``,
-    content9: `아트시그널 첫 번째 자리는 지역의 영화소모임과 흑인음악동아리 구성원이 모여 서로가 생각하는 예술과 신진 예술인을 위해 필요한 것들 그리고 자신의 작업물을 서로 보여주고 이야기를 나누는 시간으로 꾸며졌습니다. `,
-    content10: `일시 : 6월 30일 금요일 오후 2시`,
+    content9: ``,
+    content10: ``,
 
     // 3
     content11: ``,
@@ -359,6 +349,100 @@ const articleData = [
     content3: `원고 공모 : 9월 예정
 웹진 오픈 : 11월 예정`,
     content4: ``,
+  },
+
+  {
+    id: 11,
+    type: 'type1',
+    date: '2023-10-28',
+    images: ['/image/type1-3/7.jpg', '/image/type1-3/1.jpg', '/image/type1-3/2.jpg', '/image/type1-3/3.jpg', '/image/type1-3/4.jpg', '/image/type1-3/5.jpg', '/image/type1-3/6.jpg'],
+    mobileImages: ['/image/type1-3/8.jpg'],
+    title1: '문화살롱 5120 기획전',
+    title2: `박관우 작가 개인전
+<증인과 증언들>
+23.10.5-10.28`,
+    title3: ``,
+    content1: '문화살롱 5120 기획전',
+    content2: `박관우 작가 개인전 <증인과 증언들> 23.10.5-10.28`,
+    content3: ``,
+    content4: `실험예술 워크숍 <증인과 증언들>은, 다섯 번에 걸쳐 만들어지는 가상의 상황 속에서 스스로 지어낸 다른 누군가의 삶을 사는 일입니다.
+이곳에서 일어나는 모든 일을 작동하게끔 하는 가장 근본적인 원칙은 "여기서 우리 모두는 거짓말만 한다."입니다. 서로가 실제로 어떤 자인지에 관한 내용은 워크숍 진행 과정 중에도, 그리고 전체 프로젝트가 종료된 후에도 영원히 봉인됩니다.
+우리는 세 시간씩 다섯 번, 총 15시간의 시간을 함께 보낼 것입니다. 우리는 밥을 먹고, 함께 술을 마시고, 춤을 추며, 그림을 그리고, 편지를 쓰며, 서로의 비밀을 나눌 것입니다.
+*본 워크숍은 2022년 코리아나미술관 *c-lab 6.0 프로젝트 후원으로 스페이스*C에서 진행했던 작업 <클럽 리얼리티>의 스핀-오프 프로그램입니다.`,
+    content5: `연계프로그램: 아티스트토크
+“믿는 자들, 거짓말쟁이들 - 삶의 조건으로서의 무지”`,
+    content6: `참여작가 I 박관우
+일시 : 23년 10월 28일 (토) 15:00-17:00
+
+모더레이터 I 배혜정 (미술평론가, 문화살롱 5120 디렉터)
+패널 I 박관우(작가), 우종학(서울대학교 물리천문학부 교수), 유운성(영화 평론가)`,
+    content7: `워크숍 일정`,
+    content8: `진행날짜 : 10월 5일, 10일, 12일, 17일, 19일 (화, 목)
+진행시간 : 19:00 ~ 22:00 (매회 3시간)`,
+    content9: '',
+  },
+
+  {
+    id: 12,
+    type: 'type1',
+    date: '2023-11-17',
+    images: ['/image/type1-4/1.jpg'],
+    mobileImages: ['/image/type1-4/1.jpg'],
+    title1: '문화살롱 5120 전시공모 선정작가 프리뷰전',
+    title2: `<공유시선 共有視線
+(The Age's Glance)>
+23.11.17-24.01.20`,
+    title3: ``,
+    content1: '문화살롱 5120 전시공모 선정작가 프리뷰전',
+    content2: `<공유시선 共有視線(The Age's Glance)> 23.11.17-24.01.20`,
+    content3: ``,
+    content4: `신진작가 발굴 및 지원, 육성을 위해 지난 8월 개최된 문화살롱 5120 전시공모에서 총 네 팀의 청년 예술가가 선발되었습니다.
+이들이 가진 가장 빛나는 힘은 기존의 질서에서 벗어나 세계를 새롭게 바라보는 독자적인 ‘시선’일 것입니다.
+문화살롱 5120은 회화, 디자인, 영상, 조각 등 다양한 장르로 작업하는 청년 예술가들의 시선을 공유하고 대표작을 미리 선보이는 프리뷰 전시를 선보입니다.
+청년 예술가들의 시작을 응원하고자 하는 모든 이들을 환영합니다.`,
+    content5: 'OPENING I 11.17 (FRI) 17:00',
+    content6: `오프닝 리셉션은 오후 5시부터 진행될 예정이며, 관람은 오전 10시부터 가능합니다.`,
+    content7: `참여작가`,
+    content8: `공재 @0jay_archive
+로트링겐 @lothringen_seoul
+이상균x조화라 @gyun_i x @hwararararara
+임하은x조현민 @haeun_is_tree x @hyunmin_studio`,
+    content9: '',
+  },
+
+  {
+    id: 13,
+    type: 'type2',
+    date: '2023-11-11',
+    title1: `THE SALON`,
+    title2: '',
+    title3: `호장품`,
+    title4: `일시 | 1회 11월 11일 토요일 오후 3시
+일시 | 2회 11월 25일 토요일 오후 3시
+...`,
+
+    // title
+    content1: `THE SALON`,
+    content2: ``,
+
+    // 1
+    content3: ``,
+    content4: ``,
+    content5: ``,
+    content6: ``,
+
+    // 2
+    content7: ``,
+    content8: ``,
+    content9: ``,
+    content10: ``,
+
+    // 3
+    content11: ``,
+    content12: `호장품`,
+    content13: `나의 물건에 내가 좋아하는 방식으로 이름을 짓고 불러봅니다. 내 물건에 담긴 이야기를 나누고 기록하면서, 평범한 물건들이 아닌 귀중품 애호가가 되는 과정을 함께합니다.
+박물관의 소장품 등록 절차에 따라 나의 애장품 정보를 카드에 직접 작성해보며 유물등록에 대한 이해를 기반으로 하는 프로그램입니다.`,
+    content14: ``,
   },
 ];
 

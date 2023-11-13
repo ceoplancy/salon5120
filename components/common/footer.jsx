@@ -11,15 +11,15 @@ const Footer = () => {
           </FontSize>
 
           <ImageFrame>
-            <CustomImageWrapper onClick={() => router.push('/')}>
+            <CustomImageWrapper onClick={() => window.open('https://www.instagram.com/salon_5120/', '_blank')}>
               <CustomImage src={'/i.svg'} alt="logo" layout="fill" />
             </CustomImageWrapper>
 
-            <CustomImageWrapper onClick={() => router.push('/')}>
+            <CustomImageWrapper onClick={() => window.open('https://www.nowon.kr/index.do', '_blank')}>
               <CustomImage src={'/m.svg'} alt="logo" layout="fill" />
             </CustomImageWrapper>
 
-            <CustomImageWrapper width="10rem" height="3rem" onClick={() => router.push('/')}>
+            <CustomImageWrapper width="10rem" height="3rem" onClick={() => window.open('https://cms.dankook.ac.kr/web/dkcti', '_blank')}>
               <CustomImage src={'/h.svg'} alt="logo" layout="fill" />
             </CustomImageWrapper>
           </ImageFrame>

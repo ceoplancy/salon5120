@@ -138,13 +138,17 @@ const ExhibitionDetail = ({ query }) => {
           )}
 
           <ContentContainer>
-            <FontSize fontSize={'2.3rem'} fontWeight={700} margin="0 0 0.5rem 0">
-              {makeData[0]?.content1}
-            </FontSize>
+            {makeData[0]?.content1 && (
+              <FontSize fontSize={'2.3rem'} fontWeight={700} margin="0 0 0.5rem 0">
+                {makeData[0]?.content1}
+              </FontSize>
+            )}
 
-            <PreTag fontSize={'4.5rem'} lineHeight={1.33} fontWeight={700}>
-              {makeData[0]?.content2}
-            </PreTag>
+            {makeData[0]?.content2 && (
+              <PreTag fontSize={'4.5rem'} lineHeight={1.33} fontWeight={700}>
+                {makeData[0]?.content2}
+              </PreTag>
+            )}
 
             {makeData[0]?.content3 && (
               <PreTag fontSize={'2.3rem'} fontWeight={400} margin="10rem 0 0 0" lineHeight={1.2}>
@@ -152,17 +156,49 @@ const ExhibitionDetail = ({ query }) => {
               </PreTag>
             )}
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} margin="3rem 0 6rem 0" lineHeight={1.73}>
-              {makeData[0]?.content4}
-            </PreTag>
+            {makeData[0]?.content4 && (
+              <PreTag fontSize={'1.5rem'} fontWeight={400} margin="3rem 0 3rem 0" lineHeight={1.73}>
+                {makeData[0]?.content4}
+              </PreTag>
+            )}
 
-            <PreTag fontSize={'2.3rem'} fontWeight={700}>
-              {makeData[0]?.content5}
-            </PreTag>
+            {makeData[0]?.content7 && (
+              <PreTag fontSize={'1.5rem'} lineHeight={1.66} fontWeight={700}>
+                {makeData[0]?.content7}
+              </PreTag>
+            )}
 
-            <PreTag fontSize={'1.5rem'} lineHeight={1.66} fontWeight={400} margin="3rem 0 3rem 0">
-              {makeData[0]?.content6}
-            </PreTag>
+            {makeData[0]?.content8 && (
+              <PreTag fontSize={'1.5rem'} lineHeight={1.66} fontWeight={400} margin="0 0 3rem 0">
+                {makeData[0]?.content8}
+              </PreTag>
+            )}
+
+            {makeData[0]?.content5 && (
+              <PreTag fontSize={'2.3rem'} fontWeight={700} lineHeight={1.39} margin="0 0 2.5rem 0">
+                {makeData[0]?.content5}
+              </PreTag>
+            )}
+
+            {makeData[0]?.content6 && (
+              <PreTag fontSize={'1.5rem'} lineHeight={1.66} fontWeight={400} margin="1rem 0 3rem 0">
+                {makeData[0]?.content6}
+              </PreTag>
+            )}
+
+            {makeData[0]?.content9 && (
+              <IframeWrapper>
+                <iframe
+                  width="1905"
+                  height="801"
+                  src="https://www.youtube.com/embed/JRF8_InIKlg?autoplay=1&mute=1"
+                  title="문화살롱 5120 | 김지희 《낯선 풍경들(Unknown Scenes)》 | 타임랩스 영상"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </IframeWrapper>
+            )}
           </ContentContainer>
         </Container>
       )}
@@ -270,3 +306,20 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+const IframeWrapper = styled.div`
+  position: relative;
+  margin-top: 10rem;
+  padding-top: 56%;
+  width: 100%;
+  height: 0;
+  margin-bottom: 3rem;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+`;

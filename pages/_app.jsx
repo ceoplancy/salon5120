@@ -58,6 +58,8 @@ function MyApp({ Component, pageProps }) {
                     {router.pathname === '/exhibition' && <SubFooter />}
                     {router.pathname === '/program' && <SubFooter />}
                     {router.pathname === '/notice' && <SubFooter />}
+                    {router.pathname === '/about' && <SubFooter />}
+                    {router.pathname === '/webzine' && <SubFooter />}
                   </>
                 )}
               </Frame>
