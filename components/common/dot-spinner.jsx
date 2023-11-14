@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-type Props = {
-  width: number;
-  height: number;
-  marginRight: number;
-  dotColor?: string;
-};
-
-const DotSpinner = ({ width, height, marginRight, dotColor }: Props) => {
+const DotSpinner = ({ width, height, marginRight, dotColor }) => {
   return (
     <Spinner width={width} height={height} marginRight={marginRight} dotColor={dotColor}>
       <div className="bounce1"></div>
@@ -19,7 +12,7 @@ const DotSpinner = ({ width, height, marginRight, dotColor }: Props) => {
 
 export default DotSpinner;
 
-const Spinner = styled.div<Props>`
+const Spinner = styled.div`
   margin: 0 auto;
 
   div {

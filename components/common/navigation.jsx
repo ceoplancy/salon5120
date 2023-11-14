@@ -2,24 +2,12 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Image from 'next/image';
-import Font from 'components/common/font';
 import useScrollEvent from 'hooks/useScrollEvent';
-import { useRecoilState } from 'recoil';
-import { filterStateAtom, toastStateAtom } from 'atoms';
 
 const Navigation = () => {
   const router = useRouter();
   const { scrollEventState } = useScrollEvent();
-
   const [isMobileMenu, setMobileMenu] = useState(false);
-
-  const [filterState, setFilterState] = useRecoilState(filterStateAtom);
-  const [toastState, setToastState] = useRecoilState(toastStateAtom);
-
-  const toastHandler = () => {
-    setToastState(true);
-    window.scrollTo(0, 0);
-  };
 
   useEffect(() => {
     if (isMobileMenu) {
@@ -44,8 +32,6 @@ const Navigation = () => {
                 fontSize="2.556rem"
                 fontWeight={700}
                 onClick={() => {
-                  setFilterState('all');
-                  toastHandler();
                   router.push('/about');
                 }}
               >
@@ -56,8 +42,6 @@ const Navigation = () => {
                 fontSize="2.556rem"
                 fontWeight={700}
                 onClick={() => {
-                  setFilterState('tech');
-                  toastHandler();
                   router.push('/exhibition');
                 }}
               >
@@ -68,8 +52,6 @@ const Navigation = () => {
                 fontSize="2.556rem"
                 fontWeight={700}
                 onClick={() => {
-                  setFilterState('retrospect');
-                  toastHandler();
                   router.push('/program');
                 }}
               >
@@ -80,8 +62,6 @@ const Navigation = () => {
                 fontSize="2.556rem"
                 fontWeight={700}
                 onClick={() => {
-                  setFilterState('retrospect');
-                  toastHandler();
                   router.push('/notice');
                 }}
               >
@@ -92,8 +72,6 @@ const Navigation = () => {
                 fontSize="2.556rem"
                 fontWeight={700}
                 onClick={() => {
-                  setFilterState('retrospect');
-                  toastHandler();
                   router.push('/webzine');
                 }}
               >
@@ -106,13 +84,13 @@ const Navigation = () => {
           <MobileMenuFrame>
             {isMobileMenu && (
               <ToggleImageWrapper width="2rem" height="2rem" onClick={() => setMobileMenu(!isMobileMenu)}>
-                <CustomImage width={20} height={20} src={'/close.svg'} alt="menu" layout="fill" />
+                <CustomImage src={'/close.svg'} alt="menu" layout="fill" />
               </ToggleImageWrapper>
             )}
 
             {!isMobileMenu && (
               <ToggleImageWrapper width="2rem" height="4.5rem" onClick={() => setMobileMenu(!isMobileMenu)}>
-                <CustomImage width={20} height={45} src={'/menu.svg'} alt="menu" layout="fill" />
+                <CustomImage src={'/menu.svg'} alt="menu" layout="fill" />
               </ToggleImageWrapper>
             )}
 
@@ -120,81 +98,76 @@ const Navigation = () => {
               <IconWrapper
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
-                  toastHandler();
                   router.push('/about');
                 }}
               >
                 <ToggleImageWrapper width="2.4rem" height="2rem">
-                  <CustomImage width={24} height={20} src={'/bookmark.svg'} alt="menu" layout="fill" />
+                  <CustomImage src={'/bookmark.svg'} alt="menu" layout="fill" />
                 </ToggleImageWrapper>
 
-                <Font size={32} pointer={true} fontWeight={700}>
+                <FontSize fontSize="3.2rem" pointer="pointer" fontWeight={700}>
                   ABOUT
-                </Font>
+                </FontSize>
               </IconWrapper>
 
               <IconWrapper
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
-                  toastHandler();
                   router.push('/exhibition');
                 }}
               >
                 <ToggleImageWrapper width="2.4rem" height="2rem">
-                  <CustomImage width={24} height={20} src={'/square.svg'} alt="menu" layout="fill" />
+                  <CustomImage src={'/square.svg'} alt="menu" layout="fill" />
                 </ToggleImageWrapper>
 
-                <Font size={32} pointer={true} fontWeight={700}>
+                <FontSize fontSize="3.2rem" pointer="pointer" fontWeight={700}>
                   EXHIBITION
-                </Font>
+                </FontSize>
               </IconWrapper>
 
               <IconWrapper
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
-                  toastHandler();
                   router.push('/program');
                 }}
               >
                 <ToggleImageWrapper width="2.4rem" height="2rem">
-                  <CustomImage width={24} height={20} src={'/roof.svg'} alt="menu" layout="fill" />
+                  <CustomImage src={'/roof.svg'} alt="menu" layout="fill" />
                 </ToggleImageWrapper>
 
-                <Font size={32} pointer={true} fontWeight={700}>
+                <FontSize fontSize="3.2rem" pointer="pointer" fontWeight={700}>
                   PROGRAM
-                </Font>
+                </FontSize>
               </IconWrapper>
 
               <IconWrapper
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
-                  toastHandler();
                   router.push('/notice');
                 }}
               >
                 <ToggleImageWrapper width="2.4rem" height="2rem">
-                  <CustomImage width={24} height={20} src={'/bookmark.svg'} alt="menu" layout="fill" />
+                  <CustomImage src={'/bookmark.svg'} alt="menu" layout="fill" />
                 </ToggleImageWrapper>
 
-                <Font size={32} pointer={true} fontWeight={700}>
+                <FontSize fontSize="3.2rem" pointer="pointer" fontWeight={700}>
                   NOTICE
-                </Font>
+                </FontSize>
               </IconWrapper>
 
               <IconWrapper
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
-                  toastHandler();
                   router.push('/webzine');
                 }}
               >
                 <ToggleImageWrapper width="2.4rem" height="2rem">
-                  <CustomImage width={24} height={20} src={'/square.svg'} alt="menu" layout="fill" />
+                  <CustomImage src={'/square.svg'} alt="menu" layout="fill" />
                 </ToggleImageWrapper>
 
-                <Font size={32} pointer={true} fontWeight={700}>
+                <FontSize fontSize="3.2rem" pointer="pointer" fontWeight={700}>
                   WEBZINE
-                </Font>
+                </FontSize>
               </IconWrapper>
             </MobileMenuWrapper>
           </MobileMenuFrame>
@@ -324,6 +297,7 @@ const FontSize = styled.p`
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
   margin: ${(props) => (props.margin ? props.margin : '')};
+  cursor: ${(props) => (props.pointer ? props.pointer : '')};
 `;
 
 const PurpleIcon = styled(FontSize)`

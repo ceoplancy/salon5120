@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-type Props = {
-  width: number;
-  height: number;
-  onClick?: () => void;
-  children?: any;
-};
-
-const ImageWrapper = (props: Props) => {
+const ImageWrapper = (props) => {
   const { width, height, onClick, children } = props;
 
   return (
@@ -19,7 +12,7 @@ const ImageWrapper = (props: Props) => {
 
 export default ImageWrapper;
 
-const Frame = styled.div<{ width: number; height: number }>`
+const Frame = styled.div`
   width: ${(props) => (props.width ? `${props.width}rem` : 0)};
   height: ${(props) => (props.height ? `${props.height}rem` : 0)};
 `;

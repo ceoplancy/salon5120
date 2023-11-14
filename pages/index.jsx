@@ -111,8 +111,6 @@ const Article = () => {
                       <div style={{ width: '100%', height: '100%' }}>
                         <ImageWrapper>
                           <Image
-                            width={500}
-                            height={500}
                             src={x.images[0]}
                             alt={`card-thumbnail${x.id}`}
                             layout="fill"
@@ -482,7 +480,7 @@ const Type2Container = styled.div`
 const Type3Container = styled.div`
   height: ${(props) => props.type3ContainerHeight}px;
   padding: 2rem;
-  background-image: url('/test2.svg');
+  background-image: url('/bookmarkborder.svg');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: url('/purple.svg'), url('/purple.svg') 5 5, progress;

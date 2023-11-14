@@ -160,7 +160,7 @@ const Type3Container = styled.div`
   height: ${(props) => props.type3ContainerHeight}px;
   width: 100%;
   padding: 2rem;
-  background-image: url('/test2.svg');
+  background-image: url('/bookmarkborder.svg');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: url('/purple.svg'), url('/purple.svg') 5 5, progress;

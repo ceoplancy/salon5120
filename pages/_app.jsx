@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 import GlobalStyle from 'styles/global-style';
-import styleTheme from 'styles/style-theme';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -34,37 +33,35 @@ function MyApp({ Component, pageProps }) {
 
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <ThemeProvider theme={styleTheme}>
-            <RecoilRoot>
-              <Frame>
-                <Head>
-                  {/* 모바일에서 인풋 클릭 시 확대방지 */}
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
-                </Head>
+          <RecoilRoot>
+            <Frame>
+              <Head>
+                {/* 모바일에서 인풋 클릭 시 확대방지 */}
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
+              </Head>
 
-                {loading ? (
-                  <SpinnerWrapper>
-                    <DotSpinner width={18} height={18} marginRight={18} dotColor="#8536FF" />
-                  </SpinnerWrapper>
-                ) : (
-                  <>
-                    <CustomGlobalStyle />
+              {loading ? (
+                <SpinnerWrapper>
+                  <DotSpinner width={18} height={18} marginRight={18} dotColor="#8536FF" />
+                </SpinnerWrapper>
+              ) : (
+                <>
+                  <CustomGlobalStyle />
 
-                    <Navigation />
+                  <Navigation />
 
-                    <Component {...pageProps} />
+                  <Component {...pageProps} />
 
-                    {router.pathname === '/' && <Footer />}
-                    {router.pathname === '/exhibition' && <SubFooter />}
-                    {router.pathname === '/program' && <SubFooter />}
-                    {router.pathname === '/notice' && <SubFooter />}
-                    {router.pathname === '/about' && <SubFooter />}
-                    {router.pathname === '/webzine' && <SubFooter />}
-                  </>
-                )}
-              </Frame>
-            </RecoilRoot>
-          </ThemeProvider>
+                  {router.pathname === '/' && <Footer />}
+                  {router.pathname === '/exhibition' && <SubFooter />}
+                  {router.pathname === '/program' && <SubFooter />}
+                  {router.pathname === '/notice' && <SubFooter />}
+                  {router.pathname === '/about' && <SubFooter />}
+                  {router.pathname === '/webzine' && <SubFooter />}
+                </>
+              )}
+            </Frame>
+          </RecoilRoot>
         </Hydrate>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
