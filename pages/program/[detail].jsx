@@ -40,7 +40,7 @@ const ProgramDetail = ({ query }) => {
             </PreTag>
 
             {makeData[0]?.content1 === '마티네 클라스 Matinée Class' && (
-              <ImageWrapper onClick={() => openLightbox(index)}>
+              <ImageWrapper>
                 <Image
                   src={`/image/matineeclass.jpg`}
                   alt={`matineeclass`}

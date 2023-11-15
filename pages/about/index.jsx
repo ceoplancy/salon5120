@@ -51,7 +51,7 @@ const About = () => {
         </FontSize>
 
         <FontSize fontSize="1.5rem" fontWeight={400} lineHeight={1.66}>
-          {`서울시 공릉로 51길 20, B1 (01833)`}
+          {`서울시 노원구 공릉로 51길 20, B1 (01833)`}
         </FontSize>
 
         <FontSize fontSize="1.5rem" fontWeight={400} margin="0 0 3rem 0" lineHeight={1.66}>
