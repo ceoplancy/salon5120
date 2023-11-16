@@ -29,7 +29,7 @@ const NoticeDetail = ({ query }) => {
       {makeData.length === 0 ? (
         <NoArticle>존재하지 않는 게시물입니다.</NoArticle>
       ) : (
-        <div>
+        <div style={{ width: '100%' }}>
           {Number(router.query.detail) === 10 && <Comp10 />}
           {Number(router.query.detail) === 14 && <Comp14 />}
           {Number(router.query.detail) === 15 && <Comp15 />}

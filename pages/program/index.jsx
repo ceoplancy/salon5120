@@ -76,8 +76,8 @@ const Program = () => {
             <div key={x.id}>
               <FadeIn>
                 <Type2Container type2ContainerPaddingTop={type2ContainerPaddingTop} type2ContainerHeight={type2ContainerHeight} onClick={() => router.push(`/program/${x.id}`)}>
-                  <FadeIn>
-                    <div>
+                  <TitleWrapper>
+                    <InnerWrapper>
                       <FontSize fontSize={'2.556rem'} fontWeight={700}>
                         {x.title1}
                       </FontSize>
@@ -86,21 +86,27 @@ const Program = () => {
                         <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
                       </ImageWrapper>
 
-                      <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
-                        {x.title2}
-                      </FontSize>
+                      {x.title2 && (
+                        <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                          {x.title2}
+                        </FontSize>
+                      )}
 
-                      <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46}>
-                        {x.title3}
-                      </PreTag>
+                      {x.title3 && (
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46}>
+                          {x.title3}
+                        </PreTag>
+                      )}
+                    </InnerWrapper>
+
+                    <div>
+                      {x.title4 && (
+                        <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
+                          {x.title4}
+                        </PreTag>
+                      )}
                     </div>
-                  </FadeIn>
-
-                  <FadeIn>
-                    <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
-                      {x.title4}
-                    </PreTag>
-                  </FadeIn>
+                  </TitleWrapper>
                 </Type2Container>
               </FadeIn>
             </div>
@@ -216,8 +222,6 @@ const Type2Container = styled.div`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
-    justify-content: space-around;
-
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
@@ -250,4 +254,16 @@ const ImageWrapper = styled.div`
   width: 100%;
   height: 1rem;
   margin: 1.6rem 0 3.8rem 0;
+`;
+
+const InnerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `;

@@ -121,7 +121,7 @@ const Article = () => {
                           />
                         </ImageWrapper>
 
-                        <FontSize fontSize={'1.556rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
+                        <FontSize fontSize={'1.66rem'} fontWeight={700} margin="2rem 0 0.5rem 0">
                           {x.title1}
                         </FontSize>
 

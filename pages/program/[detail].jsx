@@ -5,10 +5,24 @@ import Comp13 from '../../components/program/13';
 import Comp9 from '../../components/program/9';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+import Slick from 'react-slick';
 
 const ProgramDetail = ({ query }) => {
   const router = useRouter();
   const [makeData, setMakeData] = useState({});
+
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const openLightbox = (index) => {
+    if (!isDragging) {
+      setPhotoIndex(index);
+      setIsOpen(true);
+    }
+  };
 
   const makeAricleData = (articleData, id) => {
     return [...articleData].filter((x) => x.id === id);
@@ -23,6 +37,68 @@ const ProgramDetail = ({ query }) => {
 
     setMakeData(makeAricleData(articleData, Number(query.detail)));
   }, []);
+
+  const CustomNextArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <RightArrowWrapper>
+        <Image
+          src={`/rightarrow.svg`}
+          alt={`rightarrow`}
+          layout="fill"
+          priority={true}
+          quality={100}
+          placeholder="blur"
+          blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick();
+          }}
+        />
+      </RightArrowWrapper>
+    );
+  };
+
+  const CustomPrevArrow = (props) => {
+    const { onClick } = props;
+    return (
+      <LeftArrowWrapper>
+        <Image
+          src={`/leftarrow.svg`}
+          alt={`leftarrow`}
+          layout="fill"
+          priority={true}
+          quality={100}
+          placeholder="blur"
+          blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick();
+          }}
+        />
+      </LeftArrowWrapper>
+    );
+  };
+
+  const settings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 100,
+    autoplay: false,
+
+    beforeChange: () => {
+      setIsDragging(true);
+    },
+    afterChange: () => {
+      setIsDragging(false);
+    },
+
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
+  };
 
   return (
     <>
@@ -39,19 +115,37 @@ const ProgramDetail = ({ query }) => {
               {makeData[0]?.content2}
             </PreTag>
 
-            {makeData[0]?.content1 === '마티네 클라스 Matinée Class' && (
-              <ImageWrapper>
-                <Image
-                  src={`/image/matineeclass.jpg`}
-                  alt={`matineeclass`}
-                  layout="fill"
-                  objectFit="cover"
-                  priority={true}
-                  quality={100}
-                  placeholder="blur"
-                  blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-                />
-              </ImageWrapper>
+            {isOpen && (
+              <Lightbox
+                mainSrc={makeData[0].images[photoIndex]}
+                nextSrc={makeData[0].images[(photoIndex + 1) % makeData[0].images.length]}
+                prevSrc={makeData[0].images[(photoIndex + makeData[0].images.length - 1) % makeData[0].images.length]}
+                onCloseRequest={() => setIsOpen(false)}
+                onMovePrevRequest={() => setPhotoIndex((photoIndex + makeData[0].images.length - 1) % makeData[0].images.length)}
+                onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % makeData[0].images.length)}
+              />
+            )}
+            {makeData[0]?.images && (
+              <CustomSlick {...settings}>
+                {makeData[0]?.images?.map((item, index) => {
+                  return (
+                    <React.Fragment key={`image${index}`}>
+                      <ImageWrapper onClick={() => openLightbox(index)}>
+                        <Image
+                          src={item}
+                          alt={`slick${index}`}
+                          layout="fill"
+                          objectFit="cover"
+                          priority={true}
+                          quality={100}
+                          placeholder="blur"
+                          blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                        />
+                      </ImageWrapper>
+                    </React.Fragment>
+                  );
+                })}
+              </CustomSlick>
             )}
           </TitleContainer>
 
@@ -159,6 +253,10 @@ const Container = styled.div`
 const TitleContainer = styled.div`
   max-width: 42rem;
   width: 100%;
+
+  @media screen and (max-width: 480px) {
+    max-width: 48rem;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -206,6 +304,44 @@ const ImageWrapper = styled.div`
   position: relative;
 
   @media screen and (max-width: 480px) {
+    margin-top: 6rem;
     width: 100%;
+  }
+`;
+
+const CustomSlick = styled(Slick)`
+  width: 42rem;
+  height: 45rem;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
+`;
+
+const RightArrowWrapper = styled.div`
+  width: 10rem;
+  height: 3rem;
+  position: absolute;
+  top: 46rem;
+  right: 12rem;
+  cursor: pointer;
+
+  @media screen and (max-width: 480px) {
+    top: 41rem;
+    right: 13rem;
+  }
+`;
+
+const LeftArrowWrapper = styled.div`
+  width: 10rem;
+  height: 3rem;
+  position: absolute;
+  top: 46rem;
+  left: 12rem;
+  cursor: pointer;
+
+  @media screen and (max-width: 480px) {
+    top: 41rem;
+    left: 13rem;
   }
 `;
