@@ -93,7 +93,7 @@ const Program = () => {
                       )}
 
                       {x.title3 && (
-                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46}>
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
                           {x.title3}
                         </PreTag>
                       )}
@@ -122,27 +122,29 @@ const Program = () => {
               {x.type === 'type2' && (
                 <FadeIn>
                   <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
-                    <div>
-                      <FontSize fontSize={'2.3rem'} fontWeight={700}>
-                        {x.title1}
-                      </FontSize>
+                    <TitleWrapper>
+                      <div>
+                        <FontSize fontSize={'2.556rem'} fontWeight={700}>
+                          {x.title1}
+                        </FontSize>
 
-                      <ImageWrapper>
-                        <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
-                      </ImageWrapper>
+                        <ImageWrapper>
+                          <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
+                        </ImageWrapper>
 
-                      <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
-                        {x.title2}
-                      </FontSize>
+                        <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                          {x.title2}
+                        </FontSize>
 
-                      <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
-                        {x.title3}
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
+                          {x.title3}
+                        </PreTag>
+                      </div>
+
+                      <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
+                        {x.title4}
                       </PreTag>
-                    </div>
-
-                    <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
-                      {x.title4}
-                    </PreTag>
+                    </TitleWrapper>
                   </Type2Container>
                 </FadeIn>
               )}
@@ -209,11 +211,11 @@ const Type2Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  width: 100%;
   height: ${(props) => props.type2ContainerHeight}px;
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
-  width: 100%;
   padding-right: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
   padding-left: 3rem;
 
   background-image: url('/arch.svg');
@@ -228,14 +230,14 @@ const Type2Container = styled.div`
     }
   }
 
-  @media screen and (max-width: 480px) {
-    padding: 13rem 2rem 2rem 2rem;
-    height: 50rem;
-  }
-
   @media screen and (min-width: 1600px) {
     padding-top: 12rem;
     max-height: 51rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 11rem 3rem 6rem 3rem;
+    height: 50rem;
   }
 `;
 
@@ -253,7 +255,7 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 1rem;
-  margin: 1.6rem 0 3.8rem 0;
+  margin: 1.6rem 0 3rem 0;
 `;
 
 const InnerWrapper = styled.div`

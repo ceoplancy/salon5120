@@ -156,15 +156,15 @@ const Article = () => {
             .map((x, index) => {
               return (
                 <div key={x.id}>
-                  <Type2Container
-                    hoveredIndex={hoveredIndex}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                    type2ContainerHeight={type2ContainerHeight}
-                    type2ContainerPaddingTop={type2ContainerPaddingTop}
-                    onClick={() => router.push(`/program/${x.id}`)}
-                  >
-                    <FadeIn>
+                  <FadeIn>
+                    <Type2Container
+                      hoveredIndex={hoveredIndex}
+                      onMouseEnter={() => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave}
+                      type2ContainerHeight={type2ContainerHeight}
+                      type2ContainerPaddingTop={type2ContainerPaddingTop}
+                      onClick={() => router.push(`/program/${x.id}`)}
+                    >
                       <div>
                         <FontSize fontSize={'2.556rem'} fontWeight={700}>
                           {x.title1}
@@ -178,18 +178,16 @@ const Article = () => {
                           {x.title2}
                         </FontSize>
 
-                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46}>
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
                           {x.title3}
                         </PreTag>
                       </div>
-                    </FadeIn>
 
-                    <FadeIn>
                       <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
                         {x.title4}
                       </PreTag>
-                    </FadeIn>
-                  </Type2Container>
+                    </Type2Container>
+                  </FadeIn>
                 </div>
               );
             })}
@@ -283,7 +281,7 @@ const Article = () => {
                     <FadeIn>
                       <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
                         <div>
-                          <FontSize fontSize={'2.3rem'} fontWeight={700}>
+                          <FontSize fontSize={'2.556rem'} fontWeight={700}>
                             {x.title1}
                           </FontSize>
 
@@ -291,16 +289,16 @@ const Article = () => {
                             <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
                           </Type2LineWrapper>
 
-                          <FontSize fontSize={'2.1rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                          <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
                             {x.title2}
                           </FontSize>
 
-                          <PreTag fontSize={'3rem'} fontWeight={700} lineHeight={1.5} margin={'0 0 2rem 0'}>
+                          <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
                             {x.title3}
                           </PreTag>
                         </div>
 
-                        <PreTag fontSize={'2.1rem'} fontWeight={700} lineHeight={1.5}>
+                        <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
                           {x.title4}
                         </PreTag>
                       </Type2Container>
@@ -445,11 +443,12 @@ const Type1Container = styled.div`
 const Type2Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 
   height: ${(props) => props.type2ContainerHeight}px;
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
   padding-right: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
   padding-left: 3rem;
 
   background-image: url('/arch.svg');
@@ -458,8 +457,6 @@ const Type2Container = styled.div`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 
   @media screen and (min-width: 480px) {
-    justify-content: space-around;
-
     transition: all 0.2s;
     &:hover {
       transform: translateY(${(props) => (props.hoveredIndex === 0 ? '0px' : '-30px')});
@@ -467,7 +464,7 @@ const Type2Container = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    padding: 13rem 2rem 2rem 2rem;
+    padding: 11rem 3rem 6rem 3rem;
     height: 50rem;
   }
 
@@ -550,5 +547,5 @@ const Type2LineWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 1rem;
-  margin: 1.6rem 0 3.8rem 0;
+  margin: 1.6rem 0 3rem 0;
 `;
