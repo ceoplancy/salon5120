@@ -111,7 +111,7 @@ const ExhibitionDetail = ({ query }) => {
               onCloseRequest={() => setIsOpen(false)}
               onMovePrevRequest={() => setPhotoIndex((photoIndex + makeData[0].images.length - 1) % makeData[0].images.length)}
               onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % makeData[0].images.length)}
-              imageCaption={<ImageCaptionBox style={{ fontSize: '4rem' }}>{makeData[0].imageCaptions[photoIndex]}</ImageCaptionBox>}
+              imageCaption={<ImageCaptionBox style={{ fontSize: '2rem' }}>{makeData[0].imageCaptions[photoIndex]}</ImageCaptionBox>}
             />
           )}
 
