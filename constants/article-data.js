@@ -29,6 +29,7 @@ const articleData = [
       '/image/type1-1/23.jpg',
     ],
     mobileImages: ['/image/type1-1/24.jpg'],
+    imageCaptions: ['전영진,Painting for Painting 20no02, acrylic on canvase, 130.3x193.9cm, 2020.', 'test2', 'test3'],
     title1: '문화살롱 5120 기획전',
     title2: `김지희 작가 개인전
 <낯선 풍경들
@@ -60,6 +61,7 @@ const articleData = [
     date: '2023-06-17',
     images: ['/image/type1-2/1.jpg', '/image/type1-2/2.jpg', '/image/type1-2/3.jpg', '/image/type1-2/4.jpg', '/image/type1-2/5.jpg', '/image/type1-2/6.jpg', '/image/type1-2/7.jpg'],
     mobileImages: ['/image/type1-2/8.jpg'],
+    imageCaptions: ['test1', 'test2', 'test3'],
     title1: '문화살롱 5120 개관기념 특별전',
     title2: `<전영진 : OPENING NEW DOOR>
 23.06.07-06.30`,
@@ -125,8 +127,7 @@ const articleData = [
     title3: `『당신을 보면 이해 받는
 기분이 들어요』
 : 그리고 독립출판 이야기`,
-    title4: `일시 | 9월 21일 목요일 오후 3시
-패널 | 저자 김지연, 디자이너...`,
+    title4: `일시 | 9월 13일 수요일 오후 4시...`,
 
     // title
     content1: `마티네 클라스 Matinée Class`,
@@ -214,8 +215,7 @@ const articleData = [
     title2: '2nd | 작가를 만나다',
     title3: `〈『갤러리 사운드』 : 역자와의 대화〉`,
     title4: `일시 | 8월 16일 수요일 오후 3시
-모더레이터 | 배혜정(문화살롱...
-패널 | 지가은(미팅룸 아트아카이브...`,
+모더레이터 | 배혜정...`,
 
     // title
     content1: `마티네 클라스 Matinée Class`,
@@ -285,7 +285,7 @@ const articleData = [
     id: 8,
     type: 'type2',
     date: '2023-07-19',
-    images: ['/image/type2-8/1.jpg', '/image/type2-8/2.jpg', '/image/type2-8/3.jpg', '/image/type2-8/4.jpg', '/image/type2-8/5.jpg', '/image/type2-8/6.jpg'],
+    images: ['/image/type2-8/1.jpg', '/image/type2-8/2.jpg', '/image/type2-8/3.jpg', '/image/type2-8/4.jpg', '/image/type2-8/5.jpg'],
     title1: `마티네 클라스 Matinée Class`,
     title2: '1st | 현대예술특강',
     title3: `〈경계를 넘는 예술〉`,
@@ -371,6 +371,7 @@ const articleData = [
     date: '2023-10-28',
     images: ['/image/type1-11/7.jpg', '/image/type1-11/1.jpg', '/image/type1-11/2.jpg', '/image/type1-11/3.jpg', '/image/type1-11/4.jpg', '/image/type1-11/5.jpg', '/image/type1-11/6.jpg'],
     mobileImages: ['/image/type1-11/8.jpg'],
+    imageCaptions: ['test1', 'test2', 'test3'],
     title1: '문화살롱 5120 기획전',
     title2: `박관우 작가 개인전
 <증인과 증언들>
@@ -403,6 +404,7 @@ const articleData = [
     date: '2023-11-17',
     images: ['/image/type1-12/1.jpg'],
     mobileImages: ['/image/type1-12/1.jpg'],
+    imageCaptions: ['test1', 'test2', 'test3'],
     title1: '문화살롱 5120 전시공모 선정작가 프리뷰전',
     title2: `<공유시선 共有視線
 (The Age's Glance)>
@@ -432,8 +434,8 @@ const articleData = [
     title1: `THE SALON`,
     title2: '',
     title3: `호장품`,
-    title4: `일시 | 1회 11월 11일 토요일 오후 3시
-일시 | 2회 11월 25일 토요일 오후 3시...`,
+    title4: `일시 | 11월 11일, 11월 25일, 12월9일,
+12월 23일 (토요일, 총 4회)`,
 
     // title
     content1: `THE SALON`,

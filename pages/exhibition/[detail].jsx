@@ -111,6 +111,7 @@ const ExhibitionDetail = ({ query }) => {
               onCloseRequest={() => setIsOpen(false)}
               onMovePrevRequest={() => setPhotoIndex((photoIndex + makeData[0].images.length - 1) % makeData[0].images.length)}
               onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % makeData[0].images.length)}
+              imageCaption={<ImageCaptionBox style={{ fontSize: '4rem' }}>{makeData[0].imageCaptions[photoIndex]}</ImageCaptionBox>}
             />
           )}
 
@@ -322,4 +323,11 @@ const IframeWrapper = styled.div`
     width: 100%;
     height: 100%;
   }
+`;
+
+const ImageCaptionBox = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
 `;

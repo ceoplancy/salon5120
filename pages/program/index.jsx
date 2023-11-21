@@ -93,13 +93,13 @@ const Program = () => {
                       )}
 
                       {x.title3 && (
-                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1rem 0'}>
                           {x.title3}
                         </PreTag>
                       )}
                     </InnerWrapper>
 
-                    <div>
+                    <div style={{ height: '5rem' }}>
                       {x.title4 && (
                         <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
                           {x.title4}
@@ -123,7 +123,7 @@ const Program = () => {
                 <FadeIn>
                   <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
                     <TitleWrapper>
-                      <div>
+                      <InnerWrapper>
                         <FontSize fontSize={'2.556rem'} fontWeight={700}>
                           {x.title1}
                         </FontSize>
@@ -136,14 +136,16 @@ const Program = () => {
                           {x.title2}
                         </FontSize>
 
-                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
+                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46}>
                           {x.title3}
                         </PreTag>
-                      </div>
+                      </InnerWrapper>
 
-                      <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
-                        {x.title4}
-                      </PreTag>
+                      <div style={{ height: '5rem' }}>
+                        <PreTag fontSize={'2.2rem'} fontWeight={700} lineHeight={1.52}>
+                          {x.title4}
+                        </PreTag>
+                      </div>
                     </TitleWrapper>
                   </Type2Container>
                 </FadeIn>
@@ -261,11 +263,10 @@ const ImageWrapper = styled.div`
 const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: 28rem;
 `;
 
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
 `;

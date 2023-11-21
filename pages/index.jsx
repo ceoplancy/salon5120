@@ -165,27 +165,31 @@ const Article = () => {
                       type2ContainerPaddingTop={type2ContainerPaddingTop}
                       onClick={() => router.push(`/program/${x.id}`)}
                     >
-                      <div>
-                        <FontSize fontSize={'2.556rem'} fontWeight={700}>
-                          {x.title1}
-                        </FontSize>
+                      <Type2TitleWrapper>
+                        <div>
+                          <FontSize fontSize={'2.556rem'} fontWeight={700}>
+                            {x.title1}
+                          </FontSize>
 
-                        <Type2LineWrapper>
-                          <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
-                        </Type2LineWrapper>
+                          <Type2LineWrapper>
+                            <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
+                          </Type2LineWrapper>
 
-                        <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
-                          {x.title2}
-                        </FontSize>
+                          <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                            {x.title2}
+                          </FontSize>
 
-                        <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
-                          {x.title3}
-                        </PreTag>
-                      </div>
+                          <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
+                            {x.title3}
+                          </PreTag>
+                        </div>
 
-                      <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
-                        {x.title4}
-                      </PreTag>
+                        <div>
+                          <PreTag fontSize={'2.3rem'} fontWeight={700} lineHeight={1.52}>
+                            {x.title4}
+                          </PreTag>
+                        </div>
+                      </Type2TitleWrapper>
                     </Type2Container>
                   </FadeIn>
                 </div>
@@ -280,27 +284,29 @@ const Article = () => {
                   <div style={{ width: '100%', height: '100%' }}>
                     <FadeIn>
                       <Type2Container onClick={() => router.push(`/program/${x.id}`)}>
-                        <div>
-                          <FontSize fontSize={'2.556rem'} fontWeight={700}>
-                            {x.title1}
-                          </FontSize>
+                        <Type2TitleWrapper>
+                          <div>
+                            <FontSize fontSize={'2.556rem'} fontWeight={700}>
+                              {x.title1}
+                            </FontSize>
 
-                          <Type2LineWrapper>
-                            <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
-                          </Type2LineWrapper>
+                            <Type2LineWrapper>
+                              <Image src={`/line.svg`} alt={`line`} layout="fill" priority={true} quality={100} />
+                            </Type2LineWrapper>
 
-                          <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
-                            {x.title2}
-                          </FontSize>
+                            <FontSize fontSize={'2.333rem'} fontWeight={700} margin={'0 0 1rem 0'}>
+                              {x.title2}
+                            </FontSize>
 
-                          <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
-                            {x.title3}
+                            <PreTag fontSize={'3.333rem'} fontWeight={700} lineHeight={1.46} margin={'0 0 1.5rem 0'}>
+                              {x.title3}
+                            </PreTag>
+                          </div>
+
+                          <PreTag fontSize={'2.2rem'} fontWeight={700} lineHeight={1.52}>
+                            {x.title4}
                           </PreTag>
-                        </div>
-
-                        <PreTag fontSize={'2.333rem'} fontWeight={700} lineHeight={1.52}>
-                          {x.title4}
-                        </PreTag>
+                        </Type2TitleWrapper>
                       </Type2Container>
                     </FadeIn>
                   </div>
@@ -443,7 +449,7 @@ const Type1Container = styled.div`
 const Type2Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 
   height: ${(props) => props.type2ContainerHeight}px;
   padding-top: ${(props) => props.type2ContainerPaddingTop}px;
@@ -548,4 +554,11 @@ const Type2LineWrapper = styled.div`
   width: 100%;
   height: 1rem;
   margin: 1.6rem 0 3rem 0;
+`;
+
+const Type2TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `;
