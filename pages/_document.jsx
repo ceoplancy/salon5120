@@ -10,26 +10,26 @@ export default class CustomDocument extends Document {
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
 
           {/* 홈페이지 */}
-          <meta name="author" content="salon5120" />
-          <meta name="keywords" content="salon5120 문화살롱 문화살롱5120" />
-          <meta name="description" content="salon5120 문화살롱" />
+          <meta name="author" content="문화살롱 5120" />
+          <meta name="keywords" content="문화살롱, 문화살롱 5120, 노원구 문화예술청년, 노원 예술 청년 지원, 경춘선 숲길 예술 센터" />
+          <meta name="description" content="시작하는 예술가가 꿈을 키워갈 수 있는 기반을 마련하고 구민이 문화예술을 향유하는 일상 속의 장소" />
 
           {/* 오픈 그래프 */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="salon5120 문화살롱5120" />
-          <meta property="og:description" content="salon5120 문화살롱5120" />
-          <meta property="og:site_name" content="salon5120 문화살롱5120"></meta>
+          <meta property="og:title" content="문화살롱 5120" />
+          <meta property="og:description" content="문화살롱 5120" />
+          <meta property="og:site_name" content="문화살롱 5120"></meta>
           <meta property="og:locale" content="ko_KR" />
-          <meta property="og:image" content="" />
-          <meta property="og:url" content="https://salon5120.vercel.app" />
+          <meta property="og:image" content="/image/seoimg.png" />
+          <meta property="og:url" content="https://salon5120.com/" />
           <meta property="og:image:width" content="600" />
           <meta property="og:image:height" content="315" />
 
           {/* 트위터용 */}
           <meta name="twitter:card" content="website" />
-          <meta name="twitter:title" content="salon5120 문화살롱5120" />
-          <meta name="twitter:description" content="salon5120 문화살롱5120" />
-          <meta name="twitter:image" content=""></meta>
+          <meta name="twitter:title" content="문화살롱 5120" />
+          <meta name="twitter:description" content="시작하는 예술가가 꿈을 키워갈 수 있는 기반을 마련하고 구민이 문화예술을 향유하는 일상 속의 장소" />
+          <meta name="twitter:image" content="/image/seoimg.png"></meta>
 
           <style
             dangerouslySetInnerHTML={{
