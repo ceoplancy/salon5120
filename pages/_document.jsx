@@ -22,7 +22,12 @@ A space within our daily lives where budding artists can nurture their dreams, w
           {/* 오픈 그래프 */}
           <meta property="og:type" content="website" />
           <meta property="og:title" content="문화살롱 5120" />
-          <meta property="og:description" content="문화살롱 5120" />
+          <meta
+            property="og:description"
+            content="시작하는 예술가가 꿈을 키워갈 수 있는 기반을 마련하고 구민이 문화예술을 향유하는 일상 속의 장소
+
+A space within our daily lives where budding artists can nurture their dreams, while residents relish in the richness of cultural arts"
+          />
           <meta property="og:site_name" content="문화살롱 5120"></meta>
           <meta property="og:locale" content="ko_KR" />
           <meta property="og:image" content="/image/seoimg.png" />
