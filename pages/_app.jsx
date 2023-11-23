@@ -27,6 +27,13 @@ function MyApp({ Component, pageProps }) {
 
         {/* 모바일에서 input focus할 때 확대방지 */}
         <meta name="viewport" content="width=device-width, content='width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=2.0; user-scalable=1;" />
+        <meta
+          name="description"
+          content="시작하는 예술가가 꿈을 키워갈 수 있는 기반을 마련하고 구민이 문화예술을 향유하는 일상 속의 장소
+
+          A space within our daily lives where budding artists can nurture their dreams, while residents relish in the richness of cultural arts"
+          key="desc"
+        />
       </Head>
 
       <GlobalStyle />
