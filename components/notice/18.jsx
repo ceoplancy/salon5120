@@ -22,7 +22,7 @@ const Comp15 = () => {
 
       <div>
         <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.4}>
-          {`문화살롱 5120 채용 공고`}
+          {`프로그램 매니저 채용공고`}
         </PreTag>
 
         <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} margin="6rem 0 0 0">
@@ -129,17 +129,17 @@ const Comp15 = () => {
           {`문의 | 이메일 hyejeongbae@naver.com`}
         </PreTag>
 
-        <PreTag color="#8536ff" fontSize={'1.1rem'} fontWeight={400} lineHeight={1} margin="6rem 0 0 0">
+        <PreTag color="#8536ff" fontSize={'1.5rem'} fontWeight={700} lineHeight={1} margin="6rem 0 0 0">
           {`첨부파일`}
         </PreTag>
 
         <FileDownLoadWrapper>
-          <a href="/image/type3-18/2023 문화살롱5120 매니저채용 응시원서별지1-4포함.hwp" download>
-            2023 문화살롱5120 매니저채용 응시원서별지1-4포함.hwp
+          <a href="/image/type3-18/2024 문화살롱5120 매니저채용 응시원서별지1-4포함.hwp" download>
+            2024 문화살롱5120 매니저채용 응시원서별지1-4포함.hwp
           </a>
 
-          <a href="/image/type3-18/문화살롱5120 채용공고.hwp" download>
-            문화살롱5120 채용공고.hwp
+          <a href="/image/type3-18/문화살롱5120 채용공고.pdf" download>
+            문화살롱5120 채용공고.pdf
           </a>
         </FileDownLoadWrapper>
       </div>
@@ -197,6 +197,6 @@ const FileDownLoadWrapper = styled.div`
     color: #8536ff;
     text-decoration: underline;
     margin-top: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 `;
