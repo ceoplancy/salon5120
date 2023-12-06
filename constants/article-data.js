@@ -567,6 +567,19 @@ const articleData = [
     content3: ``,
     content4: ``,
   },
+
+  {
+    id: 18,
+    type: 'type3',
+    date: '2024-01-30',
+    title1: `2024년 문화살롱 5120
+프로그램 매니저 채용 공고`,
+    title2: ``,
+    content1: ``,
+    content2: ``,
+    content3: ``,
+    content4: ``,
+  },
 ];
 
 export default articleData;
