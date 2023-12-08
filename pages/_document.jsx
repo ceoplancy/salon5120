@@ -18,6 +18,8 @@ export default class CustomDocument extends Document {
 
 A space within our daily lives where budding artists can nurture their dreams, while residents relish in the richness of cultural arts"
           />
+          <meta name="google-site-verification" content="UiuhLv-5agYlmxJYPGsL8PI7RvWIn7H-HPwlVeOJSKo" />
+          <meta name="naver-site-verification" content="6bbee0f307edc2ec713e39b070a26862d1155ecf" />
 
           {/* 오픈 그래프 */}
           <meta property="og:type" content="website" />
