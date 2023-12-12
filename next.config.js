@@ -4,7 +4,7 @@ const withInterceptStdout = require('next-intercept-stdout');
 
 module.exports = withInterceptStdout(
   {
-    siteUrl: 'https://example.com',
+    siteUrl: 'https://www.salon5120.com',
     generateRobotsTxt: true,
     // images: {
     //   domains: [],
