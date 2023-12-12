@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import Head from 'next/head';
 import GlobalStyle from 'styles/global-style';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
@@ -14,6 +14,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SubFooter from '../components/common/sub-footer';
 import { createGlobalStyle } from 'styled-components';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = React.useState(() => new QueryClient());
@@ -37,6 +38,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <GlobalStyle />
+      <Analytics />
 
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
