@@ -1,5 +1,4 @@
 module.exports = {
   siteUrl: 'https://www.salon5120.com',
-  generateRobotsTxt: true, // (optional)
-  // ...other options
+  generateRobotsTxt: true,
 };
