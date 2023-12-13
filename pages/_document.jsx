@@ -22,6 +22,7 @@ A space within our daily lives where budding artists can nurture their dreams, w
           <meta name="google-site-verification" content="UiuhLv-5agYlmxJYPGsL8PI7RvWIn7H-HPwlVeOJSKo" />
           <meta name="naver-site-verification" content="6bbee0f307edc2ec713e39b070a26862d1155ecf" />
           <meta name="google-site-verification" content="L-QMDXRMHqkjJ5l-GYJSOQ2-_WL1hgsXstCsKf6em0o" />
+          <meta name="naver-site-verification" content="d88add6497479cf3d927ba5d48cb70d7a0e51657" />
 
           {/* 오픈 그래프 */}
           <meta property="og:type" content="website" />
