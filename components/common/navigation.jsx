@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 import useScrollEvent from 'hooks/useScrollEvent';
@@ -31,51 +32,51 @@ const Navigation = () => {
               <PurpleIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                onClick={() => {
-                  router.push('/about');
-                }}
+                // onClick={() => {
+                //   router.push('/about');
+                // }}
               >
-                ABOUT
+                <Link href="https://www.salon5120.com/about">ABOUT</Link>
               </PurpleIcon>
 
               <RedIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                onClick={() => {
-                  router.push('/exhibition');
-                }}
+                // onClick={() => {
+                //   router.push('/exhibition');
+                // }}
               >
-                EXHIBITION
+                <Link href="https://www.salon5120.com/exhibition">EXHIBITION</Link>
               </RedIcon>
 
               <GreenIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                onClick={() => {
-                  router.push('/program');
-                }}
+                // onClick={() => {
+                //   router.push('/program');
+                // }}
               >
-                PROGRAM
+                <Link href="https://www.salon5120.com/program">PROGRAM</Link>
               </GreenIcon>
 
               <PurpleIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                onClick={() => {
-                  router.push('/notice');
-                }}
+                // onClick={() => {
+                //   router.push('/notice');
+                // }}
               >
-                NOTICE
+                <Link href="https://www.salon5120.com/notice">NOTICE</Link>
               </PurpleIcon>
 
               <RedIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                onClick={() => {
-                  router.push('/webzine');
-                }}
+                // onClick={() => {
+                //   router.push('/webzine');
+                // }}
               >
-                WEBZINE
+                <Link href="https://www.salon5120.com/webzine">WEBZINE</Link>
               </RedIcon>
             </MenuWrapper>
           </DeskTopMenuWrapper>
@@ -179,7 +180,7 @@ const Navigation = () => {
 
 export default Navigation;
 
-const Frame = styled.nav`
+const Frame = styled.div`
   height: 8rem;
 
   position: sticky;
@@ -221,14 +222,14 @@ const MobileMenuFrame = styled.div`
   }
 `;
 
-const MenuWrapper = styled.div`
+const MenuWrapper = styled.ul`
   width: 100%;
   display: flex;
   justify-content: flex-end;
   gap: 7rem;
 `;
 
-const DeskTopMenuWrapper = styled.div`
+const DeskTopMenuWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 60%;
@@ -300,15 +301,24 @@ const FontSize = styled.p`
   cursor: ${(props) => (props.pointer ? props.pointer : '')};
 `;
 
-const PurpleIcon = styled(FontSize)`
+const CustomLi = styled.li`
+  cursor: pointer;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
+  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
+  margin: ${(props) => (props.margin ? props.margin : '')};
+  cursor: ${(props) => (props.pointer ? props.pointer : '')};
+`;
+
+const PurpleIcon = styled(CustomLi)`
   cursor: url('/purple.svg'), url('/purple.svg') 5 5, progress;
 `;
 
-const RedIcon = styled(FontSize)`
+const RedIcon = styled(CustomLi)`
   cursor: url('/red.svg'), url('/purple.svg') 5 5, progress;
 `;
 
-const GreenIcon = styled(FontSize)`
+const GreenIcon = styled(CustomLi)`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
 `;
 
