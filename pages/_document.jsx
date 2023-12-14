@@ -15,10 +15,7 @@ export default class CustomDocument extends Document {
           <meta name="keywords" content="문화살롱, 문화살롱 5120, 노원구 문화예술청년, 노원 예술 청년 지원, 경춘선 숲길 예술 센터" />
           <meta name="description" content="문화살롱 문화살롱5120 시작하는 예술가가 꿈을 키워갈 수 있는 기반을 마련하고 구민이 문화예술을 향유하는 일상 속의 장소" />
           <meta name="google-site-verification" content="UiuhLv-5agYlmxJYPGsL8PI7RvWIn7H-HPwlVeOJSKo" />
-          <meta name="google-site-verification" content="L-QMDXRMHqkjJ5l-GYJSOQ2-_WL1hgsXstCsKf6em0o" />
-          <meta name="naver-site-verification" content="6bbee0f307edc2ec713e39b070a26862d1155ecf" />
           <meta name="naver-site-verification" content="d88add6497479cf3d927ba5d48cb70d7a0e51657" />
-          <meta name="robots" content="index,follow" />
 
           {/* 오픈 그래프 */}
           <meta property="og:url" content="https://www.salon5120.com/" />
@@ -31,7 +28,6 @@ export default class CustomDocument extends Document {
           <meta property="og:url" content="https://salon5120.com/" />
           <meta property="og:image:width" content="600" />
           <meta property="og:image:height" content="315" />
-          <link rel="canonical" href="https://salon5120.com/another" />
 
           {/* 트위터용 */}
           <meta name="twitter:card" content="website" />
