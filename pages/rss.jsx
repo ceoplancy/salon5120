@@ -1,7 +1,13 @@
 import { Feed } from 'feed';
 import articleData from '../constants/article-data';
+import fs from 'fs';
+import path from 'path';
 
-const generateRssFeed = async (posts) => {
+export default function Rss() {
+  return null;
+}
+
+export async function getServerSideProps({ res }) {
   const feed = new Feed({
     title: '문화살롱 5120',
     description: '문화살롱 5120',
@@ -17,29 +23,26 @@ const generateRssFeed = async (posts) => {
     },
   });
 
-  posts.forEach((post) => {
+  articleData.forEach((post) => {
     feed.addItem({
       title: post.title1,
-      id: post.url,
-      link: post.url,
-      description: post.description,
+      id: 'https://www.salon5120.com/',
+      link: 'https://www.salon5120.com/',
+      description: post.content1,
       date: new Date(post.date),
     });
   });
 
-  return feed.rss2();
-};
+  const xml = feed.rss2();
 
-const Rss = () => {};
-
-export async function getServerSideProps({ res }) {
-  const rss = await generateRssFeed(articleData);
+  const filePath = path.join(process.cwd(), 'rss.xml');
+  fs.writeFileSync(filePath, xml);
 
   res.setHeader('Content-Type', 'text/xml');
-  res.write(rss);
+  res.write(xml);
   res.end();
 
-  return { props: {} };
+  return {
+    props: {},
+  };
 }
-
-export default Rss;
