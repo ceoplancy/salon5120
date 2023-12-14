@@ -25,7 +25,7 @@ export default class CustomDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:title" content="문화살롱 5120" />
           <meta property="og:description" content="문화살롱 문화살롱5120 시작하는 예술가가 꿈을 키워갈 수 있는 기반을 마련하고 구민이 문화예술을 향유하는 일상 속의 장소" />
-          <meta property="og:site_name" content="문화살롱 5120"></meta>
+          <meta property="og:site_name" content="문화살롱, 문화살롱5120"></meta>
           <meta property="og:locale" content="ko_KR" />
           <meta property="og:image" content="/image/seoimg.png" />
           <meta property="og:url" content="https://salon5120.com/" />
