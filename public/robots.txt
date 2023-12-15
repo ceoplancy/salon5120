@@ -1,9 +1,5 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.salon5120.com
-
-# Sitemaps
-Sitemap: https://www.salon5120.com/sitemap.xml
+Sitemap:https://www.salon5120.com/sitemap.xml
+Sitemap: https://www.salon5120.com/rss.xml
