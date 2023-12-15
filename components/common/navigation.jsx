@@ -192,7 +192,7 @@ const Frame = styled.div`
   transition: all 0.2s;
 `;
 
-const NavigationFrame = styled.div`
+const NavigationFrame = styled.header`
   background: #fff;
   border-bottom: 0.15rem solid #000;
   position: absolute;
