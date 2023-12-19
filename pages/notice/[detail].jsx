@@ -8,6 +8,7 @@ import Comp15 from '../../components/notice/15';
 import Comp16 from '../../components/notice/16';
 import Comp17 from '../../components/notice/17';
 import Comp18 from '../../components/notice/18';
+import Comp19 from '../../components/notice/19';
 
 const NoticeDetail = ({ query }) => {
   const router = useRouter();
@@ -39,6 +40,7 @@ const NoticeDetail = ({ query }) => {
           {Number(router.query.detail) === 16 && <Comp16 />}
           {Number(router.query.detail) === 17 && <Comp17 />}
           {Number(router.query.detail) === 18 && <Comp18 />}
+          {Number(router.query.detail) === 19 && <Comp19 />}
         </div>
       )}
     </>

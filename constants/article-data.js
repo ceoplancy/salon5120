@@ -580,6 +580,18 @@ const articleData = [
     content3: ``,
     content4: ``,
   },
+
+  {
+    id: 19,
+    type: 'type3',
+    date: '2024-02-01',
+    title1: `문화살롱 5120 프로그램 매니저 채용 결과`,
+    title2: ``,
+    content1: ``,
+    content2: ``,
+    content3: ``,
+    content4: ``,
+  },
 ];
 
 export default articleData;

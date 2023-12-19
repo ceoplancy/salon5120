@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const Comp15 = () => {
+const Comp17 = () => {
   return (
     <Container>
       <TitleContainer>
@@ -150,7 +150,7 @@ const Comp15 = () => {
   );
 };
 
-export default Comp15;
+export default Comp17;
 
 const PreTag = styled.pre`
   white-space: pre-wrap;
