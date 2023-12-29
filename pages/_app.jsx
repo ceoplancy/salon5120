@@ -14,6 +14,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SubFooter from '../components/common/sub-footer';
 import { createGlobalStyle } from 'styled-components';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = React.useState(() => new QueryClient());
@@ -51,6 +52,7 @@ function MyApp({ Component, pageProps }) {
                   <Navigation />
 
                   <Component {...pageProps} />
+                  <Analytics />
 
                   {router.pathname === '/' && <Footer />}
                   {router.pathname === '/exhibition' && <SubFooter />}
