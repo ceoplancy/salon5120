@@ -107,13 +107,15 @@ const ProgramDetail = ({ query }) => {
       ) : (
         <Container>
           <TitleContainer>
-            <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.33} margin="0 0 4rem 0">
+            <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.33} margin="0 0 4rem">
               {makeData[0]?.content1}
             </PreTag>
 
-            <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66}>
-              {makeData[0]?.content2}
-            </PreTag>
+            {makeData[0]?.content2 && (
+              <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} margin="0 0 4rem">
+                {makeData[0]?.content2}
+              </PreTag>
+            )}
 
             {isOpen && (
               <Lightbox
@@ -125,12 +127,13 @@ const ProgramDetail = ({ query }) => {
                 onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % makeData[0].images.length)}
               />
             )}
+
             {makeData[0]?.images && (
               <CustomSlick {...settings}>
                 {makeData[0]?.images?.map((item, index) => {
                   return (
                     <React.Fragment key={`image${index}`}>
-                      <ImageWrapper onClick={() => openLightbox(index)}>
+                      <ImageWrapper marginTop="4rem" onClick={() => openLightbox(index)}>
                         <Image
                           src={item}
                           alt={`slick${index}`}
@@ -298,7 +301,6 @@ export async function getServerSideProps(context) {
 }
 
 const ImageWrapper = styled.div`
-  margin-top: 12rem;
   width: 42rem;
   height: 31.5rem;
   position: relative;
@@ -322,7 +324,7 @@ const RightArrowWrapper = styled.div`
   width: 10rem;
   height: 3rem;
   position: absolute;
-  top: 46rem;
+  top: 35rem;
   right: 12rem;
   cursor: pointer;
 
@@ -336,7 +338,7 @@ const LeftArrowWrapper = styled.div`
   width: 10rem;
   height: 3rem;
   position: absolute;
-  top: 46rem;
+  top: 35rem;
   left: 12rem;
   cursor: pointer;
 
