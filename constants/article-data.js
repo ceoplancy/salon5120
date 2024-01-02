@@ -477,20 +477,14 @@ const articleData = [
 (The Age's Glance)>
 23.11.17-24.01.20`,
     title3: ``,
-    content1: '문화살롱 5120 전시공모 선정작가 프리뷰전',
-    content2: `<공유시선 共有視線(The Age's Glance)> 23.11.17-24.01.20`,
+    content1: '',
+    content2: ``,
     content3: ``,
-    content4: `신진작가 발굴 및 지원, 육성을 위해 지난 8월 개최된 문화살롱 5120 전시공모에서 총 네 팀의 청년 예술가가 선발되었습니다.
-이들이 가진 가장 빛나는 힘은 기존의 질서에서 벗어나 세계를 새롭게 바라보는 독자적인 ‘시선’일 것입니다.
-문화살롱 5120은 회화, 디자인, 영상, 조각 등 다양한 장르로 작업하는 청년 예술가들의 시선을 공유하고 대표작을 미리 선보이는 프리뷰 전시를 선보입니다.
-청년 예술가들의 시작을 응원하고자 하는 모든 이들을 환영합니다.`,
-    content5: 'OPENING I 11.17 (FRI) 17:00',
-    content6: `오프닝 리셉션은 오후 5시부터 진행될 예정이며, 관람은 오전 10시부터 가능합니다.`,
-    content7: `참여작가`,
-    content8: `공재 @0jay_archive
-로트링겐 @lothringen_seoul
-이상균x조화라 @gyun_i x @hwararararara
-임하은x조현민 @haeun_is_tree x @hyunmin_studio`,
+    content4: ``,
+    content5: '',
+    content6: ``,
+    content7: ``,
+    content8: ``,
     content9: '',
   },
 

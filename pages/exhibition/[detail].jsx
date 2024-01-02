@@ -4,9 +4,12 @@ import Image from 'next/image';
 import Slick from 'react-slick';
 import articleData from '../../constants/article-data';
 import Lightbox from 'react-image-lightbox';
+import { useRouter } from 'next/router';
 import 'react-image-lightbox/style.css';
+import Comp12 from '../../components/exhibition/12';
 
 const ExhibitionDetail = ({ query }) => {
+  const router = useRouter();
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -200,6 +203,9 @@ const ExhibitionDetail = ({ query }) => {
                 ></iframe>
               </IframeWrapper>
             )}
+
+            {/* 별도 */}
+            {Number(router.query.detail) === 12 && <Comp12 />}
           </ContentContainer>
         </Container>
       )}
