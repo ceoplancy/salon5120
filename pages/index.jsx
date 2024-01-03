@@ -113,9 +113,10 @@ const Article = () => {
                           <Image
                             src={x.images[0]}
                             alt={`card-thumbnail${x.id}`}
-                            layout="fill"
                             priority={true}
                             quality={100}
+                            layout="fill"
+                            objectFit="cover"
                             placeholder="blur"
                             blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                           />
