@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 
 const Comp12 = () => {
   return (
@@ -9,7 +8,7 @@ const Comp12 = () => {
         {`문화살롱 5120 전시공모 선정작가 프리뷰전`}
       </PreTag>
 
-      <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.2}>
+      <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.4}>
         {`<공유시선 共有視線 (The Age's Glance)> 
 23.11.17-24.01.20`}
       </PreTag>
@@ -42,7 +41,7 @@ const Comp12 = () => {
 (홍해준 문화살롱 5120 프로그램 매니저)`}
       </PreTag>
 
-      <PreTag fontSize={'1.5rem'} fontWeight={700} margin="10rem 0 0 0">
+      <PreTag fontSize={'1.5rem'} fontWeight={700} margin="11.2rem 0 0 0">
         {`2023 문화살롱 5120 전시 공모`}
       </PreTag>
 
@@ -52,11 +51,11 @@ const Comp12 = () => {
 문화살롱 5120은 매년 전시공모를 예정하고 있습니다. 지난 공모에 참여해주신 모든 팀에게 감사의 인사를 전하며 안타깝게 선정되지 못하신 팀에게도 응원의 마음을 전합니다. 올해 공모에 참여해주신 심사위원분들의 심사평을 아래 함께 적습니다. `}
       </PreTag>
 
-      <PreTag fontSize={'1.5rem'} fontWeight={700} margin="10rem 0 0 0">
+      <PreTag fontSize={'1.5rem'} fontWeight={700} margin="6rem 0 0 0">
         {`심사평`}
       </PreTag>
 
-      <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} margin="3rem 0 6rem 0">
+      <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} margin="3rem 0 10rem 0">
         {`지원자들의 폭이 다채로운 점이 눈에 띄었다. 특히 팀을 구성한 지원자들이 기획적 특이점을 잘 설정한 경우가 있었다. 지역 커뮤니티 문화 공간이라는 특성과 연계하여 흥미로운 작업이 기대된다. 개인 작업의 경우, 완성도와 함께 장르의 다양성을 고려하여 평가하였다. (권태현 미술평론가)
 
 끊임없이 변화하는 예술의 흐름을 예측하고 기대하기도 하며 나름의 목적과 신념으로 기존과 다른 새로운 예술을 창작하기 위해 노력하는 사람이 예술가라고 생각합니다. 그러한 점에서 동시대 예술가의 다양하고 신선한 작업을 살펴보는 일은 동료인 저에게도 긍정적인 자극임과 동시에 희망을 품게 하는 일이었습니다. 개인적으로는 작품의 완성도를 주의 깊게 보았습니다. 전시라는 열매의 가장 중요한 중심은 작품이라는 단단한 씨앗이라 생각하기 때문입니다. 좋은 전시기획의 원천, 영감이 되는 작품을 더욱 기대합니다. 기쁠 때도 슬플 때도 중심을 잃지 않기 위해 고군분투하는, 특히 이번 공모에 도전하기 위해 시간과 정성을 내어준 예술가 모두를 응원합니다! (전영진 노원구 예술가)
