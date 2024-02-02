@@ -610,6 +610,76 @@ const articleData = [
     content3: ``,
     content4: ``,
   },
+
+  {
+    id: 20,
+    type: 'type4',
+    date: '2024-02-01',
+    title1: `발간의 글`,
+    title2: `| 웹진 놀 편집부`,
+    title3: ``,
+    webzineKey: 1,
+  },
+
+  {
+    id: 21,
+    type: 'type5',
+    date: '2024-02-01',
+    title1: `표류`,
+    title2: `시 당선작`,
+    title3: `| 임혜리`,
+    webzineKey: 1,
+  },
+
+  {
+    id: 22,
+    type: 'type5',
+    date: '2024-02-01',
+    title1: `다중우주의 당신`,
+    title2: `시 당선작`,
+    title3: `| 임혜리`,
+    webzineKey: 1,
+  },
+
+  {
+    id: 23,
+    type: 'type5',
+    date: '2024-02-01',
+    title1: `너는 겨울잠을 잔다`,
+    title2: `소설 당선작`,
+    title3: `| 정아연`,
+    webzineKey: 1,
+  },
+
+  {
+    id: 24,
+    type: 'type6',
+    date: '2024-02-01',
+    title1: `규칙의 인식과 변형 – 한국 동시대 미술의 ‘규칙’에 대한 문제제기`,
+    title2: `| 허경`,
+    title3: ``,
+    webzineKey: 1,
+  },
+
+  {
+    id: 25,
+    type: 'type6',
+    date: '2024-02-01',
+    title1: `비평 글쓰기에 대한 글쓰기, 나는 왜 비평을 통해 동료 예술가들과 연결되고자 하는가?`,
+    title2: `| 이연숙(리타)`,
+    title3: ``,
+    webzineKey: 1,
+  },
+
+  {
+    id: 26,
+    type: 'type6',
+    date: '2024-02-01',
+    title1: `지망생의 노래`,
+    title2: `| 윤혜은`,
+    title3: ``,
+    webzineKey: 1,
+  },
 ];
 
 export default articleData;

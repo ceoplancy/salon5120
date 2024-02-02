@@ -1,69 +1,260 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
+import articleData from '../../constants/article-data';
+import sortByDateAscending from '../../functions/sortByDateAscending';
+import { useRouter } from 'next/router';
 
 const Webzine = () => {
-  return (
-    <>
-      <Frame>
-        <TitleContainer>
-          <FontSize fontSize={'4.5rem'} fontWeight={700} lineHeight={1.33}>
-            WEBZINE
-          </FontSize>
+  const router = useRouter();
 
-          <FontSize fontSize={'4.5rem'} fontWeight={700} margin="0 0 3rem 0" lineHeight={1.33}>
-            {`<놀>`}
-          </FontSize>
+  const makeAricleData = (articleData, articleType) => {
+    if (articleType === 'type4') {
+      return sortByDateAscending(
+        articleData.filter((x) => x.type === 'type4'),
+        'date'
+      );
+    }
+
+    if (articleType === 'type5') {
+      return sortByDateAscending(
+        articleData.filter((x) => x.type === 'type5'),
+        'date'
+      );
+    }
+
+    if (articleType === 'type6') {
+      return sortByDateAscending(
+        articleData.filter((x) => x.type === 'type6'),
+        'date'
+      );
+    }
+  };
+  return (
+    <Frame>
+      <TitleFrame>
+        <TitleContainer>
+          <FontSize fontSize="3rem">웹진</FontSize>
+
+          <TitleWrapper>
+            <FontSize fontSize="13rem">놀</FontSize>
+
+            <SubTitleWrapper>
+              <FontSize fontSize="2.1rem">Vol.1</FontSize>
+
+              <FontSize fontSize="2.1rem">2023. 겨울</FontSize>
+
+              {/* <FontSize color="#8500FF" fontSize="2.1rem">
+                다른 호 보기
+              </FontSize> */}
+            </SubTitleWrapper>
+          </TitleWrapper>
         </TitleContainer>
 
-        <ContentContainer>
-          <PreTag fontSize={'2rem'} fontWeight={400} lineHeight={1.66}>
-            {`2023년 12월, 청년 예술인들을 위한 네트워크 공간 문화살롱 5120에서 종합예술웹진 『놀』을 창간합니다. ‘놀’은 ‘놀다’의 어간 ‘놀’을 뜻하기도 하고, ‘노을’의 준말을 뜻하기도 합니다. 또한 문화살롱 5120을 품고 있는 ‘노원구’라는 행정구역명의 어감을 변용한 것이기도 합니다.
+        <ImageWrapper>
+          <Image
+            src={`/webzinemenu.svg`}
+            alt={`webzinemenu`}
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+            quality={100}
+            placeholder="blur"
+            blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+          />
+        </ImageWrapper>
+      </TitleFrame>
 
-이처럼 『놀』은 정해진 틀 없이 누구나 읽고 쓸 수 있고, 무엇이든 이야기할 수 있는 자유로운 종합예술웹진을 표방합니다.
+      <Line />
 
-예술계에서 가장 활발하게 이야기되고 있는 이슈부터 고전 담론까지 모든 것을 포괄한 예술비평을 지향합니다. 청년 예술가들이 일상에서 천천히, 그리고 분명하게 감각하고 깨달은 것들을 자신만의 문장으로 표현한 시, 소설, 에세이, 아동문학, 극작품 등 모든 문학작품을 재발견하는 여정을 시작합니다.
+      <ContentFrame>
+        {/* type4 */}
+        <div>
+          <FontSize color="#8500FF" fontSize="3rem">
+            발간의 글
+          </FontSize>
 
-예술을 향유하고 사랑하는 모든 예술가와 작품이 자유롭듯 다양한 색깔로 채워질 『놀』을 기대해 주시기 바랍니다.`}
-          </PreTag>
-        </ContentContainer>
-      </Frame>
-    </>
+          {makeAricleData(articleData, 'type4')?.map((x, index) => {
+            return (
+              <ContentWrapper key={x.id} onClick={() => router.push(`/webzine/${x.id}`)}>
+                <Type4Contaienr>
+                  <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.5rem' }}>
+                    <FontSize fontSize="3rem">{x.title1}</FontSize>
+
+                    <FontSize fontSize="1.5rem">| 웹진 놀 편집부</FontSize>
+                  </div>
+                </Type4Contaienr>
+              </ContentWrapper>
+            );
+          })}
+        </div>
+
+        <div>
+          {/* type5 */}
+          <FontSize color="#FF504F" fontSize="3rem">
+            문학 공모
+          </FontSize>
+
+          <ContentWrapper>
+            <Type5Contaienr>
+              {makeAricleData(articleData, 'type5').map((x, index) => {
+                return (
+                  <div key={x.id} onClick={() => router.push(`/webzine/${x.id}`)}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <FontSize fontSize="1.5rem">{x.title2}</FontSize>
+
+                      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.5rem', marginTop: '1.5rem' }}>
+                        <FontSize fontSize="3rem">{x.title1}</FontSize>
+
+                        <FontSize fontSize="1.5rem">{x.title3}</FontSize>
+                      </div>
+                    </div>
+
+                    {index !== makeAricleData(articleData, 'type5').length - 1 && <div style={{ border: '0.5px solid #FF504F', width: '100%', margin: '3.5rem 0 3.5rem 0' }} />}
+                  </div>
+                );
+              })}
+            </Type5Contaienr>
+          </ContentWrapper>
+        </div>
+
+        <div>
+          {/* type6 */}
+          <FontSize color="#40E9CB" fontSize="3rem">
+            기획 칼럼
+          </FontSize>
+
+          {makeAricleData(articleData, 'type6').map((x, index) => {
+            return (
+              <ContentWrapper key={x.id} onClick={() => router.push(`/webzine/${x.id}`)}>
+                <Type6Contaienr>
+                  <FontSize fontSize="3rem" lineHeight={1.3}>
+                    {x.title1}
+                  </FontSize>
+
+                  <FontSize fontSize="1.5rem" margin="2rem 0 0 0">
+                    {x.title2}
+                  </FontSize>
+                </Type6Contaienr>
+              </ContentWrapper>
+            );
+          })}
+        </div>
+      </ContentFrame>
+    </Frame>
   );
 };
 
 export default Webzine;
 
-const Frame = styled.div`
+const Frame = styled.div``;
+
+const TitleFrame = styled.div`
   width: 100%;
   margin-top: 6rem;
   display: flex;
-
-  @media screen and (max-width: 480px) {
-    flex-direction: column;
-    margin-top: 6rem;
-  }
-`;
-
-const ContentContainer = styled.div`
-  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
 `;
 
 const TitleContainer = styled.div`
-  max-width: 45rem;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
-const PreTag = styled.pre`
-  white-space: pre-wrap;
-  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
-  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
-  margin: ${(props) => (props.margin ? props.margin : '')};
+const TitleWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  gap: 5em;
+  margin-top: 4.2rem;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+`;
+
+const SubTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 `;
 
 const FontSize = styled.p`
   font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 700)};
   margin: ${(props) => (props.margin ? props.margin : '')};
+  color: ${(props) => (props.color ? props.color : '#000')};
+`;
+
+const ImageWrapper = styled.div`
+  width: 7.7rem;
+  height: 17rem;
+  position: relative;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const Line = styled.div`
+  border: 0.5px solid #000;
+  width: 100%;
+  margin-top: 4.5rem;
+  margin-bottom: 6.7rem;
+`;
+
+const ContentFrame = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  margin-bottom: 10rem;
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+`;
+
+const Type4Contaienr = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 28rem;
+  margin-top: 2.3rem;
+  padding: 3rem;
+
+  background-image: url('/webzinetype1.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+`;
+
+const Type5Contaienr = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 43rem;
+  margin-top: 2.3rem;
+  padding: 3rem;
+
+  background-image: url('/webzinetype2.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+`;
+
+const Type6Contaienr = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 38.5rem;
+  margin-top: 2.3rem;
+  padding: 11.5rem 3rem 3rem 3rem;
+
+  background-image: url('/webzinetype3.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
