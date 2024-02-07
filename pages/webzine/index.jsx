@@ -104,9 +104,13 @@ const Webzine = () => {
                       <FontSize fontSize="1.5rem">{x.title2}</FontSize>
 
                       <div style={{ display: 'flex', alignItems: 'flex-end', gap: '0.5rem', marginTop: '1.5rem' }}>
-                        <FontSize fontSize="3rem">{x.title1}</FontSize>
+                        <PreTag fontSize="3rem" lineHeight={1.4}>
+                          {x.title1}
+                        </PreTag>
 
-                        <FontSize fontSize="1.5rem">{x.title3}</FontSize>
+                        <PreTag fontSize="1.5rem" lineHeight={1.8}>
+                          {x.title3}
+                        </PreTag>
                       </div>
                     </div>
 
@@ -187,6 +191,18 @@ const FontSize = styled.p`
   color: ${(props) => (props.color ? props.color : '#000')};
 `;
 
+const PreTag = styled.pre`
+  white-space: pre-wrap;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
+  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 700)};
+  margin: ${(props) => (props.margin ? props.margin : '')};
+  cursor: ${(props) => (props.pointer ? props.pointer : '')};
+  float: ${(props) => (props.float ? props.float : '')};
+  letter-spacing: ${(props) => (props.letterSpacing ? props.letterSpacing : '')};
+  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
+  font-style: ${(props) => (props.fontStyle ? props.fontStyle : '')};
+`;
+
 const ImageWrapper = styled.div`
   width: 7.7rem;
   height: 17rem;
@@ -240,11 +256,8 @@ const Type5Contaienr = styled.div`
   height: 100%;
   min-height: 43rem;
   margin-top: 2.3rem;
-  padding: 3rem;
-
-  background-image: url('/webzinetype2.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
+  padding: 3.5rem;
+  border: 1px solid #ff504f;
 `;
 
 const Type6Contaienr = styled.div`

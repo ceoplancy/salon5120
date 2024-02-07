@@ -680,6 +680,17 @@ const articleData = [
     title3: ``,
     webzineKey: 1,
   },
+
+  {
+    id: 27,
+    type: 'type5',
+    date: '2024-02-01',
+    title1: `제 1회 웹진 놀 문학공모
+심사평`,
+    title2: `심사평`,
+    title3: ``,
+    webzineKey: 1,
+  },
 ];
 
 export default articleData;

@@ -9,6 +9,7 @@ import Comp23 from '../../components/webzine/23';
 import Comp24 from '../../components/webzine/24';
 import Comp25 from '../../components/webzine/25';
 import Comp26 from '../../components/webzine/26';
+import Comp27 from '../../components/webzine/27';
 
 const WebzineDetail = ({ query }) => {
   const router = useRouter();
@@ -53,6 +54,7 @@ const WebzineDetail = ({ query }) => {
             {Number(router.query.detail) === 24 && <Comp24 />}
             {Number(router.query.detail) === 25 && <Comp25 />}
             {Number(router.query.detail) === 26 && <Comp26 />}
+            {Number(router.query.detail) === 27 && <Comp27 />}
           </div>
         </Container>
       )}
