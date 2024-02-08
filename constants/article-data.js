@@ -647,7 +647,7 @@ const articleData = [
     date: '2024-02-01',
     title1: `너는 겨울잠을 잔다`,
     title2: `소설 당선작`,
-    title3: `| 정아연`,
+    title3: `| 장아연`,
     webzineKey: 1,
   },
 
