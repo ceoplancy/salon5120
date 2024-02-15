@@ -7,6 +7,7 @@ import Lightbox from 'react-image-lightbox';
 import { useRouter } from 'next/router';
 import 'react-image-lightbox/style.css';
 import Comp12 from '../../components/exhibition/12';
+import Comp30 from '../../components/exhibition/30';
 
 const ExhibitionDetail = ({ query }) => {
   const router = useRouter();
@@ -206,6 +207,7 @@ const ExhibitionDetail = ({ query }) => {
 
             {/* 별도 */}
             {Number(router.query.detail) === 12 && <Comp12 />}
+            {Number(router.query.detail) === 30 && <Comp30 />}
           </ContentContainer>
         </Container>
       )}

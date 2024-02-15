@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import Slick from 'react-slick';
+import MatineClass from '../../components/program/matinee-class';
 
 const ProgramDetail = ({ query }) => {
   const router = useRouter();
@@ -229,6 +230,12 @@ const ProgramDetail = ({ query }) => {
             )}
 
             {/* 별도 */}
+            {Number(router.query.detail) === 4 && <MatineClass />}
+            {Number(router.query.detail) === 6 && <MatineClass />}
+            {Number(router.query.detail) === 8 && <MatineClass />}
+            {Number(router.query.detail) === 28 && <MatineClass />}
+            {Number(router.query.detail) === 29 && <MatineClass />}
+
             {Number(router.query.detail) === 13 && <Comp13 />}
             {Number(router.query.detail) === 9 && <Comp9 />}
           </ContentContainer>
