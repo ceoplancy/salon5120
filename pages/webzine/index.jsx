@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -6,6 +6,13 @@ import webzineHomeArticleData from '../../constants/webzine-home-article-data';
 
 const Webzine = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      alert('준비 중입니다.');
+      router.push('/webzine/vol1');
+    }
+  }, []);
 
   return (
     <Frame>
