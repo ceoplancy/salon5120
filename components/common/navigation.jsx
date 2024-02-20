@@ -76,7 +76,7 @@ const Navigation = () => {
                 //   router.push('/webzine');
                 // }}
               >
-                <Link href="https://www.salon5120.com/webzine">WEBZINE</Link>
+                <Link href="https://www.salon5120.com/webzine/vol1">WEBZINE</Link>
               </RedIcon>
             </MenuWrapper>
           </DeskTopMenuWrapper>
@@ -159,7 +159,7 @@ const Navigation = () => {
               <IconWrapper
                 onClick={() => {
                   setMobileMenu(!isMobileMenu);
-                  router.push('/webzine');
+                  router.push('/webzine/vol1');
                 }}
               >
                 <ToggleImageWrapper width="2.4rem" height="2rem">

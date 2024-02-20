@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import articleData from '../../constants/article-data';
+import articleData from '../../../constants/article-data';
 import { useRouter } from 'next/router';
-import Comp20 from '../../components/webzine/20';
-import Comp21 from '../../components/webzine/21';
-import Comp22 from '../../components/webzine/22';
-import Comp23 from '../../components/webzine/23';
-import Comp24 from '../../components/webzine/24';
-import Comp25 from '../../components/webzine/25';
-import Comp26 from '../../components/webzine/26';
-import Comp27 from '../../components/webzine/27';
+import Comp20 from '../../../components/webzine/20';
+import Comp21 from '../../../components/webzine/21';
+import Comp22 from '../../../components/webzine/22';
+import Comp23 from '../../../components/webzine/23';
+import Comp24 from '../../../components/webzine/24';
+import Comp25 from '../../../components/webzine/25';
+import Comp26 from '../../../components/webzine/26';
+import Comp27 from '../../../components/webzine/27';
 
 const WebzineDetail = ({ query }) => {
   const router = useRouter();
