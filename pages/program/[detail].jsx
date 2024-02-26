@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import articleData from '../../constants/article-data';
-import Comp13 from '../../components/program/13';
-import Comp9 from '../../components/program/9';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import Slick from 'react-slick';
 import MatineClass from '../../components/program/matinee-class';
+import Comp13 from '../../components/program/13';
+import Comp9 from '../../components/program/9';
+import Comp32 from '../../components/program/32';
 
 const ProgramDetail = ({ query }) => {
   const router = useRouter();
@@ -126,6 +127,7 @@ const ProgramDetail = ({ query }) => {
                 onCloseRequest={() => setIsOpen(false)}
                 onMovePrevRequest={() => setPhotoIndex((photoIndex + makeData[0].images.length - 1) % makeData[0].images.length)}
                 onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % makeData[0].images.length)}
+                imageCaption={makeData[0].imageCaptions && <ImageCaptionBox style={{ fontSize: '2rem' }}>{makeData[0].imageCaptions[photoIndex]}</ImageCaptionBox>}
               />
             )}
 
@@ -133,20 +135,18 @@ const ProgramDetail = ({ query }) => {
               <CustomSlick {...settings}>
                 {makeData[0]?.images?.map((item, index) => {
                   return (
-                    <React.Fragment key={`image${index}`}>
-                      <ImageWrapper marginTop="4rem" onClick={() => openLightbox(index)}>
-                        <Image
-                          src={item}
-                          alt={`slick${index}`}
-                          layout="fill"
-                          objectFit="cover"
-                          priority={true}
-                          quality={100}
-                          placeholder="blur"
-                          blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-                        />
-                      </ImageWrapper>
-                    </React.Fragment>
+                    <ImageWrapper key={`image${index}`} marginTop="4rem" onClick={() => openLightbox(index)}>
+                      <Image
+                        src={item}
+                        alt={`slick${index}`}
+                        layout="fill"
+                        objectFit="cover"
+                        priority={true}
+                        quality={100}
+                        placeholder="blur"
+                        blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+                      />
+                    </ImageWrapper>
                   );
                 })}
               </CustomSlick>
@@ -238,6 +238,7 @@ const ProgramDetail = ({ query }) => {
 
             {Number(router.query.detail) === 13 && <Comp13 />}
             {Number(router.query.detail) === 9 && <Comp9 />}
+            {Number(router.query.detail) === 32 && <Comp32 />}
           </ContentContainer>
         </Container>
       )}
@@ -263,6 +264,7 @@ const Container = styled.div`
 const TitleContainer = styled.div`
   max-width: 42rem;
   width: 100%;
+  margin-bottom: 8rem;
 
   @media screen and (max-width: 480px) {
     max-width: 48rem;
@@ -309,7 +311,8 @@ export async function getServerSideProps(context) {
 
 const ImageWrapper = styled.div`
   width: 42rem;
-  height: 31.5rem;
+  height: 42rem;
+  /* height: 31.5rem; */
   position: relative;
 
   @media screen and (max-width: 480px) {
@@ -331,12 +334,12 @@ const RightArrowWrapper = styled.div`
   width: 10rem;
   height: 3rem;
   position: absolute;
-  top: 35rem;
+  top: 45rem;
   right: 12rem;
   cursor: pointer;
 
   @media screen and (max-width: 480px) {
-    top: 41rem;
+    top: 50rem;
     right: 13rem;
   }
 `;
@@ -345,12 +348,19 @@ const LeftArrowWrapper = styled.div`
   width: 10rem;
   height: 3rem;
   position: absolute;
-  top: 35rem;
+  top: 45rem;
   left: 12rem;
   cursor: pointer;
 
   @media screen and (max-width: 480px) {
-    top: 41rem;
+    top: 50rem;
     left: 13rem;
   }
+`;
+
+const ImageCaptionBox = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
 `;

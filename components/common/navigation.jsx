@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 import useScrollEvent from 'hooks/useScrollEvent';
@@ -32,51 +31,51 @@ const Navigation = () => {
               <PurpleIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                // onClick={() => {
-                //   router.push('/about');
-                // }}
+                onClick={() => {
+                  router.push('/about');
+                }}
               >
-                <Link href="https://www.salon5120.com/about">ABOUT</Link>
+                <span>ABOUT</span>
               </PurpleIcon>
 
               <RedIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                // onClick={() => {
-                //   router.push('/exhibition');
-                // }}
+                onClick={() => {
+                  router.push('/exhibition');
+                }}
               >
-                <Link href="https://www.salon5120.com/exhibition">EXHIBITION</Link>
+                <span>EXHIBITION</span>
               </RedIcon>
 
               <GreenIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                // onClick={() => {
-                //   router.push('/program');
-                // }}
+                onClick={() => {
+                  router.push('/program');
+                }}
               >
-                <Link href="https://www.salon5120.com/program">PROGRAM</Link>
+                <span>PROGRAM</span>
               </GreenIcon>
 
               <PurpleIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                // onClick={() => {
-                //   router.push('/notice');
-                // }}
+                onClick={() => {
+                  router.push('/notice');
+                }}
               >
-                <Link href="https://www.salon5120.com/notice">NOTICE</Link>
+                <span>NOTICE</span>
               </PurpleIcon>
 
               <RedIcon
                 fontSize="2.556rem"
                 fontWeight={700}
-                // onClick={() => {
-                //   router.push('/webzine');
-                // }}
+                onClick={() => {
+                  router.push('/webzine/vol1');
+                }}
               >
-                <Link href="https://www.salon5120.com/webzine/vol1">WEBZINE</Link>
+                <span>WEBZINE</span>
               </RedIcon>
             </MenuWrapper>
           </DeskTopMenuWrapper>
@@ -181,12 +180,11 @@ const Navigation = () => {
 export default Navigation;
 
 const Frame = styled.div`
-  height: 8rem;
-
   position: sticky;
   top: 0;
   z-index: 3;
 
+  height: 8rem;
   visibility: ${(props) => (props.scrollEventState ? 'hidden' : 'visible')};
   opacity: ${(props) => (props.scrollEventState ? 0 : 1)};
   transition: all 0.2s;
@@ -209,7 +207,6 @@ const Container = styled.div`
   padding: 1.5rem 6rem;
 
   @media screen and (max-width: 480px) {
-    /* padding: 1.5rem; */
     padding: 2.4rem 1.5rem 2.4rem 1.5rem;
   }
 `;
@@ -320,12 +317,4 @@ const RedIcon = styled(CustomLi)`
 
 const GreenIcon = styled(CustomLi)`
   cursor: url('/green.svg'), url('/purple.svg') 5 5, progress;
-`;
-
-const PreTag = styled.pre`
-  white-space: pre-wrap;
-  font-size: ${(props) => (props.fontSize ? props.fontSize : '1.6rem')};
-  line-height: ${(props) => (props.lineHeight ? props.lineHeight : '')};
-  font-weight: ${(props) => (props.fontWeight ? props.fontWeight : 400)};
-  margin: ${(props) => (props.margin ? props.margin : '')};
 `;

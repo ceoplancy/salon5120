@@ -40,7 +40,7 @@ const MatineClass = () => {
           <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} inlineBlock="inline-block">
             {`참여신청 | `}
           </PreTag>
-          <a style={{ textDecoration: 'underline' }} href=" https://bitly.ws/3c3Vk">
+          <a style={{ textDecoration: 'underline' }} href="https://bitly.ws/3c3Vk">
             https://bitly.ws/3c3Vk
           </a>
         </PreTag>
