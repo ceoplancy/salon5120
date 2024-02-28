@@ -48,8 +48,7 @@ const WebzineVol1 = () => {
                 color="#8500FF"
                 fontSize="2.1rem"
                 onClick={() => {
-                  // router.push('/webzine');
-                  alert('준비 중입니다.');
+                  router.push('/webzine');
                 }}
                 cursor="pointer"
               >
