@@ -62,7 +62,7 @@ const Comp1 = () => {
         </PreTag>
       </div>
 
-      <div>
+      <div style={{ marginBottom: '10rem' }}>
         <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
           <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
             {`전시 사진 | `}
