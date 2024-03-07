@@ -6,8 +6,10 @@ import articleData from '../../constants/article-data';
 import Lightbox from 'react-image-lightbox';
 import { useRouter } from 'next/router';
 import 'react-image-lightbox/style.css';
+import Comp1 from '../../components/exhibition/1';
 import Comp12 from '../../components/exhibition/12';
 import Comp30 from '../../components/exhibition/30';
+import Comp2 from '../../components/exhibition/2';
 
 const ExhibitionDetail = ({ query }) => {
   const router = useRouter();
@@ -191,21 +193,9 @@ const ExhibitionDetail = ({ query }) => {
               </PreTag>
             )}
 
-            {makeData[0]?.content9 && (
-              <IframeWrapper>
-                <iframe
-                  width="1905"
-                  height="801"
-                  src="https://www.youtube.com/embed/JRF8_InIKlg?autoplay=1&mute=1"
-                  title="문화살롱 5120 | 김지희 《낯선 풍경들(Unknown Scenes)》 | 타임랩스 영상"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </IframeWrapper>
-            )}
-
             {/* 별도 */}
+            {Number(router.query.detail) === 1 && <Comp1 />}
+            {Number(router.query.detail) === 2 && <Comp2 />}
             {Number(router.query.detail) === 12 && <Comp12 />}
             {Number(router.query.detail) === 30 && <Comp30 />}
           </ContentContainer>
@@ -216,6 +206,16 @@ const ExhibitionDetail = ({ query }) => {
 };
 
 export default ExhibitionDetail;
+
+export async function getServerSideProps(context) {
+  const { query } = context;
+
+  return {
+    props: {
+      query,
+    },
+  };
+}
 
 const Container = styled.div`
   margin-top: 6rem;
@@ -303,33 +303,6 @@ const LeftArrowWrapper = styled.div`
   @media screen and (max-width: 480px) {
     top: 61rem;
     left: 14rem;
-  }
-`;
-
-export async function getServerSideProps(context) {
-  const { query } = context;
-
-  return {
-    props: {
-      query,
-    },
-  };
-}
-
-const IframeWrapper = styled.div`
-  position: relative;
-  margin-top: 10rem;
-  padding-top: 56%;
-  width: 100%;
-  height: 0;
-  margin-bottom: 3rem;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 `;
 

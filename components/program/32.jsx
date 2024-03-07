@@ -44,6 +44,15 @@ const Comp32 = () => {
           </a>
         </PreTag>
       </div>
+
+      <div>
+        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} inlineBlock="inline-block">
+          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} inlineBlock="inline-block">
+            {`사진 | `}
+          </PreTag>
+          {`이동웅`}
+        </PreTag>
+      </div>
     </div>
   );
 };

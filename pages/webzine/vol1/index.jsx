@@ -46,7 +46,8 @@ const WebzineVol1 = () => {
 
               <FontSize
                 color="#8500FF"
-                fontSize="2.1rem"
+                fontSize="1.5rem"
+                margin="0.5rem 0 0 0"
                 onClick={() => {
                   router.push('/webzine');
                 }}
