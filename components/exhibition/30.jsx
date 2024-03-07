@@ -42,7 +42,6 @@ const Comp30 = () => {
           </PreTag>
           {`2024년 2월 8일(목) 오후 5시`}
         </PreTag>
-        ₩
       </div>
 
       <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8}>
@@ -56,7 +55,6 @@ const Comp30 = () => {
           </PreTag>
           {`이동웅`}
         </PreTag>
-        ₩
       </div>
 
       <div>
