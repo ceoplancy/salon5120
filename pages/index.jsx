@@ -70,7 +70,8 @@ const Article = () => {
   };
 
   const makeMobileArticleData = (articleData) => {
-    return sortByDateAscending(articleData, 'date');
+    const result = articleData.filter((x) => x.type === 'type1' || x.type === 'type2' || x.type === 'type3');
+    return sortByDateAscending(result, 'date');
   };
 
   const [windowDimensions, setWindowDimensions] = useState();
@@ -532,7 +533,7 @@ const PreTag = styled.pre`
 const LoadMoreBtn = styled.div`
   width: 100%;
   height: 5rem;
-  margin-top: 1.3rem;
+  margin-top: 6rem;
   margin-bottom: 5rem;
   display: flex;
   justify-content: center;
@@ -541,13 +542,14 @@ const LoadMoreBtn = styled.div`
 `;
 
 const MobileLoadMoreBtn = styled.div`
-  width: 100%;
-  height: 100%;
-  margin-top: 1.5rem;
+  padding: 2rem;
+  margin: 2rem 0 4rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 10px;
 `;
 
 const Type2LineWrapper = styled.div`

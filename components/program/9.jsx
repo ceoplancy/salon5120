@@ -4,6 +4,15 @@ import styled from 'styled-components';
 const Comp9 = () => {
   return (
     <div>
+      <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.4}>
+        아트시그널 Art Signal
+      </PreTag>
+
+      <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} margin="3rem 0 3rem 0">
+        아트시그널은 문학, 미술, 음악, 영화 등 장르를 가리지 않고 예술 관련 학과 학생들이나 동아리원들이 모여 자유로운 좌담회 형식으로 이야기를 나누는 라운드테이블 프로그램입니다. 청년 예술인들에게
+        어떤 지원이 필요한지 이야기하고, 각자의 작업을 공유하는 시간을 가집니다.
+      </PreTag>
+
       <FontSize fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} margin="3rem 0 0 0">
         1st
       </FontSize>

@@ -109,7 +109,7 @@ const ProgramDetail = ({ query }) => {
       ) : (
         <Container>
           <TitleContainer>
-            <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.33} margin="0 0 4rem">
+            <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.33} margin="0 0 4rem 0">
               {makeData[0]?.content1}
             </PreTag>
 
@@ -131,7 +131,7 @@ const ProgramDetail = ({ query }) => {
               />
             )}
 
-            {makeData[0]?.images && (
+            {makeData[0]?.images?.lenght > 0 && (
               <CustomSlick {...settings}>
                 {makeData[0]?.images?.map((item, index) => {
                   return (
@@ -264,7 +264,6 @@ const Container = styled.div`
 const TitleContainer = styled.div`
   max-width: 42rem;
   width: 100%;
-  margin-bottom: 8rem;
 
   @media screen and (max-width: 480px) {
     max-width: 48rem;
