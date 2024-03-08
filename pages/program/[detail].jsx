@@ -131,7 +131,7 @@ const ProgramDetail = ({ query }) => {
               />
             )}
 
-            {makeData[0]?.images?.lenght > 0 && (
+            {makeData[0].images?.length > 0 && (
               <CustomSlick {...settings}>
                 {makeData[0]?.images?.map((item, index) => {
                   return (

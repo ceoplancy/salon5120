@@ -17,8 +17,8 @@ const Comp32 = () => {
       </PreTag>
 
       <div>
-        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} inlineBlock="inline-block">
-          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} inlineBlock="inline-block">
+        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
+          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
             {`일시 | `}
           </PreTag>
           {`2024년 2월 22일 목요일, 오후 7시 30분`}
@@ -26,8 +26,8 @@ const Comp32 = () => {
       </div>
 
       <div>
-        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} inlineBlock="inline-block">
-          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} inlineBlock="inline-block">
+        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
+          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
             {`강연자 | `}
           </PreTag>
           {`천지윤(해금 연주가), 락가(TARL(탈) 프로듀서)`}
@@ -35,8 +35,8 @@ const Comp32 = () => {
       </div>
 
       <div>
-        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} inlineBlock="inline-block">
-          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} inlineBlock="inline-block">
+        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
+          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
             {`참여신청 | `}
           </PreTag>
           <a style={{ textDecoration: 'underline' }} href="https://bitly.ws/3d5yc">
@@ -46,8 +46,8 @@ const Comp32 = () => {
       </div>
 
       <div>
-        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} inlineBlock="inline-block">
-          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.66} inlineBlock="inline-block">
+        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
+          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
             {`사진 | `}
           </PreTag>
           {`이동웅`}
