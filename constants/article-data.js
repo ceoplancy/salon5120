@@ -626,7 +626,7 @@ const articleData = [
       '임하은, Travel Agency Signboard, 종이에 디지털 프린트, 35x35cm, 2023',
       '임하은, Small Bush Arch Track 2, 캔버스에 아크릴, 60.6×90.9cm, 2023',
       '임하은, Yoga Tour in Arch Track, 캔버스에 아크릴, 80.3x116.8cm, 2023',
-      '임하은, Tour Information Board, 종이에 디지털 프린트, 24.3x41.5cm, 2024 Ⓒ이동웅',
+      '임하은, Tour Information Board, 종이에 디지털 프린트, 24.3x41.5cm, 2024',
       '임하은, Home For Sale Banner, 종이에 아크릴, 109x157.6cm, 2023',
       '임하은, Arch Track Souvenir Shop, 복합 매체, 103x116.8x28.6cm 2024',
       '임하은, Arch Track Souvenir Shop, 복합 매체, 103x116.8x28.6cm 2024',
