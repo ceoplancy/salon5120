@@ -121,17 +121,17 @@ const ProgramDetail = ({ query }) => {
 
             {isOpen && (
               <Lightbox
-                mainSrc={makeData[0].images[photoIndex]}
-                nextSrc={makeData[0].images[(photoIndex + 1) % makeData[0].images.length]}
-                prevSrc={makeData[0].images[(photoIndex + makeData[0].images.length - 1) % makeData[0].images.length]}
+                mainSrc={makeData[0]?.images[photoIndex]}
+                nextSrc={makeData[0]?.images[(photoIndex + 1) % makeData[0]?.images?.length]}
+                prevSrc={makeData[0]?.images[(photoIndex + makeData[0]?.images?.length - 1) % makeData[0]?.images?.length]}
                 onCloseRequest={() => setIsOpen(false)}
-                onMovePrevRequest={() => setPhotoIndex((photoIndex + makeData[0].images.length - 1) % makeData[0].images.length)}
-                onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % makeData[0].images.length)}
-                imageCaption={makeData[0].imageCaptions && <ImageCaptionBox style={{ fontSize: '2rem' }}>{makeData[0].imageCaptions[photoIndex]}</ImageCaptionBox>}
+                onMovePrevRequest={() => setPhotoIndex((photoIndex + makeData[0]?.images?.length - 1) % makeData[0]?.images?.length)}
+                onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % makeData[0]?.images?.length)}
+                imageCaption={makeData[0]?.imageCaptions && <ImageCaptionBox style={{ fontSize: '2rem' }}>{makeData[0]?.imageCaptions[photoIndex]}</ImageCaptionBox>}
               />
             )}
 
-            {makeData[0].images?.length > 0 && (
+            {makeData[0]?.images?.length > 0 && (
               <CustomSlick {...settings}>
                 {makeData[0]?.images?.map((item, index) => {
                   return (
