@@ -10,7 +10,7 @@ const Comp1 = () => {
 
       <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.5}>
         {`김지희 작가 개인전
-<낯선 풍경들(Unknown Scenes)>
+《낯선 풍경들(Unknown Scenes)》
 23.08.08-09.16`}
       </PreTag>
 

@@ -9,7 +9,7 @@ const Comp2 = () => {
       </PreTag>
 
       <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.5}>
-        {`<전영진 : OPENING NEW DOOR>
+        {`《전영진 : OPENING NEW DOOR》
 23.06.07-06.30`}
       </PreTag>
 

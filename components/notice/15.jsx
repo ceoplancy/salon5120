@@ -22,11 +22,11 @@ const Comp15 = () => {
 
       <div>
         <PreTag fontSize={'3.2rem'} fontWeight={700} lineHeight={1.4}>
-          {`박관우, <증인과 증언들> 워크숍 참여자 모집`}
+          {`박관우, 《증인과 증언들》 워크숍 참여자 모집`}
         </PreTag>
 
         <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.66} margin="6rem 0 6rem 0">
-          {`10월, 문화살롱 5120에서 진행되는 실험예술 워크숍 <증인과 증언들> 사건의 일부가 될 구성원을 모집합니다.`}
+          {`10월, 문화살롱 5120에서 진행되는 실험예술 워크숍 《증인과 증언들》 사건의 일부가 될 구성원을 모집합니다.`}
         </PreTag>
 
         <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8}>

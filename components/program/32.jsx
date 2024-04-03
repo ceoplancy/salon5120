@@ -28,7 +28,7 @@ const Comp32 = () => {
       <div>
         <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
           <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
-            {`강연자 | `}
+            {`아티스트 | `}
           </PreTag>
           {`천지윤(해금 연주가), 락가(TARL(탈) 프로듀서)`}
         </PreTag>

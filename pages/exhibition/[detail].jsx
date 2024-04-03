@@ -7,9 +7,10 @@ import Lightbox from 'react-image-lightbox';
 import { useRouter } from 'next/router';
 import 'react-image-lightbox/style.css';
 import Comp1 from '../../components/exhibition/1';
+import Comp2 from '../../components/exhibition/2';
 import Comp12 from '../../components/exhibition/12';
 import Comp30 from '../../components/exhibition/30';
-import Comp2 from '../../components/exhibition/2';
+import Comp33 from '../../components/exhibition/33';
 
 const ExhibitionDetail = ({ query }) => {
   const router = useRouter();
@@ -198,6 +199,7 @@ const ExhibitionDetail = ({ query }) => {
             {Number(router.query.detail) === 2 && <Comp2 />}
             {Number(router.query.detail) === 12 && <Comp12 />}
             {Number(router.query.detail) === 30 && <Comp30 />}
+            {Number(router.query.detail) === 33 && <Comp33 />}
           </ContentContainer>
         </Container>
       )}

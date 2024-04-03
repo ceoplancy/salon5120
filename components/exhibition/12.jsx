@@ -9,7 +9,7 @@ const Comp12 = () => {
       </PreTag>
 
       <PreTag fontSize={'4.5rem'} fontWeight={700} lineHeight={1.4}>
-        {`<공유시선 共有視線 (The Age's Glance)> 
+        {`《공유시선 共有視線 (The Age's Glance)》 
 23.11.17-24.01.20`}
       </PreTag>
 
