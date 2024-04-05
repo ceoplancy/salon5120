@@ -706,7 +706,7 @@ Pattern》
     mobileImages: ['/image/type1-33/1.jpg'],
     imageCaptions: [''],
     title1: '문화살롱 5120 2023 전시공모 선정작가전',
-    title2: `《텍스트의 섬광》
+    title2: `《텍스트의 섬광 The Light of Text》
 24.04.05-24.05.11`,
     title3: ``,
   },
