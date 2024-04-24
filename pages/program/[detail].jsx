@@ -10,6 +10,7 @@ import MatineClass from '../../components/program/matinee-class';
 import Comp13 from '../../components/program/13';
 import Comp9 from '../../components/program/9';
 import Comp32 from '../../components/program/32';
+import Comp34 from '../../components/program/34';
 
 const ProgramDetail = ({ query }) => {
   const router = useRouter();
@@ -239,6 +240,7 @@ const ProgramDetail = ({ query }) => {
             {Number(router.query.detail) === 13 && <Comp13 />}
             {Number(router.query.detail) === 9 && <Comp9 />}
             {Number(router.query.detail) === 32 && <Comp32 />}
+            {Number(router.query.detail) === 34 && <Comp34 />}
           </ContentContainer>
         </Container>
       )}

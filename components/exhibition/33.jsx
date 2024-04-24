@@ -47,6 +47,24 @@ const Comp33 = () => {
       <div>
         <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
           <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
+            {`전시 사진 | `}
+          </PreTag>
+          {`이동웅`}
+        </PreTag>
+      </div>
+
+      <div>
+        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
+          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
+            {`스틸컷 제공 | `}
+          </PreTag>
+          {`로트링겐`}
+        </PreTag>
+      </div>
+
+      <div>
+        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} inlineBlock="inline-block">
+          <PreTag fontSize={'1.5rem'} fontWeight={700} lineHeight={1.8} inlineBlock="inline-block">
             {`문의 | `}
           </PreTag>
           {`02-948-1217 / culturesalon5120@gmail.com`}
