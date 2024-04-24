@@ -269,6 +269,7 @@ const TitleContainer = styled.div`
 
   @media screen and (max-width: 480px) {
     max-width: 48rem;
+    margin-bottom: 10rem;
   }
 `;
 
