@@ -11,6 +11,7 @@ import Comp2 from '../../components/exhibition/2';
 import Comp12 from '../../components/exhibition/12';
 import Comp30 from '../../components/exhibition/30';
 import Comp33 from '../../components/exhibition/33';
+import Comp35 from '../../components/exhibition/35';
 
 const ExhibitionDetail = ({ query }) => {
   const router = useRouter();
@@ -200,6 +201,7 @@ const ExhibitionDetail = ({ query }) => {
             {Number(router.query.detail) === 12 && <Comp12 />}
             {Number(router.query.detail) === 30 && <Comp30 />}
             {Number(router.query.detail) === 33 && <Comp33 />}
+            {Number(router.query.detail) === 35 && <Comp35 />}
           </ContentContainer>
         </Container>
       )}

@@ -782,6 +782,19 @@ Pattern》
     content1: `THE SALON`,
     content2: ``,
   },
+
+  {
+    id: 35,
+    type: 'type1',
+    date: '2024-05-24',
+    images: ['/image/type1-35/1.jpg'],
+    mobileImages: ['/image/type1-35/1.jpg'],
+    imageCaptions: [''],
+    title1: '문화살롱 5120 2023 전시공모 선정작가전',
+    title2: `《We can take a shower together, If you want.》
+24.05.24-24.07.06`,
+    title3: ``,
+  },
 ];
 
 export default articleData;
