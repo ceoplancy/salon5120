@@ -62,7 +62,7 @@ const Comp35 = () => {
         </PreTag>
       </div>
 
-      <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} margin="6rem 0 0 0">
+      <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} margin="6rem 0 10rem 0">
         {`  문화살롱 5120의 2023 전시공모 선정작가 중 세 번째 전시로 공재 작가의 전시 《We can take a shower together, If you want.》이 5월 24일 금요일부터 개최됩니다.
 
   공재는 개인의 경험과 기억을 바탕으로 흙과 나무의 물성을 탐구하면서 조각 및 설치로 작업합니다. 이를 통해 작가는 집단적 신화와 전설이 어떻게 변형되고 왜곡되는지 탐구하는데요. 그의 작업은 집단이 부여한 권위와 힘이 어떻게 개인의 평범한 기억을 신화적인 기억으로 변모시키는지 그 과정을 보여줍니다.
