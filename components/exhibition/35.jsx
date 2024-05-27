@@ -72,12 +72,6 @@ const Comp35 = () => {
   문화살롱 5120의 전시공모 <공유시선>을 통해 선정되어 작년 프리뷰 전시에서 선보였던 공재 작가의 심화된 조각적 탐구와 새로운 작품들에 많은 기대를 부탁드립니다.
 `}
       </PreTag>
-
-      <div style={{ textAlign: 'right' }}>
-        <PreTag fontSize={'1.5rem'} fontWeight={400} lineHeight={1.8} margin="3.6rem 0 10rem 0">
-          {`포스터 디자인 : 원정인`}
-        </PreTag>
-      </div>
     </Container>
   );
 };
