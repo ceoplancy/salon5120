@@ -39,6 +39,8 @@ function MyApp({ Component, pageProps }) {
               <Head>
                 {/* 모바일에서 인풋 클릭 시 확대방지 */}
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"></meta>
+                <meta name="naver-site-verification" content="d91ada1739e80bd5505b4f4e6935118d7ee38168" />
+                <meta name="google-site-verification" content="L-QMDXRMHqkjJ5l-GYJSOQ2-_WL1hgsXstCsKf6em0o" />
               </Head>
 
               {loading ? (
